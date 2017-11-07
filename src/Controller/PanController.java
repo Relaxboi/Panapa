@@ -20,5 +20,15 @@ public class PanController {
 
     public void Delete() {//Eliminar
     }
+    
+    //Set and get del ArrayList
+    public ArrayList<Pan> getListaPan() {
+        return ListaPan;
+    }
 
+    public void setListaPan(ArrayList<Pan> ListaPan) {
+        this.ListaPan = ListaPan;
+    }
+    
+    
 }
