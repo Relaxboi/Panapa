@@ -6,13 +6,13 @@ import java.util.ArrayList;
 public class PanController {
 
     ArrayList<Pan> ListaPan = new ArrayList();
-    
-    public void Create() {
-    Pan pan1 = new Pan(); 
+
+    public void Create(Pan pan1) {
+        ListaPan.add(pan1);
     }
 
     public void Read() {
-    
+
     }
 
     public void Uptade() {
