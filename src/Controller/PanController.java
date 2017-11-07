@@ -6,8 +6,7 @@ import java.util.ArrayList;
 public class PanController {
 
     ArrayList<Pan> ListaPan = new ArrayList();
-    String Id;
-
+    
     public void Create(Pan Pan1) {
         ListaPan.add(Pan1);
     }
