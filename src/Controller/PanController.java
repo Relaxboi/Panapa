@@ -1,5 +1,3 @@
-
-
 package Controller;
 
 import Model.Pan;
@@ -10,8 +8,8 @@ public class PanController {
     ArrayList<Pan> ListaPan = new ArrayList();
     String Id;
 
-    public void Create() {
-        Pan pan1 = new Pan();
+    public void Create(Pan Pan1) {
+        ListaPan.add(Pan1);
     }
 
     public void Read() {
