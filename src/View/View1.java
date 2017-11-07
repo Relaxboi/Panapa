@@ -68,11 +68,6 @@ public class View1 extends javax.swing.JFrame {
 
         registrarPan_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/guardar.png"))); // NOI18N
         registrarPan_btn.setText("Registrar");
-        registrarPan_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                registrarPan(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -184,12 +179,6 @@ public class View1 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void registrarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarPan
-
-        paco.Create(new Pan(nombrePanReg_txt.getText(), 0, 0, ""));
-        
-    }//GEN-LAST:event_registrarPan
 
     /**
      * @param args the command line arguments
