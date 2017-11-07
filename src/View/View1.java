@@ -17,7 +17,7 @@ public class View1 extends javax.swing.JFrame {
     /**
      * Creates new form View1
      */
-    PanController paco = new PanController();
+    
 
     public View1() {
         initComponents();
