@@ -191,8 +191,10 @@ public class View1 extends javax.swing.JFrame {
         paco.Create(new Pan(nombrePanReg_txt.getText(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), "f2"));
         for(int i = 0; i < paco.getListaPan().size(); i++){//getListPan = acceder al ArryList
             
-            System.out.println(paco.getListaPan().get(i).getNombreTipo());
+            //System.out.println(paco.getListaPan().get(i).getNombreTipo());
         }
+        
+        paco.Read("queso");
     }//GEN-LAST:event_registrarPan
 
     /**
