@@ -7,13 +7,16 @@ package View;
 
 import Controller.PanController;
 import Model.Pan;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Roberto Batty
  */
 public class View1 extends javax.swing.JFrame {
-
+    private DefaultTableModel Consulta;
     /**
      * Creates new form View1
      */
@@ -286,8 +289,19 @@ public class View1 extends javax.swing.JFrame {
 
         jLabel8.setText("Buscar :");
 
+        precioPanEdit_txt2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                precioPanEdit_txt2ActionPerformed(evt);
+            }
+        });
+
         EditPan_btn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.png"))); // NOI18N
         EditPan_btn1.setText("Consultar");
+        EditPan_btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditPan_btn1ActionPerformed(evt);
+            }
+        });
 
         listaPanesEdit_tbl1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -331,12 +345,12 @@ public class View1 extends javax.swing.JFrame {
             Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Consultar_ProductoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EditPan_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(selecEditPan_chbx1)
                         .addComponent(precioPanEdit_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel8)))
+                        .addComponent(jLabel8))
+                    .addComponent(EditPan_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(339, Short.MAX_VALUE))
             .addGroup(Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Consultar_ProductoLayout.createSequentialGroup()
@@ -425,14 +439,11 @@ public class View1 extends javax.swing.JFrame {
 
     private void registrarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarPan
         paco.Create(new Pan(nombrePanReg_txt.getText(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), "f2"));
-<<<<<<< HEAD
         for(int i = 0; i < paco.getListaPan().size(); i++){//getListPan = acceder al ArryList
             
             //System.out.println(paco.getListaPan().get(i).getNombreTipo());
         }
-        
-        paco.Read("queso");
-=======
+       
 
         for (int i = 0; i < paco.getListaPan().size(); i++) {//getListPan = acceder al ArryList
 
@@ -440,7 +451,6 @@ public class View1 extends javax.swing.JFrame {
         }
         
 
->>>>>>> 906ec165da5992407200f07a939fbef75ce29488
     }//GEN-LAST:event_registrarPan
 
     public void ListarRegistrar() {
@@ -494,6 +504,30 @@ public class View1 extends javax.swing.JFrame {
     private void Actualizar_panel(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Actualizar_panel
         ListarModificar();
     }//GEN-LAST:event_Actualizar_panel
+
+    private void precioPanEdit_txt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precioPanEdit_txt2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_precioPanEdit_txt2ActionPerformed
+
+    private void EditPan_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditPan_btn1ActionPerformed
+       if(precioPanEdit_txt2.getText() == null || precioPanEdit_txt2.getText().equals("")){
+           JOptionPane.showMessageDialog(null, "No Ha Ingresado Los Datos","ERROR!",1);
+       }else{
+          Consulta = (DefaultTableModel) listaPanesEdit_tbl1.getModel();
+          for(int i = 0; i < Consulta.getRowCount(); i++){
+              Consulta.removeRow(i);
+          }
+          ArrayList<Object[]> A = new ArrayList();
+          A = (ArrayList<Object[]>) paco.Read(precioPanEdit_txt2.getText()).clone();
+          if(A.isEmpty()){
+              JOptionPane.showMessageDialog(null, "No Se Han Encontrado Coincidencias","No Se Encontro",0);
+          }else{
+              for(int i = 0; i < A.size(); i++){
+                  Consulta.addRow(A.get(i));
+              }
+          }
+       }
+    }//GEN-LAST:event_EditPan_btn1ActionPerformed
 
     /**
      * @param args the command line arguments

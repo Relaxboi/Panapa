@@ -434,13 +434,13 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="EditPan_btn1" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                          <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="selecEditPan_chbx1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="precioPanEdit_txt2" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                               <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="EditPan_btn1" min="-2" pref="44" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="339" max="32767" attributes="0"/>
                   </Group>
@@ -467,6 +467,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="precioPanEdit_txt2">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="precioPanEdit_txt2ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="EditPan_btn1">
               <Properties>
@@ -475,6 +478,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Consultar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EditPan_btn1ActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane3">
               <AuxValues>
