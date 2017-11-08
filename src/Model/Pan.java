@@ -2,24 +2,27 @@
 package Model;
 
 public class Pan {
-    
+
     private String nombreTipo;
     private int precio;
     private int cantidad;
     private String id;
-    
+
     //Constructores - Sobrecarga
-    public Pan(String nombreTipo, int precio, int cantidad, String id){
+    public Pan(String nombreTipo, int precio, int cantidad, String id) {
         this.nombreTipo = nombreTipo;
         this.precio = precio;
+        this.cantidad = cantidad;
+        this.id = id;
     }
-    public Pan(){}
+
+    public Pan() {
+    }
 
     public String getNombreTipo() {
         return nombreTipo;
     }
-    
-    
+
     //Set and get 
     public void setNombreTipo(String nombreTipo) {
         this.nombreTipo = nombreTipo;
@@ -48,7 +51,5 @@ public class Pan {
     public void setId(String id) {
         this.id = id;
     }
-
-
 
 }

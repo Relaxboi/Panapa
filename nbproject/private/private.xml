@@ -3,9 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Fernando/Desktop/Panapa/src/View/View1.java</file>
             <file>file:/C:/Users/Fernando/Desktop/Panapa/src/Model/Pan.java</file>
             <file>file:/C:/Users/Fernando/Desktop/Panapa/src/Controller/PanController.java</file>
+=======
+            <file>file:/D:/Copia%20de%20Seguridad%20(Mis%20Documentos)/Mis%20Documentos/NetBeansProjects/Panapa%201.1.0/src/Controller/PanController.java</file>
+            <file>file:/D:/Copia%20de%20Seguridad%20(Mis%20Documentos)/Mis%20Documentos/NetBeansProjects/Panapa%201.1.0/src/Model/Pan.java</file>
+            <file>file:/D:/Copia%20de%20Seguridad%20(Mis%20Documentos)/Mis%20Documentos/NetBeansProjects/Panapa%201.1.0/src/View/View1.java</file>
+>>>>>>> 906ec165da5992407200f07a939fbef75ce29488
         </group>
     </open-files>
 </project-private>
