@@ -18,6 +18,8 @@ public class View1 extends javax.swing.JFrame {
      * Creates new form View1
      */
     PanController paco = new PanController();
+
+    int indexMod_tbl = 0;
     //PACO es instanciar al PanController 
 
     public View1() {
@@ -173,6 +175,11 @@ public class View1 extends javax.swing.JFrame {
 
         EditPan_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/editar.png"))); // NOI18N
         EditPan_btn.setText("Modificar");
+        EditPan_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificarPan(evt);
+            }
+        });
 
         listaPanesEdit_tbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -188,6 +195,11 @@ public class View1 extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        listaPanesEdit_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                selecProdModif_tbl(evt);
             }
         });
         jScrollPane2.setViewportView(listaPanesEdit_tbl);
@@ -430,14 +442,13 @@ public class View1 extends javax.swing.JFrame {
 
             System.out.println(paco.getListaPan().get(i).getNombreTipo());
         }
-        
+        ListarRegistrar();
 
     }//GEN-LAST:event_registrarPan
 
     public void ListarRegistrar() {
-
-        listaPanesReg_tbl = new javax.swing.JTable();
-        paco.Listar();        
+        
+        paco.Listar();
 
         listaPanesReg_tbl.setModel(new javax.swing.table.DefaultTableModel(
                 paco.getListaPanesMtz(),
@@ -460,9 +471,9 @@ public class View1 extends javax.swing.JFrame {
 
     public void ListarModificar() {
 
-        listaPanesEdit_tbl = new javax.swing.JTable();
+      
         paco.Listar();
-        
+
         listaPanesEdit_tbl.setModel(new javax.swing.table.DefaultTableModel(
                 paco.getListaPanesMtz(),
                 new String[]{
@@ -478,6 +489,12 @@ public class View1 extends javax.swing.JFrame {
             }
         });
 
+        listaPanesEdit_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                selecProdModif_tbl(evt);
+            }
+        });
+
         jScrollPane2.setViewportView(listaPanesEdit_tbl);
 
     }
@@ -485,6 +502,18 @@ public class View1 extends javax.swing.JFrame {
     private void Actualizar_panel(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Actualizar_panel
         ListarModificar();
     }//GEN-LAST:event_Actualizar_panel
+
+    private void selecProdModif_tbl(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selecProdModif_tbl
+        // rowAtPoint -> ( EVENTO 'evt' . getPoint() 'posicion' );
+        int ab = listaPanesEdit_tbl.rowAtPoint(evt.getPoint());
+        this.indexMod_tbl = ab;
+        System.out.println("holaaa " + indexMod_tbl);
+
+    }//GEN-LAST:event_selecProdModif_tbl
+
+    private void modificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarPan
+
+    }//GEN-LAST:event_modificarPan
 
     /**
      * @param args the command line arguments
