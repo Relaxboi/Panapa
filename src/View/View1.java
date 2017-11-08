@@ -507,7 +507,7 @@ public class View1 extends javax.swing.JFrame {
         // rowAtPoint -> ( EVENTO 'evt' . getPoint() 'posicion' );
         int ab = listaPanesEdit_tbl.rowAtPoint(evt.getPoint());
         this.indexMod_tbl = ab;
-        System.out.println("holaaa " + indexMod_tbl);
+        System.out.println("holaaaa " + indexMod_tbl);
 
     }//GEN-LAST:event_selecProdModif_tbl
 
