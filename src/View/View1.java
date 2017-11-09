@@ -933,18 +933,14 @@ public class View1 extends javax.swing.JFrame {
 
 
     private void ConsultPan_btnActionPerformed(java.awt.event.ActionEvent evt) {                                               
-       
-        if(precioPanConsult_txt.getText() == null || precioPanConsult_txt.getText().equals("")){
-           JOptionPane.showMessageDialog(null, "No Ha Ingresado Los Datos","ERROR!",1);
+        Consulta = (DefaultTableModel) listaPanesEdit_tbl1.getModel(); 
+        for(int i = 0; i < Consulta.getRowCount(); i++){
+            Consulta.removeRow(i);
         }
-    }
-    
-    private void EditPan_btn1ActionPerformed(java.awt.event.ActionEvent evt) {                                             
-       if(precioPanConsult_txt.getText() == null || precioPanConsult_txt.getText().equals("")){
+        if(precioPanConsult_txt.getText() == null || precioPanConsult_txt.getText().equals("")){
            JOptionPane.showMessageDialog(null, "No Ha Ingresado Los Datos","ERROR!",0);
 
        }else{
-          Consulta = (DefaultTableModel) listaPanesEdit_tbl1.getModel();
           for(int i = 0; i < Consulta.getRowCount(); i++){
               Consulta.removeRow(i);
           }
@@ -954,22 +950,13 @@ public class View1 extends javax.swing.JFrame {
           if(A.isEmpty()){
               JOptionPane.showMessageDialog(null, "No Se Han Encontrado Coincidencias","No Se Encontro",1);
           }else{
-              for(int i = 0; i < Consulta.getRowCount(); i++){
-                  Consulta.removeRow(i);
-              }
               for(int i = 0; i < A.size(); i++){
                   Consulta.addRow(A.get(i));
               }
           }
        }
     }
-
-        
-                                                 
-
-                                               
-
-
+                                           
     private void selecProdModif_tbl(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selecProdModif_tbl
         // rowAtPoint -> ( EVENTO 'evt' . getPoint() 'posicion' );
         int ab = listaPanesEdit_tbl.rowAtPoint(evt.getPoint());
