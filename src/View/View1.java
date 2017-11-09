@@ -23,7 +23,7 @@ public class View1 extends javax.swing.JFrame {
      */
     PanController paco = new PanController();
 
-    int indexMod_tbl = 0;
+    Object indexMod_tbl = null;
     //PACO es instanciar al PanController 
 
     public View1() {
@@ -1043,9 +1043,12 @@ public class View1 extends javax.swing.JFrame {
 
     private void selecProdModif_tbl(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selecProdModif_tbl
         // rowAtPoint -> ( EVENTO 'evt' . getPoint() 'posicion' );
-        int ab = listaPanesEdit_tbl.rowAtPoint(evt.getPoint());
-        this.indexMod_tbl = ab;
-        System.out.println("holaaaa y chaaaooo" + indexMod_tbl);
+        int posEditPan = listaPanesEdit_tbl.rowAtPoint(evt.getPoint());
+        this.indexMod_tbl = posEditPan;
+        if ( posEditPan >= 0){
+            selecEditPan_chbx.setSelected(true);
+            
+        }
 
     }//GEN-LAST:event_selecProdModif_tbl
 
