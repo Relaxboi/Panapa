@@ -9,6 +9,7 @@ import Controller.PanController;
 import Model.Pan;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -1082,32 +1083,31 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_consultProvEdit_btnActionPerformed
 
     private void consultPanEdit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanEdit_btnActionPerformed
-        // TODO add your handling code here:
+        Consulta = (DefaultTableModel) listaPanesEdit_tbl.getModel();
+        Buscar(Consulta, paco.Read(nombrePanConsultEdit_txt.getText()), nombrePanConsultEdit_txt.getText());
+        Consulta = null;
     }//GEN-LAST:event_consultPanEdit_btnActionPerformed
-
-    private void consultPan_btn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPan_btn
-        Consulta = (DefaultTableModel) listaPanesConsult_tbl.getModel();
-        for (int i = 0; i < Consulta.getRowCount(); i++) {
-            Consulta.removeRow(i);
+    private void Buscar(DefaultTableModel Table, ArrayList<Object[]> Array, String Caja){
+        for (int i = 0; i < Table.getRowCount(); i++) {
+            Table.removeRow(i);
         }
-        if (nombrePanConsult_txt.getText() == null || nombrePanConsult_txt.getText().equals("")) {
+        if (Caja == null || Caja.equals("")) {
             JOptionPane.showMessageDialog(null, "No Ha Ingresado Los Datos", "ERROR!", 0);
         } else {
-            for (int i = 0; i < Consulta.getRowCount(); i++) {
-                Consulta.removeRow(i);
-            }
-            ArrayList<Object[]> A = new ArrayList();
-            A.clear();
-            A = (ArrayList<Object[]>) paco.Read(nombrePanConsult_txt.getText()).clone();
-            if (A.isEmpty()) {
+            if (Array.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "No Se Han Encontrado Coincidencias", "No Se Encontro", 1);
             } else {
-                for (int i = 0; i < A.size(); i++) {
-                    Consulta.addRow(A.get(i));
+                for (int i = 0; i < Array.size(); i++) {
+                    Table.addRow(Array.get(i));
                 }
             }
         }
-    
+        
+    }
+    private void consultPan_btn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPan_btn
+        Consulta = (DefaultTableModel) listaPanesConsult_tbl.getModel();
+        Buscar(Consulta, paco.Read(nombrePanConsult_txt.getText()), nombrePanConsult_txt.getText());
+        Consulta = null;
     }//GEN-LAST:event_consultPan_btn
 
     /**
