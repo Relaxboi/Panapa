@@ -75,10 +75,10 @@ public class View1 extends javax.swing.JFrame {
         Eliminar_Producto = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         listaPanesEdit_tbl2 = new javax.swing.JTable();
-        precioPanEdit_txt3 = new javax.swing.JTextField();
+        nombrePanEliminar_txt = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        selecEditPan_chbx2 = new javax.swing.JCheckBox();
-        EditPan_btn3 = new javax.swing.JButton();
+        selecPanEliminar_chbx = new javax.swing.JCheckBox();
+        eliminarPan_btn = new javax.swing.JButton();
         Proveedores = new javax.swing.JTabbedPane();
         Registrar_Producto1 = new javax.swing.JPanel();
         nombreProvReg_txt = new javax.swing.JTextField();
@@ -451,30 +451,29 @@ public class View1 extends javax.swing.JFrame {
 
         jLabel9.setText("Buscar :");
 
-        selecEditPan_chbx2.setText("Seleccionado");
-        selecEditPan_chbx2.setEnabled(false);
+        selecPanEliminar_chbx.setText("Seleccionado");
+        selecPanEliminar_chbx.setEnabled(false);
 
-        EditPan_btn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/eliminar.png"))); // NOI18N
-        EditPan_btn3.setText("Eliminar");
+        eliminarPan_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/eliminar.png"))); // NOI18N
+        eliminarPan_btn.setText("Eliminar");
 
         javax.swing.GroupLayout Eliminar_ProductoLayout = new javax.swing.GroupLayout(Eliminar_Producto);
         Eliminar_Producto.setLayout(Eliminar_ProductoLayout);
         Eliminar_ProductoLayout.setHorizontalGroup(
             Eliminar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Eliminar_ProductoLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(Eliminar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Eliminar_ProductoLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(selecEditPan_chbx2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(selecPanEliminar_chbx)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(precioPanEdit_txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(EditPan_btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Eliminar_ProductoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane4)))
+                        .addComponent(nombrePanEliminar_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(eliminarPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE))
                 .addContainerGap())
         );
         Eliminar_ProductoLayout.setVerticalGroup(
@@ -482,10 +481,10 @@ public class View1 extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Eliminar_ProductoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(Eliminar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(precioPanEdit_txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombrePanEliminar_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
-                    .addComponent(selecEditPan_chbx2)
-                    .addComponent(EditPan_btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(selecPanEliminar_chbx)
+                    .addComponent(eliminarPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1038,31 +1037,9 @@ public class View1 extends javax.swing.JFrame {
     private void nombrePanConsult_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombrePanConsult_txtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nombrePanConsult_txtActionPerformed
+         
 
-          
-
-    private void EditPan_btn1ActionPerformed(java.awt.event.ActionEvent evt) {
-        if (nombrePanConsult_txt.getText() == null || nombrePanConsult_txt.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "No Ha Ingresado Los Datos", "ERROR!", 0);
-
-        } else {
-            Consulta = (DefaultTableModel) listaPanesConsult_tbl.getModel();
-
-            for (int i = 0; i < Consulta.getRowCount(); i++) {
-                Consulta.removeRow(i);
-            }
-            ArrayList<Object[]> A = new ArrayList();
-            A.clear();
-            A = (ArrayList<Object[]>) paco.Read(nombrePanConsult_txt.getText()).clone();
-            if (A.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "No Se Han Encontrado Coincidencias", "No Se Encontro", 1);
-            } else {
-                for (int i = 0; i < A.size(); i++) {
-                    Consulta.addRow(A.get(i));
-                }
-            }
-        }
-    }
+  
 
     private void selecProdModif_tbl(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selecProdModif_tbl
         // rowAtPoint -> ( EVENTO 'evt' . getPoint() 'posicion' );
@@ -1161,7 +1138,6 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JPanel Consultar_Producto;
     private javax.swing.JPanel Consultar_Producto1;
     private javax.swing.JButton EditPan_btn;
-    private javax.swing.JButton EditPan_btn3;
     private javax.swing.JButton EliminarProv_btn;
     private javax.swing.JPanel Eliminar_Producto;
     private javax.swing.JPanel Eliminar_Producto1;
@@ -1182,6 +1158,7 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JTextField direcProvEdit_txt;
     private javax.swing.JTextField direcProvReg_txt;
     private javax.swing.JButton editProv_btn;
+    private javax.swing.JButton eliminarPan_btn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel16;
@@ -1226,22 +1203,22 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JTextField nombrePanConsultEdit_txt;
     private javax.swing.JTextField nombrePanConsult_txt;
     private javax.swing.JTextField nombrePanEdit_txt;
+    private javax.swing.JTextField nombrePanEliminar_txt;
     private javax.swing.JTextField nombrePanReg_txt;
     private javax.swing.JTextField nombreProvConsultEdit_txt;
     private javax.swing.JTextField nombreProvConsult_txt;
     private javax.swing.JTextField nombreProvEdit_txt;
     private javax.swing.JTextField nombreProvReg_txt;
     private javax.swing.JTextField precioPanEdit_txt;
-    private javax.swing.JTextField precioPanEdit_txt3;
     private javax.swing.JTextField precioPanReg_txt;
     private javax.swing.JButton registrarPan_btn;
     private javax.swing.JButton registrarProv_btn;
     private javax.swing.JCheckBox selecConsultPan_chbx;
     private javax.swing.JCheckBox selecConsultProv_chbx;
     private javax.swing.JCheckBox selecEditPan_chbx;
-    private javax.swing.JCheckBox selecEditPan_chbx2;
     private javax.swing.JCheckBox selecEditProv_chbx;
     private javax.swing.JCheckBox selecEliminarProv_chbx;
+    private javax.swing.JCheckBox selecPanEliminar_chbx;
     private javax.swing.JTextField serviProvEdit_txt;
     private javax.swing.JTextField serviProvReg_txt;
     private javax.swing.JTextField telefonoProvEdit_txt;
