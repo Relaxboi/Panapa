@@ -1083,17 +1083,25 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_consultPanEdit_btnActionPerformed
 
     private void consultPan_btn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPan_btn
-         Consulta = (DefaultTableModel) listaPanesEdit_tbl.getModel();
+        Consulta = (DefaultTableModel) listaPanesConsult_tbl.getModel();
         for (int i = 0; i < Consulta.getRowCount(); i++) {
             Consulta.removeRow(i);
         }
         if (nombrePanConsult_txt.getText() == null || nombrePanConsult_txt.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "No Ha Ingresado Los Datos", "ERROR!", 0);
-
         } else {
-
-            if (nombrePanConsult_txt.getText() == null || nombrePanConsult_txt.getText().equals("")) {
-                JOptionPane.showMessageDialog(null, "No Ha Ingresado Los Datos", "ERROR!", 1);
+            for (int i = 0; i < Consulta.getRowCount(); i++) {
+                Consulta.removeRow(i);
+            }
+            ArrayList<Object[]> A = new ArrayList();
+            A.clear();
+            A = (ArrayList<Object[]>) paco.Read(nombrePanConsult_txt.getText()).clone();
+            if (A.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "No Se Han Encontrado Coincidencias", "No Se Encontro", 1);
+            } else {
+                for (int i = 0; i < A.size(); i++) {
+                    Consulta.addRow(A.get(i));
+                }
             }
         }
     
