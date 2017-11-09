@@ -229,6 +229,7 @@ public class View1 extends javax.swing.JFrame {
 
         EditPan_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/editar.png"))); // NOI18N
         EditPan_btn.setText("Modificar");
+        EditPan_btn.setEnabled(false);
         EditPan_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 modificarPan(evt);
@@ -258,6 +259,12 @@ public class View1 extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(listaPanesEdit_tbl);
 
+        cantidadPanEdit_txt.setEnabled(false);
+
+        precioPanEdit_txt.setEnabled(false);
+
+        nombrePanEdit_txt.setEnabled(false);
+
         jLabel4.setText("Nuevo Nombre :  ");
 
         jLabel5.setText("Nuevo Precio : ");
@@ -286,9 +293,19 @@ public class View1 extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE))
                     .addGroup(Modificar_ProductoLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
                         .addGroup(Modificar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(Modificar_ProductoLayout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(selecEditPan_chbx)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel7)
+                                .addGap(12, 12, 12)
+                                .addComponent(nombrePanConsultEdit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(consultPanEdit_btn)
+                                .addGap(121, 121, 121))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Modificar_ProductoLayout.createSequentialGroup()
+                                .addGap(46, 46, 46)
                                 .addGroup(Modificar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(nombrePanEdit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(Modificar_ProductoLayout.createSequentialGroup()
@@ -307,16 +324,7 @@ public class View1 extends javax.swing.JFrame {
                                     .addGroup(Modificar_ProductoLayout.createSequentialGroup()
                                         .addGap(15, 15, 15)
                                         .addComponent(jLabel6)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(Modificar_ProductoLayout.createSequentialGroup()
-                                .addComponent(selecEditPan_chbx)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel7)
-                                .addGap(12, 12, 12)
-                                .addComponent(nombrePanConsultEdit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(consultPanEdit_btn)
-                                .addGap(121, 121, 121)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addComponent(EditPan_btn)))
                 .addGap(15, 15, 15))
         );
@@ -1037,16 +1045,18 @@ public class View1 extends javax.swing.JFrame {
     private void nombrePanConsult_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombrePanConsult_txtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nombrePanConsult_txtActionPerformed
-         
 
-  
 
     private void selecProdModif_tbl(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selecProdModif_tbl
         // rowAtPoint -> ( EVENTO 'evt' . getPoint() 'posicion' );
         int posEditPan = listaPanesEdit_tbl.rowAtPoint(evt.getPoint());
         this.indexMod_tbl = posEditPan;
-        if ( posEditPan >= 0){
-            selecEditPan_chbx.setSelected(true);
+        int opcEditPan = JOptionPane.showConfirmDialog(null, "");
+
+        switch (posEditPan) {
+            case 0:
+                
+                break;
             
         }
 
@@ -1107,7 +1117,7 @@ public class View1 extends javax.swing.JFrame {
                 }
             }
         }
-    
+
     }//GEN-LAST:event_consultPan_btn
 
     /**
