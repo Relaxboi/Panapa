@@ -522,31 +522,35 @@ public class View1 extends javax.swing.JFrame {
         ListarModificar();
     }//GEN-LAST:event_Actualizar_panel
 
-<<<<<<< HEAD
+
     private void precioPanEdit_txt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precioPanEdit_txt2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_precioPanEdit_txt2ActionPerformed
 
     private void EditPan_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditPan_btn1ActionPerformed
        if(precioPanEdit_txt2.getText() == null || precioPanEdit_txt2.getText().equals("")){
-           JOptionPane.showMessageDialog(null, "No Ha Ingresado Los Datos","ERROR!",1);
+           JOptionPane.showMessageDialog(null, "No Ha Ingresado Los Datos","ERROR!",0);
        }else{
           Consulta = (DefaultTableModel) listaPanesEdit_tbl1.getModel();
           for(int i = 0; i < Consulta.getRowCount(); i++){
               Consulta.removeRow(i);
           }
           ArrayList<Object[]> A = new ArrayList();
+          A.clear();
           A = (ArrayList<Object[]>) paco.Read(precioPanEdit_txt2.getText()).clone();
           if(A.isEmpty()){
-              JOptionPane.showMessageDialog(null, "No Se Han Encontrado Coincidencias","No Se Encontro",0);
+              JOptionPane.showMessageDialog(null, "No Se Han Encontrado Coincidencias","No Se Encontro",1);
           }else{
+              for(int i = 0; i < Consulta.getRowCount(); i++){
+                  Consulta.removeRow(i);
+              }
               for(int i = 0; i < A.size(); i++){
                   Consulta.addRow(A.get(i));
               }
           }
        }
     }//GEN-LAST:event_EditPan_btn1ActionPerformed
-=======
+
     private void selecProdModif_tbl(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selecProdModif_tbl
         // rowAtPoint -> ( EVENTO 'evt' . getPoint() 'posicion' );
         int ab = listaPanesEdit_tbl.rowAtPoint(evt.getPoint());
@@ -558,7 +562,7 @@ public class View1 extends javax.swing.JFrame {
     private void modificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarPan
 
     }//GEN-LAST:event_modificarPan
->>>>>>> 453f29000d6dd4611fd4c2c4c374f96c39416e26
+
 
     /**
      * @param args the command line arguments

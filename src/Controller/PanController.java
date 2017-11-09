@@ -19,18 +19,16 @@ public class PanController {
     public ArrayList Read(String s) {//Busca leer/buscar
         String Palabra = "";
         ArrayList<Object[]> A = new ArrayList<>();
+        A.clear();
         Object[] H = new Object[3];
         for (int i = 0; i < ListaPan.size(); i++) {
             Palabra = "";
             for (int b = 0; b < ListaPan.get(i).getNombreTipo().length(); b++) {
                 if (ListaPan.get(i).getNombreTipo().charAt(b) != ' ') {
                     Palabra += ListaPan.get(i).getNombreTipo().charAt(b);
-                    if (Palabra.equals(s)) {
-                       H[0] = ListaPan.get(i).getNombreTipo();
-                       H[1] = ""+ListaPan.get(i).getCantidad();
-                       H[2] = ""+ListaPan.get(i).getPrecio();
-                       A.add(H);
-                        break;
+                    if (Palabra.equals(s)) {               
+                       A.add(new Object[]{ListaPan.get(i).getNombreTipo(), ""+ListaPan.get(i).getCantidad(), ""+ListaPan.get(i).getPrecio()});
+                       break;
                     }
 
                 }else{
