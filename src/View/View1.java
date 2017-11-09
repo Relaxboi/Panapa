@@ -38,6 +38,7 @@ public class View1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
         Productos = new javax.swing.JTabbedPane();
         Registrar_Producto = new javax.swing.JPanel();
         nombrePanReg_txt = new javax.swing.JTextField();
@@ -63,9 +64,9 @@ public class View1 extends javax.swing.JFrame {
         precioPanEdit_txt1 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         Consultar_Producto = new javax.swing.JPanel();
-        selecEditPan_chbx1 = new javax.swing.JCheckBox();
+        selecConsultPan_chbx = new javax.swing.JCheckBox();
         jLabel8 = new javax.swing.JLabel();
-        precioPanEdit_txt2 = new javax.swing.JTextField();
+        precioPanConsult_txt = new javax.swing.JTextField();
         ConsultPan_btn = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         listaPanesEdit_tbl1 = new javax.swing.JTable();
@@ -184,7 +185,7 @@ public class View1 extends javax.swing.JFrame {
                             .addGroup(Registrar_ProductoLayout.createSequentialGroup()
                                 .addGap(33, 33, 33)
                                 .addComponent(jLabel2)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                         .addComponent(registrarPan_btn)))
                 .addGap(15, 15, 15))
         );
@@ -207,9 +208,9 @@ public class View1 extends javax.swing.JFrame {
                             .addComponent(cantidadPanReg_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(precioPanReg_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(nombrePanReg_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         Productos.addTab("Registrar Producto", Registrar_Producto);
@@ -264,11 +265,11 @@ public class View1 extends javax.swing.JFrame {
                 .addGroup(Modificar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(Modificar_ProductoLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane2))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE))
                     .addGroup(Modificar_ProductoLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
                         .addGroup(Modificar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Modificar_ProductoLayout.createSequentialGroup()
-                                .addGap(25, 25, 25)
                                 .addGroup(Modificar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(nombrePanEdit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(Modificar_ProductoLayout.createSequentialGroup()
@@ -286,29 +287,26 @@ public class View1 extends javax.swing.JFrame {
                                     .addComponent(cantidadPanEdit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(Modificar_ProductoLayout.createSequentialGroup()
                                         .addGap(15, 15, 15)
-                                        .addComponent(jLabel6)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE))
+                                        .addComponent(jLabel6))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Modificar_ProductoLayout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(selecEditPan_chbx)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel7)
                                 .addGap(12, 12, 12)
                                 .addComponent(precioPanEdit_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(104, 104, 104)))
+                                .addGap(76, 76, 76)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(EditPan_btn)))
                 .addGap(15, 15, 15))
         );
         Modificar_ProductoLayout.setVerticalGroup(
             Modificar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Modificar_ProductoLayout.createSequentialGroup()
-                .addGroup(Modificar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(17, 17, 17)
+                .addGroup(Modificar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(EditPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(Modificar_ProductoLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(EditPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(Modificar_ProductoLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(Modificar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(selecEditPan_chbx)
                             .addComponent(precioPanEdit_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -326,22 +324,22 @@ public class View1 extends javax.swing.JFrame {
                             .addGroup(Modificar_ProductoLayout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(precioPanEdit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(35, 35, 35)))
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
+                                .addComponent(precioPanEdit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         Productos.addTab("Modificar Producto", Modificar_Producto);
 
-        selecEditPan_chbx1.setText("Seleccionado");
-        selecEditPan_chbx1.setEnabled(false);
+        selecConsultPan_chbx.setText("Seleccionado");
+        selecConsultPan_chbx.setEnabled(false);
 
         jLabel8.setText("Buscar :");
 
-        precioPanEdit_txt2.addActionListener(new java.awt.event.ActionListener() {
+        precioPanConsult_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                precioPanEdit_txt2ActionPerformed(evt);
+                precioPanConsult_txtActionPerformed(evt);
             }
         });
 
@@ -376,19 +374,19 @@ public class View1 extends javax.swing.JFrame {
         Consultar_ProductoLayout.setHorizontalGroup(
             Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Consultar_ProductoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(selecEditPan_chbx1)
                 .addGap(18, 18, 18)
+                .addComponent(selecConsultPan_chbx)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(precioPanEdit_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(precioPanConsult_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(ConsultPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(Consultar_ProductoLayout.createSequentialGroup()
                     .addGap(13, 13, 13)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
                     .addGap(14, 14, 14)))
         );
         Consultar_ProductoLayout.setVerticalGroup(
@@ -397,15 +395,15 @@ public class View1 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(selecEditPan_chbx1)
-                        .addComponent(precioPanEdit_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(selecConsultPan_chbx)
+                        .addComponent(precioPanConsult_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel8))
                     .addComponent(ConsultPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(290, Short.MAX_VALUE))
+                .addContainerGap(413, Short.MAX_VALUE))
             .addGroup(Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Consultar_ProductoLayout.createSequentialGroup()
-                    .addContainerGap(66, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(76, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
         );
 
@@ -441,20 +439,21 @@ public class View1 extends javax.swing.JFrame {
         Eliminar_Producto.setLayout(Eliminar_ProductoLayout);
         Eliminar_ProductoLayout.setHorizontalGroup(
             Eliminar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Eliminar_ProductoLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(selecEditPan_chbx2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(precioPanEdit_txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(EditPan_btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addGroup(Eliminar_ProductoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(Eliminar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Eliminar_ProductoLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(selecEditPan_chbx2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(precioPanEdit_txt3, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(EditPan_btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Eliminar_ProductoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4)))
+                .addContainerGap())
         );
         Eliminar_ProductoLayout.setVerticalGroup(
             Eliminar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -466,11 +465,13 @@ public class View1 extends javax.swing.JFrame {
                     .addComponent(selecEditPan_chbx2)
                     .addComponent(EditPan_btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         Productos.addTab("Eliminar Producto", Eliminar_Producto);
+
+        jTabbedPane1.addTab("Producto", Productos);
 
         Productos1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -539,7 +540,7 @@ public class View1 extends javax.swing.JFrame {
                             .addGroup(Registrar_Producto1Layout.createSequentialGroup()
                                 .addGap(33, 33, 33)
                                 .addComponent(jLabel11)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                         .addComponent(registrarPan_btn1)))
                 .addGap(15, 15, 15))
         );
@@ -562,12 +563,12 @@ public class View1 extends javax.swing.JFrame {
                             .addComponent(cantidadPanReg_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(precioPanReg_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(nombrePanReg_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        Productos1.addTab("Registrar Producto", Registrar_Producto1);
+        Productos1.addTab("Registrar Prooverdor", Registrar_Producto1);
 
         EditPan_btn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/editar.png"))); // NOI18N
         EditPan_btn2.setText("Modificar");
@@ -619,11 +620,11 @@ public class View1 extends javax.swing.JFrame {
                 .addGroup(Modificar_Producto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(Modificar_Producto1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane6))
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE))
                     .addGroup(Modificar_Producto1Layout.createSequentialGroup()
-                        .addGroup(Modificar_Producto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Modificar_Producto1Layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
+                        .addGap(26, 26, 26)
+                        .addGroup(Modificar_Producto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Modificar_Producto1Layout.createSequentialGroup()
                                 .addGroup(Modificar_Producto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(nombrePanEdit_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(Modificar_Producto1Layout.createSequentialGroup()
@@ -641,29 +642,26 @@ public class View1 extends javax.swing.JFrame {
                                     .addComponent(cantidadPanEdit_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(Modificar_Producto1Layout.createSequentialGroup()
                                         .addGap(15, 15, 15)
-                                        .addComponent(jLabel15)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Modificar_Producto1Layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel15))))
+                            .addGroup(Modificar_Producto1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(selecEditPan_chbx3)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel16)
                                 .addGap(12, 12, 12)
                                 .addComponent(precioPanEdit_txt5, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(104, 104, 104)))
+                                .addGap(76, 76, 76)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(EditPan_btn2)))
                 .addGap(15, 15, 15))
         );
         Modificar_Producto1Layout.setVerticalGroup(
             Modificar_Producto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Modificar_Producto1Layout.createSequentialGroup()
-                .addGroup(Modificar_Producto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(20, 20, 20)
+                .addGroup(Modificar_Producto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(EditPan_btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(Modificar_Producto1Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(EditPan_btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(Modificar_Producto1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(Modificar_Producto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(selecEditPan_chbx3)
                             .addComponent(precioPanEdit_txt5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -681,13 +679,13 @@ public class View1 extends javax.swing.JFrame {
                             .addGroup(Modificar_Producto1Layout.createSequentialGroup()
                                 .addComponent(jLabel14)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(precioPanEdit_txt4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(35, 35, 35)))
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
+                                .addComponent(precioPanEdit_txt4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        Productos1.addTab("Modificar Producto", Modificar_Producto1);
+        Productos1.addTab("Modificar Prooverdor", Modificar_Producto1);
 
         selecEditPan_chbx4.setText("Seleccionado");
         selecEditPan_chbx4.setEnabled(false);
@@ -731,19 +729,19 @@ public class View1 extends javax.swing.JFrame {
         Consultar_Producto1Layout.setHorizontalGroup(
             Consultar_Producto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Consultar_Producto1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(45, Short.MAX_VALUE)
                 .addComponent(selecEditPan_chbx4)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel17)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(precioPanEdit_txt6, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(EditPan_btn4, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(Consultar_Producto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(Consultar_Producto1Layout.createSequentialGroup()
                     .addGap(13, 13, 13)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
                     .addGap(14, 14, 14)))
         );
         Consultar_Producto1Layout.setVerticalGroup(
@@ -756,15 +754,15 @@ public class View1 extends javax.swing.JFrame {
                         .addComponent(precioPanEdit_txt6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel17))
                     .addComponent(EditPan_btn4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(290, Short.MAX_VALUE))
+                .addContainerGap(413, Short.MAX_VALUE))
             .addGroup(Consultar_Producto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Consultar_Producto1Layout.createSequentialGroup()
-                    .addContainerGap(66, Short.MAX_VALUE)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(78, Short.MAX_VALUE)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
         );
 
-        Productos1.addTab("Consultar Producto", Consultar_Producto1);
+        Productos1.addTab("Consultar Prooverdor", Consultar_Producto1);
 
         listaPanesEdit_tbl5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -796,20 +794,21 @@ public class View1 extends javax.swing.JFrame {
         Eliminar_Producto1.setLayout(Eliminar_Producto1Layout);
         Eliminar_Producto1Layout.setHorizontalGroup(
             Eliminar_Producto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Eliminar_Producto1Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(selecEditPan_chbx5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(precioPanEdit_txt7, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(EditPan_btn5, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addGroup(Eliminar_Producto1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(Eliminar_Producto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Eliminar_Producto1Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(selecEditPan_chbx5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(precioPanEdit_txt7, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(EditPan_btn5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Eliminar_Producto1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         Eliminar_Producto1Layout.setVerticalGroup(
             Eliminar_Producto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -821,11 +820,13 @@ public class View1 extends javax.swing.JFrame {
                     .addComponent(selecEditPan_chbx5)
                     .addComponent(EditPan_btn5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        Productos1.addTab("Eliminar Producto", Eliminar_Producto1);
+        Productos1.addTab("Eliminar Prooverdor", Eliminar_Producto1);
+
+        jTabbedPane1.addTab("Proovedores", Productos1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -833,18 +834,14 @@ public class View1 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Productos, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Productos1, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(210, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(586, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Productos, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Productos1, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -930,20 +927,20 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_Actualizar_panel
 
 
-    private void precioPanEdit_txt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precioPanEdit_txt2ActionPerformed
+    private void precioPanConsult_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precioPanConsult_txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_precioPanEdit_txt2ActionPerformed
+    }//GEN-LAST:event_precioPanConsult_txtActionPerformed
 
 
     private void ConsultPan_btnActionPerformed(java.awt.event.ActionEvent evt) {                                               
        
-        if(precioPanEdit_txt2.getText() == null || precioPanEdit_txt2.getText().equals("")){
+        if(precioPanConsult_txt.getText() == null || precioPanConsult_txt.getText().equals("")){
            JOptionPane.showMessageDialog(null, "No Ha Ingresado Los Datos","ERROR!",1);
         }
     }
     
     private void EditPan_btn1ActionPerformed(java.awt.event.ActionEvent evt) {                                             
-       if(precioPanEdit_txt2.getText() == null || precioPanEdit_txt2.getText().equals("")){
+       if(precioPanConsult_txt.getText() == null || precioPanConsult_txt.getText().equals("")){
            JOptionPane.showMessageDialog(null, "No Ha Ingresado Los Datos","ERROR!",0);
 
        }else{
@@ -953,7 +950,7 @@ public class View1 extends javax.swing.JFrame {
           }
           ArrayList<Object[]> A = new ArrayList();
           A.clear();
-          A = (ArrayList<Object[]>) paco.Read(precioPanEdit_txt2.getText()).clone();
+          A = (ArrayList<Object[]>) paco.Read(precioPanConsult_txt.getText()).clone();
           if(A.isEmpty()){
               JOptionPane.showMessageDialog(null, "No Se Han Encontrado Coincidencias","No Se Encontro",1);
           }else{
@@ -1093,6 +1090,7 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable listaPanesEdit_tbl;
     private javax.swing.JTable listaPanesEdit_tbl1;
     private javax.swing.JTable listaPanesEdit_tbl2;
@@ -1105,9 +1103,9 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JTextField nombrePanEdit_txt1;
     private javax.swing.JTextField nombrePanReg_txt;
     private javax.swing.JTextField nombrePanReg_txt1;
+    private javax.swing.JTextField precioPanConsult_txt;
     private javax.swing.JTextField precioPanEdit_txt;
     private javax.swing.JTextField precioPanEdit_txt1;
-    private javax.swing.JTextField precioPanEdit_txt2;
     private javax.swing.JTextField precioPanEdit_txt3;
     private javax.swing.JTextField precioPanEdit_txt4;
     private javax.swing.JTextField precioPanEdit_txt5;
@@ -1117,8 +1115,8 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JTextField precioPanReg_txt1;
     private javax.swing.JButton registrarPan_btn;
     private javax.swing.JButton registrarPan_btn1;
+    private javax.swing.JCheckBox selecConsultPan_chbx;
     private javax.swing.JCheckBox selecEditPan_chbx;
-    private javax.swing.JCheckBox selecEditPan_chbx1;
     private javax.swing.JCheckBox selecEditPan_chbx2;
     private javax.swing.JCheckBox selecEditPan_chbx3;
     private javax.swing.JCheckBox selecEditPan_chbx4;
