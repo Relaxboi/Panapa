@@ -934,27 +934,41 @@ public class View1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_precioPanEdit_txt2ActionPerformed
 
+<<<<<<< HEAD
     private void ConsultPan_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultPan_btnActionPerformed
        
         if(precioPanEdit_txt2.getText() == null || precioPanEdit_txt2.getText().equals("")){
            JOptionPane.showMessageDialog(null, "No Ha Ingresado Los Datos","ERROR!",1);
+=======
+    private void EditPan_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditPan_btn1ActionPerformed
+       if(precioPanEdit_txt2.getText() == null || precioPanEdit_txt2.getText().equals("")){
+           JOptionPane.showMessageDialog(null, "No Ha Ingresado Los Datos","ERROR!",0);
+>>>>>>> e5dd9a039813494010b0048caf0524755bc7a69e
        }else{
           Consulta = (DefaultTableModel) listaPanesEdit_tbl1.getModel();
           for(int i = 0; i < Consulta.getRowCount(); i++){
               Consulta.removeRow(i);
           }
           ArrayList<Object[]> A = new ArrayList();
+          A.clear();
           A = (ArrayList<Object[]>) paco.Read(precioPanEdit_txt2.getText()).clone();
           if(A.isEmpty()){
-              JOptionPane.showMessageDialog(null, "No Se Han Encontrado Coincidencias","No Se Encontro",0);
+              JOptionPane.showMessageDialog(null, "No Se Han Encontrado Coincidencias","No Se Encontro",1);
           }else{
+              for(int i = 0; i < Consulta.getRowCount(); i++){
+                  Consulta.removeRow(i);
+              }
               for(int i = 0; i < A.size(); i++){
                   Consulta.addRow(A.get(i));
               }
           }
        }
+<<<<<<< HEAD
         
     }//GEN-LAST:event_ConsultPan_btnActionPerformed
+=======
+    }//GEN-LAST:event_EditPan_btn1ActionPerformed
+>>>>>>> e5dd9a039813494010b0048caf0524755bc7a69e
 
     private void selecProdModif_tbl(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selecProdModif_tbl
         // rowAtPoint -> ( EVENTO 'evt' . getPoint() 'posicion' );
@@ -968,6 +982,7 @@ public class View1 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_modificarPan
 
+<<<<<<< HEAD
     private void registrarPan_btn1registrarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarPan_btn1registrarPan
         // TODO add your handling code here:
     }//GEN-LAST:event_registrarPan_btn1registrarPan
@@ -992,6 +1007,8 @@ public class View1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Productos1Actualizar_panel
 
+=======
+>>>>>>> e5dd9a039813494010b0048caf0524755bc7a69e
 
     /**
      * @param args the command line arguments
