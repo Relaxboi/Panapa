@@ -67,7 +67,7 @@ public class View1 extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         consultPanEdit_btn = new javax.swing.JButton();
         EditPan_btn = new javax.swing.JButton();
-        CancelarEditPan_btn2 = new javax.swing.JButton();
+        cancelarEditPan_btn = new javax.swing.JButton();
         Consultar_Producto = new javax.swing.JPanel();
         selecConsultPan_chbx = new javax.swing.JCheckBox();
         jLabel8 = new javax.swing.JLabel();
@@ -162,6 +162,11 @@ public class View1 extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(listaPanesReg_tbl);
+        if (listaPanesReg_tbl.getColumnModel().getColumnCount() > 0) {
+            listaPanesReg_tbl.getColumnModel().getColumn(0).setResizable(false);
+            listaPanesReg_tbl.getColumnModel().getColumn(1).setResizable(false);
+            listaPanesReg_tbl.getColumnModel().getColumn(2).setResizable(false);
+        }
 
         registrarPan_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/guardar.png"))); // NOI18N
         registrarPan_btn.setText("Registrar");
@@ -261,6 +266,11 @@ public class View1 extends javax.swing.JFrame {
             }
         });
         jScrollPane2.setViewportView(listaPanesEdit_tbl);
+        if (listaPanesEdit_tbl.getColumnModel().getColumnCount() > 0) {
+            listaPanesEdit_tbl.getColumnModel().getColumn(0).setResizable(false);
+            listaPanesEdit_tbl.getColumnModel().getColumn(1).setResizable(false);
+            listaPanesEdit_tbl.getColumnModel().getColumn(2).setResizable(false);
+        }
 
         cantidadPanEdit_txt.setEnabled(false);
 
@@ -289,13 +299,18 @@ public class View1 extends javax.swing.JFrame {
         EditPan_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/editar.png"))); // NOI18N
         EditPan_btn.setText("Modificar");
         EditPan_btn.setEnabled(false);
-
-        CancelarEditPan_btn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cancelar.png"))); // NOI18N
-        CancelarEditPan_btn2.setText("Cancelar");
-        CancelarEditPan_btn2.setEnabled(false);
-        CancelarEditPan_btn2.addActionListener(new java.awt.event.ActionListener() {
+        EditPan_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CancelarEditPan_btn2modificarPan(evt);
+                EditPan_btnActionPerformed(evt);
+            }
+        });
+
+        cancelarEditPan_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cancelar.png"))); // NOI18N
+        cancelarEditPan_btn.setText("Cancelar");
+        cancelarEditPan_btn.setEnabled(false);
+        cancelarEditPan_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarEditPan_btnmodificarPan(evt);
             }
         });
 
@@ -338,7 +353,7 @@ public class View1 extends javax.swing.JFrame {
                 .addGroup(Modificar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(EditPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(GuardarEditPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CancelarEditPan_btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cancelarEditPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39))
             .addGroup(Modificar_ProductoLayout.createSequentialGroup()
                 .addContainerGap()
@@ -378,7 +393,7 @@ public class View1 extends javax.swing.JFrame {
                         .addGap(5, 5, 5)
                         .addGroup(Modificar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cantidadPanEdit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CancelarEditPan_btn2))))
+                            .addComponent(cancelarEditPan_btn))))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
                 .addContainerGap())
@@ -422,6 +437,11 @@ public class View1 extends javax.swing.JFrame {
             }
         });
         jScrollPane3.setViewportView(listaPanesConsult_tbl);
+        if (listaPanesConsult_tbl.getColumnModel().getColumnCount() > 0) {
+            listaPanesConsult_tbl.getColumnModel().getColumn(0).setResizable(false);
+            listaPanesConsult_tbl.getColumnModel().getColumn(1).setResizable(false);
+            listaPanesConsult_tbl.getColumnModel().getColumn(2).setResizable(false);
+        }
 
         javax.swing.GroupLayout Consultar_ProductoLayout = new javax.swing.GroupLayout(Consultar_Producto);
         Consultar_Producto.setLayout(Consultar_ProductoLayout);
@@ -480,6 +500,11 @@ public class View1 extends javax.swing.JFrame {
             }
         });
         jScrollPane4.setViewportView(listaPanesEdit_tbl2);
+        if (listaPanesEdit_tbl2.getColumnModel().getColumnCount() > 0) {
+            listaPanesEdit_tbl2.getColumnModel().getColumn(0).setResizable(false);
+            listaPanesEdit_tbl2.getColumnModel().getColumn(1).setResizable(false);
+            listaPanesEdit_tbl2.getColumnModel().getColumn(2).setResizable(false);
+        }
 
         jLabel9.setText("Buscar :");
 
@@ -543,7 +568,7 @@ public class View1 extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, true, true
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -552,6 +577,10 @@ public class View1 extends javax.swing.JFrame {
         });
         jScrollPane5.setViewportView(listaPanesReg_tbl1);
         if (listaPanesReg_tbl1.getColumnModel().getColumnCount() > 0) {
+            listaPanesReg_tbl1.getColumnModel().getColumn(0).setResizable(false);
+            listaPanesReg_tbl1.getColumnModel().getColumn(1).setResizable(false);
+            listaPanesReg_tbl1.getColumnModel().getColumn(2).setResizable(false);
+            listaPanesReg_tbl1.getColumnModel().getColumn(3).setResizable(false);
             listaPanesReg_tbl1.getColumnModel().getColumn(4).setResizable(false);
         }
 
@@ -678,7 +707,7 @@ public class View1 extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, true, true
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -687,6 +716,10 @@ public class View1 extends javax.swing.JFrame {
         });
         jScrollPane6.setViewportView(listaPanesReg_tbl2);
         if (listaPanesReg_tbl2.getColumnModel().getColumnCount() > 0) {
+            listaPanesReg_tbl2.getColumnModel().getColumn(0).setResizable(false);
+            listaPanesReg_tbl2.getColumnModel().getColumn(1).setResizable(false);
+            listaPanesReg_tbl2.getColumnModel().getColumn(2).setResizable(false);
+            listaPanesReg_tbl2.getColumnModel().getColumn(3).setResizable(false);
             listaPanesReg_tbl2.getColumnModel().getColumn(4).setResizable(false);
         }
 
@@ -847,7 +880,7 @@ public class View1 extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, true, true
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -856,7 +889,10 @@ public class View1 extends javax.swing.JFrame {
         });
         jScrollPane7.setViewportView(listaProvConsult_tbl);
         if (listaProvConsult_tbl.getColumnModel().getColumnCount() > 0) {
-            listaProvConsult_tbl.getColumnModel().getColumn(4).setResizable(false);
+            listaProvConsult_tbl.getColumnModel().getColumn(0).setResizable(false);
+            listaProvConsult_tbl.getColumnModel().getColumn(1).setResizable(false);
+            listaProvConsult_tbl.getColumnModel().getColumn(2).setResizable(false);
+            listaProvConsult_tbl.getColumnModel().getColumn(3).setResizable(false);
         }
 
         javax.swing.GroupLayout Consultar_Producto1Layout = new javax.swing.GroupLayout(Consultar_Producto1);
@@ -922,6 +958,10 @@ public class View1 extends javax.swing.JFrame {
         });
         jScrollPane8.setViewportView(listaProvEliminar_tbl);
         if (listaProvEliminar_tbl.getColumnModel().getColumnCount() > 0) {
+            listaProvEliminar_tbl.getColumnModel().getColumn(0).setResizable(false);
+            listaProvEliminar_tbl.getColumnModel().getColumn(1).setResizable(false);
+            listaProvEliminar_tbl.getColumnModel().getColumn(2).setResizable(false);
+            listaProvEliminar_tbl.getColumnModel().getColumn(3).setResizable(false);
             listaProvEliminar_tbl.getColumnModel().getColumn(4).setResizable(false);
         }
 
@@ -984,7 +1024,9 @@ public class View1 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel_General, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Panel_General, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         pack();
@@ -1078,8 +1120,8 @@ public class View1 extends javax.swing.JFrame {
         selecEditPan_chbx.setSelected(true);
         EditPan_btn.setEnabled(true);
         nombrePanEdit_txt.setText(paco.getListaPan().get(posEditPan).getNombreTipo());
-       
-
+        cantidadPanEdit_txt.setText(paco.getListaPan().get(posEditPan).getCantidad() + "");
+        precioPanEdit_txt.setText(paco.getListaPan().get(posEditPan).getPrecio() + "");
     }//GEN-LAST:event_selecProdModif_tbl
 
     private void modificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarPan
@@ -1116,7 +1158,7 @@ public class View1 extends javax.swing.JFrame {
         Buscar(Consulta, paco.Read(nombrePanConsultEdit_txt.getText()), nombrePanConsultEdit_txt.getText());
         Consulta = null;
     }//GEN-LAST:event_consultPanEdit_btnActionPerformed
-    private void Buscar(DefaultTableModel Table, ArrayList<Object[]> Array, String Caja){
+    private void Buscar(DefaultTableModel Table, ArrayList<Object[]> Array, String Caja) {
         for (int i = 0; i < Table.getRowCount(); i++) {
             Table.removeRow(i);
         }
@@ -1132,7 +1174,6 @@ public class View1 extends javax.swing.JFrame {
             }
         }
 
-        
     }
     private void consultPan_btn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPan_btn
         Consulta = (DefaultTableModel) listaPanesConsult_tbl.getModel();
@@ -1141,9 +1182,23 @@ public class View1 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_consultPan_btn
 
-    private void CancelarEditPan_btn2modificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarEditPan_btn2modificarPan
+    private void cancelarEditPan_btnmodificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarEditPan_btnmodificarPan
         // TODO add your handling code here:
-    }//GEN-LAST:event_CancelarEditPan_btn2modificarPan
+    }//GEN-LAST:event_cancelarEditPan_btnmodificarPan
+
+    private void EditPan_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditPan_btnActionPerformed
+        int opcEditPan = JOptionPane.showConfirmDialog(null, "¿Desea Modificar el Producto?");
+        switch (opcEditPan) {
+            case 0:
+                GuardarEditPan_btn.setEnabled(true);
+                cancelarEditPan_btn.setEnabled(true);
+                nombrePanEdit_txt.setEnabled(true);
+                precioPanEdit_txt.setEnabled(true);
+                cantidadPanEdit_txt.setEnabled(true);
+                break;
+        
+        }
+    }//GEN-LAST:event_EditPan_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1181,7 +1236,6 @@ public class View1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CancelarEditPan_btn2;
     private javax.swing.JPanel Consultar_Producto;
     private javax.swing.JPanel Consultar_Producto1;
     private javax.swing.JButton EditPan_btn;
@@ -1197,6 +1251,7 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JPanel Registrar_Producto;
     private javax.swing.JPanel Registrar_Producto1;
     private javax.swing.JPanel Ventas;
+    private javax.swing.JButton cancelarEditPan_btn;
     private javax.swing.JTextField cantidadPanEdit_txt;
     private javax.swing.JTextField cantidadPanReg_txt;
     private javax.swing.JButton consultPanEdit_btn;
