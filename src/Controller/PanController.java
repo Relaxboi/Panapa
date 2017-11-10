@@ -37,8 +37,11 @@ public class PanController {
         return A;
     }
 
-    public void Uptade(int index) {//Actualizar o modificar
-
+    public void Uptade(int index, Pan p1) {//Actualizar o modificar
+        getListaPan().get(index).setNombreTipo(p1.getNombreTipo());
+        getListaPan().get(index).setCantidad(p1.getCantidad());
+        getListaPan().get(index).setPrecio(p1.getPrecio());
+        getListaPan().get(index).setId(p1.getId());
     }
 
     public void Delete() {//Eliminar
