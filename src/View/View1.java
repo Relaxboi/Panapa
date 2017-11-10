@@ -1024,9 +1024,7 @@ public class View1 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Panel_General, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+            .addComponent(Panel_General, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -1070,7 +1068,15 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_selecProdModif_tbl
 
     private void modificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarPan
+        int posEditPan = Integer.parseInt("" + this.indexMod_tbl);
 
+        paco.Uptade(posEditPan, new Pan(
+                nombrePanEdit_txt.getText(),
+                Integer.parseInt(precioPanEdit_txt.getText()),
+                Integer.parseInt(cantidadPanEdit_txt.getText()), "")
+        );
+        ListarModificar();
+        desabilitarObjEdit();
     }//GEN-LAST:event_modificarPan
 
 
@@ -1141,9 +1147,17 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_consultPan_btn
 
     private void cancelarEditPan_btnmodificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarEditPan_btnmodificarPan
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cancelarEditPan_btnmodificarPan
+        desabilitarObjEdit();
 
+    }//GEN-LAST:event_cancelarEditPan_btnmodificarPan
+    public void desabilitarObjEdit() {
+        GuardarEditPan_btn.setEnabled(false);
+        cancelarEditPan_btn.setEnabled(false);
+        nombrePanEdit_txt.setEnabled(false);
+        precioPanEdit_txt.setEnabled(false);
+        cantidadPanEdit_txt.setEnabled(false);
+        selecEditPan_chbx.setSelected(false);
+    }
     private void EditPan_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditPan_btnActionPerformed
         int opcEditPan = JOptionPane.showConfirmDialog(null, "¿Desea Modificar el Producto?");
         switch (opcEditPan) {
@@ -1153,6 +1167,7 @@ public class View1 extends javax.swing.JFrame {
                 nombrePanEdit_txt.setEnabled(true);
                 precioPanEdit_txt.setEnabled(true);
                 cantidadPanEdit_txt.setEnabled(true);
+                EditPan_btn.setEnabled(false);
                 break;
 
         }
