@@ -1124,11 +1124,14 @@ public class View1 extends javax.swing.JFrame {
 
     private void modificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarPan
         int posEditPan = Integer.parseInt("" + this.indexMod_tbl);
-        paco.getListaPan().get(posEditPan).setNombreTipo(nombrePanEdit_txt.getText());
-        paco.getListaPan().get(posEditPan).setPrecio(Integer.parseInt(precioPanEdit_txt.getText()));
-        paco.getListaPan().get(posEditPan).setCantidad(Integer.parseInt(cantidadPanEdit_txt.getText()));
+
+        paco.Uptade(posEditPan, new Pan(
+                nombrePanEdit_txt.getText(),
+                Integer.parseInt(precioPanEdit_txt.getText()),
+                Integer.parseInt(cantidadPanEdit_txt.getText()), "")
+        );
         ListarModificar();
-         desabilitarObjEdit();
+        desabilitarObjEdit();
     }//GEN-LAST:event_modificarPan
 
 
