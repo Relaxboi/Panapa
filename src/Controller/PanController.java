@@ -2,18 +2,16 @@ package Controller;
 
 import Model.Pan;
 import java.util.ArrayList;
-
+import javax.swing.table.DefaultTableModel;
 
 public class PanController {
 
     ArrayList<Pan> ListaPan = new ArrayList();
-
-    Object[][] ListaPanesMtz = new Object[getListaPan().size()][3];
-
+    ArrayList<Object[]> Panes = new ArrayList();    
 
     public void Create(Pan Pan1) {//Crea un tipo de pan - datos en cola
         ListaPan.add(Pan1);
-        
+
     }
 
     public ArrayList Read(String s) {//Busca leer/buscar
@@ -26,12 +24,12 @@ public class PanController {
             for (int b = 0; b < ListaPan.get(i).getNombreTipo().length(); b++) {
                 if (ListaPan.get(i).getNombreTipo().charAt(b) != ' ') {
                     Palabra += ListaPan.get(i).getNombreTipo().charAt(b);
-                    if (Palabra.equals(s)) {               
-                       A.add(new Object[]{ListaPan.get(i).getNombreTipo(), ""+ListaPan.get(i).getCantidad(), ""+ListaPan.get(i).getPrecio()});
-                       break;
+                    if (Palabra.equals(s)) {
+                        A.add(new Object[]{ListaPan.get(i).getNombreTipo(), "" + ListaPan.get(i).getCantidad(), "" + ListaPan.get(i).getPrecio()});
+                        break;
                     }
 
-                }else{
+                } else {
                     Palabra = "";
                 }
             }
@@ -46,15 +44,12 @@ public class PanController {
     public void Delete() {//Eliminar
     }
 
-    public void Listar() {
-        ListaPanesMtz = new Object[getListaPan().size()][3];
-        
+    public ArrayList Listar() {
+        Panes.clear();
         for (int i = 0; i < getListaPan().size(); i++) {
-            ListaPanesMtz[i][0] = getListaPan().get(i).getNombreTipo();
-            ListaPanesMtz[i][1] = getListaPan().get(i).getCantidad();
-            ListaPanesMtz[i][2] = getListaPan().get(i).getPrecio();
+            Panes.add(new Object[]{getListaPan().get(i).getNombreTipo(), getListaPan().get(i).getCantidad(), getListaPan().get(i).getPrecio()});
         }
-
+        return Panes;
     }
 
     //Set and get del ArrayList
@@ -66,12 +61,13 @@ public class PanController {
         this.ListaPan = ListaPan;
     }
 
-    public Object[][] getListaPanesMtz() {
-        return ListaPanesMtz;
+    public void Tablas(DefaultTableModel Table, ArrayList<Object[]> Array) {
+        while(Table.getRowCount() != 0){
+            Table.removeRow(0);
+        }
+        for (int i = 0; i < Array.size(); i++) {
+            Table.addRow(Array.get(i));
+        }
     }
 
-    public void setListaPanesMtz(Object[][] ListaPanesMtz) {
-        this.ListaPanesMtz = ListaPanesMtz;
-    }
-    
 }
