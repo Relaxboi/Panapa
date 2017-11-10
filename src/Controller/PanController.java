@@ -46,6 +46,7 @@ public class PanController {
 
     public void Delete(int index) {//Eliminar
         ListaPan.remove(index);
+        
     }
 
     public ArrayList Listar() {
