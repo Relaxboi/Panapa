@@ -1114,10 +1114,10 @@ public class View1 extends javax.swing.JFrame {
     private void consultPanEdit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanEdit_btnActionPerformed
         Consulta = (DefaultTableModel) listaPanesEdit_tbl.getModel();
         if (nombrePanConsultEdit_txt.getText().equals("") || nombrePanConsultEdit_txt.getText() == null) {
-            JOptionPane.showMessageDialog(null, "No Ha Ingresado Los Datos", "ERROR!", 0);
+            JOptionPane.showMessageDialog(null, "No ha ingresado los datos", "ERROR!", 0);
         } else {
             if (paco.Read(nombrePanConsultEdit_txt.getText()).isEmpty()) {
-                JOptionPane.showMessageDialog(null, "No Se Han Encontrado Coincidencias", "No Se Encontro", 1);
+                JOptionPane.showMessageDialog(null, "No se han encontrado coincidencias", "No Se Encontro", 1);
             } else {
                 paco.Tablas(Consulta, paco.Read(nombrePanConsultEdit_txt.getText()));
             }
@@ -1129,10 +1129,10 @@ public class View1 extends javax.swing.JFrame {
     private void consultPan_btn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPan_btn
         Consulta = (DefaultTableModel) listaPanesConsult_tbl.getModel();
         if (nombrePanConsult_txt.getText().equals("") || nombrePanConsult_txt.getText() == null) {
-            JOptionPane.showMessageDialog(null, "No Ha Ingresado Los Datos", "ERROR!", 0);
+            JOptionPane.showMessageDialog(null, "No ha ingresado los datos", "ERROR!", 0);
         } else {
             if (paco.Read(nombrePanConsult_txt.getText()).isEmpty()) {
-                JOptionPane.showMessageDialog(null, "No Se Han Encontrado Coincidencias", "No Se Encontro", 1);
+                JOptionPane.showMessageDialog(null, "No se han encontrado coincidencias", "No Se Encontro", 1);
             } else {
                 paco.Tablas(Consulta, paco.Read(nombrePanConsult_txt.getText()));
             }
