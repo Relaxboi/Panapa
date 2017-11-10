@@ -1123,7 +1123,12 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_selecProdModif_tbl
 
     private void modificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarPan
-
+        int posEditPan = Integer.parseInt("" + this.indexMod_tbl);
+        paco.getListaPan().get(posEditPan).setNombreTipo(nombrePanEdit_txt.getText());
+        paco.getListaPan().get(posEditPan).setPrecio(Integer.parseInt(precioPanEdit_txt.getText()));
+        paco.getListaPan().get(posEditPan).setCantidad(Integer.parseInt(cantidadPanEdit_txt.getText()));
+        ListarModificar();
+         desabilitarObjEdit();
     }//GEN-LAST:event_modificarPan
 
 
@@ -1181,15 +1186,17 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_consultPan_btn
 
     private void cancelarEditPan_btnmodificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarEditPan_btnmodificarPan
+        desabilitarObjEdit();
+
+    }//GEN-LAST:event_cancelarEditPan_btnmodificarPan
+    public void desabilitarObjEdit() {
         GuardarEditPan_btn.setEnabled(false);
         cancelarEditPan_btn.setEnabled(false);
         nombrePanEdit_txt.setEnabled(false);
         precioPanEdit_txt.setEnabled(false);
         cantidadPanEdit_txt.setEnabled(false);
         selecEditPan_chbx.setSelected(false);
-        
-    }//GEN-LAST:event_cancelarEditPan_btnmodificarPan
-
+    }
     private void EditPan_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditPan_btnActionPerformed
         int opcEditPan = JOptionPane.showConfirmDialog(null, "¿Desea Modificar el Producto?");
         switch (opcEditPan) {
