@@ -44,13 +44,17 @@ public class PanController {
         getListaPan().get(index).setId(p1.getId());
     }
 
-    public void Delete() {//Eliminar
+    public void Delete(int index) {//Eliminar
+        ListaPan.remove(index);
     }
 
     public ArrayList Listar() {
         Panes.clear();
         for (int i = 0; i < getListaPan().size(); i++) {
-            Panes.add(new Object[]{getListaPan().get(i).getNombreTipo(), getListaPan().get(i).getCantidad(), getListaPan().get(i).getPrecio()});
+            Panes.add(new Object[]{
+                getListaPan().get(i).getNombreTipo(), 
+                getListaPan().get(i).getCantidad(), 
+                getListaPan().get(i).getPrecio()});
         }
         return Panes;
     }
