@@ -1034,77 +1034,20 @@ public class View1 extends javax.swing.JFrame {
 // Evento del boton para registrar y tabular el producto
     private void registrarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarPan
         paco.Create(new Pan(nombrePanReg_txt.getText(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), "f2"));
-        for (int i = 0; i < paco.getListaPan().size(); i++) {//getListPan = acceder al ArryList
-
-            //System.out.println(paco.getListaPan().get(i).getNombreTipo());
-        }
-
-        for (int i = 0; i < paco.getListaPan().size(); i++) {//getListPan = acceder al ArryList
-
-            System.out.println(paco.getListaPan().get(i).getNombreTipo());
-        }
-        ListarRegistrar();
-
+        Consulta = (DefaultTableModel) listaPanesReg_tbl.getModel();
+        paco.Tablas(Consulta, paco.Listar());
+        Consulta = null;
     }//GEN-LAST:event_registrarPan
 // Metodo 
 
-    public void ListarRegistrar() {
-
-        paco.Listar();
-
-        listaPanesReg_tbl.setModel(new javax.swing.table.DefaultTableModel(
-                paco.getListaPanesMtz(),
-                new String[]{
-                    "Nombre", "Cantidad", "Precio"
-                }
-        ) {
-            boolean[] canEdit = new boolean[]{
-                false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit[columnIndex];
-            }
-        });
-
-        jScrollPane1.setViewportView(listaPanesReg_tbl);
-
-    }
-
-    public void ListarModificar() {
-
-        paco.Listar();
-
-        listaPanesEdit_tbl.setModel(new javax.swing.table.DefaultTableModel(
-                paco.getListaPanesMtz(),
-                new String[]{
-                    "Nombre", "Cantidad", "Precio"
-                }
-        ) {
-            boolean[] canEdit = new boolean[]{
-                false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit[columnIndex];
-            }
-        });
-
-        listaPanesEdit_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                selecProdModif_tbl(evt);
-            }
-        });
-
-        jScrollPane2.setViewportView(listaPanesEdit_tbl);
-
-    }
 // Evento del Panel de pestañas Para mantener actulaizadas las tablas cuando se cliquén las pestañas
     private void Actualizar_panel(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Actualizar_panel
-
-        ListarModificar();
-        ListarRegistrar();
-
+        Consulta = (DefaultTableModel) listaPanesReg_tbl.getModel();
+        paco.Tablas(Consulta, paco.Listar());
+        Consulta = null;
+        Consulta = (DefaultTableModel) listaPanesEdit_tbl.getModel();
+        paco.Tablas(Consulta, paco.Listar());
+        Consulta = null;
     }//GEN-LAST:event_Actualizar_panel
 
 
@@ -1120,8 +1063,10 @@ public class View1 extends javax.swing.JFrame {
         selecEditPan_chbx.setSelected(true);
         EditPan_btn.setEnabled(true);
         nombrePanEdit_txt.setText(paco.getListaPan().get(posEditPan).getNombreTipo());
+
         cantidadPanEdit_txt.setText(paco.getListaPan().get(posEditPan).getCantidad() + "");
         precioPanEdit_txt.setText(paco.getListaPan().get(posEditPan).getPrecio() + "");
+
     }//GEN-LAST:event_selecProdModif_tbl
 
     private void modificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarPan
@@ -1155,31 +1100,44 @@ public class View1 extends javax.swing.JFrame {
 
     private void consultPanEdit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanEdit_btnActionPerformed
         Consulta = (DefaultTableModel) listaPanesEdit_tbl.getModel();
+
         Buscar(Consulta, paco.Read(nombrePanConsultEdit_txt.getText()), nombrePanConsultEdit_txt.getText());
         Consulta = null;
-    }//GEN-LAST:event_consultPanEdit_btnActionPerformed
+    }                                                  
     private void Buscar(DefaultTableModel Table, ArrayList<Object[]> Array, String Caja) {
         for (int i = 0; i < Table.getRowCount(); i++) {
             Table.removeRow(i);
         }
         if (Caja == null || Caja.equals("")) {
-            JOptionPane.showMessageDialog(null, "No Ha Ingresado Los Datos", "ERROR!", 0);
-        } else {
-            if (Array.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "No Se Han Encontrado Coincidencias", "No Se Encontro", 1);
+
+            if (nombrePanConsultEdit_txt.getText() == null || nombrePanConsultEdit_txt.getText().equals("")) {
+
+                JOptionPane.showMessageDialog(null, "No Ha Ingresado Los Datos", "ERROR!", 0);
             } else {
-                for (int i = 0; i < Array.size(); i++) {
-                    Table.addRow(Array.get(i));
+                if (paco.Read(nombrePanConsultEdit_txt.getText()).isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "No Se Han Encontrado Coincidencias", "No Se Encontro", 1);
+                } else {
+                    paco.Tablas(Consulta, paco.Read(nombrePanConsultEdit_txt.getText()));
                 }
             }
-        }
+            Consulta = null;
+    }//GEN-LAST:event_consultPanEdit_btnActionPerformed
 
     }
+
+
     private void consultPan_btn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPan_btn
         Consulta = (DefaultTableModel) listaPanesConsult_tbl.getModel();
-        Buscar(Consulta, paco.Read(nombrePanConsult_txt.getText()), nombrePanConsult_txt.getText());
+        if (nombrePanConsult_txt.getText().equals("") || nombrePanConsult_txt.getText() == null) {
+            JOptionPane.showMessageDialog(null, "No Ha Ingresado Los Datos", "ERROR!", 0);
+        } else {
+            if (paco.Read(nombrePanConsult_txt.getText()).isEmpty()) {
+                JOptionPane.showMessageDialog(null, "No Se Han Encontrado Coincidencias", "No Se Encontro", 1);
+            } else {
+                paco.Tablas(Consulta, paco.Read(nombrePanConsult_txt.getText()));
+            }
+        }
         Consulta = null;
-
     }//GEN-LAST:event_consultPan_btn
 
     private void cancelarEditPan_btnmodificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarEditPan_btnmodificarPan
@@ -1196,7 +1154,7 @@ public class View1 extends javax.swing.JFrame {
                 precioPanEdit_txt.setEnabled(true);
                 cantidadPanEdit_txt.setEnabled(true);
                 break;
-        
+
         }
     }//GEN-LAST:event_EditPan_btnActionPerformed
 
