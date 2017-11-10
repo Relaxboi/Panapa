@@ -84,6 +84,7 @@ public class View1 extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         selecPanEliminar_chbx = new javax.swing.JCheckBox();
         eliminarPan_btn = new javax.swing.JButton();
+        consultPanEliminar_btn = new javax.swing.JButton();
         Proveedores = new javax.swing.JTabbedPane();
         Registrar_Producto1 = new javax.swing.JPanel();
         nombreProvReg_txt = new javax.swing.JTextField();
@@ -518,6 +519,13 @@ public class View1 extends javax.swing.JFrame {
         eliminarPan_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/eliminar.png"))); // NOI18N
         eliminarPan_btn.setText("Eliminar");
 
+        consultPanEliminar_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.png"))); // NOI18N
+        consultPanEliminar_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultPanEliminar_btnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout Eliminar_ProductoLayout = new javax.swing.GroupLayout(Eliminar_Producto);
         Eliminar_Producto.setLayout(Eliminar_ProductoLayout);
         Eliminar_ProductoLayout.setHorizontalGroup(
@@ -528,11 +536,13 @@ public class View1 extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Eliminar_ProductoLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(selecPanEliminar_chbx)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel9)
+                        .addGap(2, 2, 2)
+                        .addComponent(nombrePanEliminar_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nombrePanEliminar_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
+                        .addComponent(consultPanEliminar_btn)
+                        .addGap(35, 35, 35)
                         .addComponent(eliminarPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE))
                 .addContainerGap())
@@ -545,7 +555,8 @@ public class View1 extends javax.swing.JFrame {
                     .addComponent(nombrePanEliminar_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
                     .addComponent(selecPanEliminar_chbx)
-                    .addComponent(eliminarPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(eliminarPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(consultPanEliminar_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1195,6 +1206,10 @@ public class View1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cancelarEditProv_btnmodificarPan
 
+    private void consultPanEliminar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanEliminar_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_consultPanEliminar_btnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1253,6 +1268,7 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JTextField cantidadPanEdit_txt;
     private javax.swing.JTextField cantidadPanReg_txt;
     private javax.swing.JButton consultPanEdit_btn;
+    private javax.swing.JButton consultPanEliminar_btn;
     private javax.swing.JButton consultPan_btn;
     private javax.swing.JButton consultProvEdit_btn;
     private javax.swing.JButton consultProv_btn;
