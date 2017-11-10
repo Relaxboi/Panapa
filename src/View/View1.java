@@ -1040,14 +1040,19 @@ public class View1 extends javax.swing.JFrame {
 
 // Evento del Panel de pestañas Para mantener actulaizadas las tablas cuando se cliquén las pestañas
     private void Actualizar_panel(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Actualizar_panel
+        Listas();
+    }//GEN-LAST:event_Actualizar_panel
+    
+    public void Listas() {
+    
         Consulta = (DefaultTableModel) listaPanesReg_tbl.getModel();
         paco.Tablas(Consulta, paco.Listar());
         Consulta = null;
         Consulta = (DefaultTableModel) listaPanesEdit_tbl.getModel();
         paco.Tablas(Consulta, paco.Listar());
         Consulta = null;
-    }//GEN-LAST:event_Actualizar_panel
-
+    
+    }
 
     private void nombrePanConsult_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombrePanConsult_txtActionPerformed
         // TODO add your handling code here:
@@ -1075,7 +1080,7 @@ public class View1 extends javax.swing.JFrame {
                 Integer.parseInt(precioPanEdit_txt.getText()),
                 Integer.parseInt(cantidadPanEdit_txt.getText()), "")
         );
-        ListarModificar();
+        Listas();
         desabilitarObjEdit();
     }//GEN-LAST:event_modificarPan
 
