@@ -1642,14 +1642,19 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_selecProdEliminar_tbl
 
     private void eliminarPan_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarPan_btnActionPerformed
-        int opcEliminarPan = JOptionPane.showConfirmDialog(null, "¿ Desea Eliminar " + paco.getListaPan().get(Integer.parseInt(this.indexElim_tbl.toString())).getNombreTipo() + "?");
-        switch (opcEliminarPan) {
-            case (0):
-                paco.Delete(Integer.parseInt(this.indexElim_tbl.toString()));
-                selecPanEliminar_chbx.setText("Seleccionado");
-                Listas();
-                break;
+        try {
+            int opcEliminarPan = JOptionPane.showConfirmDialog(null, "¿ Desea Eliminar " + paco.getListaPan().get(Integer.parseInt(this.indexElim_tbl.toString())).getNombreTipo() + "?");
+            switch (opcEliminarPan) {
+                case (0):
+                    paco.Delete(Integer.parseInt(this.indexElim_tbl.toString()));
+                    selecPanEliminar_chbx.setText("Seleccionado");
+                    Listas();
+                    break;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No hay nada seleccionado", "ERROR!", 0);
         }
+
         selecPanEliminar_chbx.setSelected(true);
 
     }//GEN-LAST:event_eliminarPan_btnActionPerformed
@@ -1693,15 +1698,20 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_consultProvEliminar_btnActionPerformed
 
     private void EliminarProv_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarProv_btnActionPerformed
-        int opcEliminarProv = JOptionPane.showConfirmDialog(null, "¿ Desea Eliminar " + Proveedor.getListaProveedores().get(Integer.parseInt(this.indexElim_tbl.toString())).getsNombre()+ "?");
-        switch (opcEliminarProv) {
-            case (0):
-                Proveedor.Delete(Integer.parseInt(this.indexElim_tbl.toString()));
-                selecEliminarProv_chbx.setText("Seleccionado");
-                Listas();
-                break;
+        try {
+            int opcEliminarProv = JOptionPane.showConfirmDialog(null, "¿ Desea Eliminar " + Proveedor.getListaProveedores().get(Integer.parseInt(this.indexElim_tbl.toString())).getsNombre() + "?");
+            switch (opcEliminarProv) {
+                case (0):
+                    Proveedor.Delete(Integer.parseInt(this.indexElim_tbl.toString()));
+                    selecEliminarProv_chbx.setText("Seleccionado");
+                    Listas();
+                    break;
+            }
+            selecPanEliminar_chbx.setSelected(true);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No hay producto seleccionado", "ERROR!", 0);
         }
-        selecPanEliminar_chbx.setSelected(true);
+
     }//GEN-LAST:event_EliminarProv_btnActionPerformed
 
     public static void main(String args[]) {
