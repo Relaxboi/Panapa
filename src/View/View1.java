@@ -50,7 +50,7 @@ public class View1 extends javax.swing.JFrame {
 >>>>>>> parent of d9ce7d4... Merge branch 'Fernando'
     PanController paco = new PanController();
     ProveedorController Proveedor = new ProveedorController();
-
+    //Indice
     Object indexMod_tbl = null;
     Object indexElim_tbl = null;
     Object indexModProv_tbl = null;
