@@ -644,8 +644,6 @@ public class View1 extends javax.swing.JFrame {
             }
         });
 
-        nombreProvReg_txt.setEnabled(false);
-
         jLabel10.setText("Nombre del Proveedor : ");
 
         listaProveedorReg_tbl.setModel(new javax.swing.table.DefaultTableModel(
@@ -681,21 +679,13 @@ public class View1 extends javax.swing.JFrame {
             }
         });
 
-        serviProvReg_txt.setEnabled(false);
-
         jLabel19.setText("Producto/Servicio :");
-
-        telefonoProvReg_txt.setEnabled(false);
 
         jLabel20.setText("Telefono :");
 
         jLabel21.setText("Direccion :");
 
-        direcProvReg_txt.setEnabled(false);
-
         jLabel22.setText("NIT :");
-
-        nitProvReg_txt.setEnabled(false);
 
         javax.swing.GroupLayout Registrar_ProveedoresLayout = new javax.swing.GroupLayout(Registrar_Proveedores);
         Registrar_Proveedores.setLayout(Registrar_ProveedoresLayout);
@@ -1106,6 +1096,11 @@ public class View1 extends javax.swing.JFrame {
         }
 
         consultProvEliminar_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.png"))); // NOI18N
+        consultProvEliminar_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultProvEliminar_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Eliminar_ProveedoresLayout = new javax.swing.GroupLayout(Eliminar_Proveedores);
         Eliminar_Proveedores.setLayout(Eliminar_ProveedoresLayout);
@@ -1477,19 +1472,27 @@ public class View1 extends javax.swing.JFrame {
     }
 
     private void consultPanEdit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanEdit_btnActionPerformed
-        Consult_General(nombrePanConsultEdit_txt.getText(), listaPanesEdit_tbl);
+        Consult_GeneralPan(nombrePanConsultEdit_txt.getText(), listaPanesEdit_tbl);
     }//GEN-LAST:event_consultPanEdit_btnActionPerformed
 
-    private void Consult_General(String s, JTable Tabla) {
+    private void Consult_GeneralPan(String s, JTable Tabla) {
+        Consulta = (DefaultTableModel) Tabla.getModel();
+        if (ValConsult(s, paco.Read(s.toUpperCase()))) {
+            paco.Tablas(Consulta, paco.Read(s.toUpperCase()));
+        }
+        Consulta = null;
+    }
+    
+    private void Consult_GeneralProv(String s, JTable Tabla) {
         Consulta = (DefaultTableModel) Tabla.getModel();
         if (ValConsult(s, Proveedor.Read(s.toUpperCase()))) {
-            paco.Tablas(Consulta, paco.Read(s.toUpperCase()));
+            paco.Tablas(Consulta, Proveedor.Read(s.toUpperCase()));
         }
         Consulta = null;
     }
 
     private void consultPan_btn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPan_btn
-        Consult_General(nombrePanConsult_txt.getText(), listaPanesConsult_tbl);
+        Consult_GeneralPan(nombrePanConsult_txt.getText(), listaPanesConsult_tbl);
     }//GEN-LAST:event_consultPan_btn
 
     private void cancelarEditPan_btnmodificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarEditPan_btnmodificarPan
@@ -1553,7 +1556,7 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_ProveedoresActualizar_panel
 
     private void consultProv_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultProv_btnActionPerformed
-        Consult_General(nombreProvConsult_txt.getText(), listaProvConsult_tbl);
+        Consult_GeneralProv(nombreProvConsult_txt.getText(), listaProvConsult_tbl);
     }//GEN-LAST:event_consultProv_btnActionPerformed
 
     private void nombreProvConsult_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreProvConsult_txtActionPerformed
@@ -1561,7 +1564,7 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_nombreProvConsult_txtActionPerformed
 
     private void consultProvEdit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultProvEdit_btnActionPerformed
-        Consult_General(nombreProvEdit_txt.getText(), listaProveedoresEdit_tbl);
+        Consult_GeneralProv(nombreProvConsultEdit_txt.getText(), listaProveedoresEdit_tbl);
     }//GEN-LAST:event_consultProvEdit_btnActionPerformed
 
     private void registrarProv_btnregistrarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarProv_btnregistrarPan
@@ -1583,10 +1586,6 @@ public class View1 extends javax.swing.JFrame {
             V = false;
         }
         return V;
-    }
-
-    private void consultProvEliminar_btnActionPerformed(java.awt.ActiveEvent evt) {
-
     }
     private void EditProv_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditProv_btnActionPerformed
         int opcEditProv = JOptionPane.showConfirmDialog(null, "¿Desea modificar el proveedor?");
@@ -1614,7 +1613,7 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarEditProv_btnmodificarPan
 
     private void consultPanEliminar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanEliminar_btnActionPerformed
-        Consult_General(nombrePanEliminar_txt.getText(), listaPanesEliminar_tbl);
+        Consult_GeneralPan(nombrePanEliminar_txt.getText(), listaPanesEliminar_tbl);
      }//GEN-LAST:event_consultPanEliminar_btnActionPerformed
 
     private void LimpiarReg_Prov() {
@@ -1686,9 +1685,10 @@ public class View1 extends javax.swing.JFrame {
        
     }//GEN-LAST:event_consultPanVenta_btnActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void consultProvEliminar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultProvEliminar_btnActionPerformed
+       Consult_GeneralProv(nombreEliminarProv_txt.getText(), listaProvEliminar_tbl);
+    }//GEN-LAST:event_consultProvEliminar_btnActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
