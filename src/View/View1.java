@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
 public class View1 extends javax.swing.JFrame {
 
     private DefaultTableModel Consulta;
-
+    //instancia
     PanController paco = new PanController();
     ProveedorController Proveedor = new ProveedorController();
 
