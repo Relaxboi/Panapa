@@ -43,8 +43,8 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Producto">
-                <Property name="tabTitle" type="java.lang.String" value="Producto"/>
+              <JTabbedPaneConstraints tabName="Productos">
+                <Property name="tabTitle" type="java.lang.String" value="Productos"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -506,13 +506,13 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="consultPan_btn" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                              <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="nombrePanConsult_txt" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="selecConsultPan_chbx" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="consultPan_btn" min="-2" pref="44" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="413" max="32767" attributes="0"/>
                       </Group>
@@ -1323,13 +1323,13 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="consultProv_btn" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                              <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="selecConsultProv_chbx" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="nombreProvConsult_txt" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                                   <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="consultProv_btn" min="-2" pref="44" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jScrollPane7" pref="383" max="32767" attributes="0"/>
