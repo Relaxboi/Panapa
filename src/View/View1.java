@@ -43,6 +43,8 @@ public class View1 extends javax.swing.JFrame {
         Panel_General.setIconAt(1, new javax.swing.ImageIcon(getClass().getResource("/Icons/packing.png")));
         //Ventas
         Panel_General.setIconAt(2, new javax.swing.ImageIcon(getClass().getResource("/Icons/cart.png")));
+        //Estadisticas
+        Panel_General.setIconAt(3, new javax.swing.ImageIcon(getClass().getResource("/Icons/estadisticas.png")));
         
         //Prod_Registrar
         Productos.setIconAt(0, new javax.swing.ImageIcon(getClass().getResource("/Icons/cash-register_2.png")));
@@ -62,7 +64,7 @@ public class View1 extends javax.swing.JFrame {
         //Prov_Modificar
         Proveedores.setIconAt(3, new javax.swing.ImageIcon(getClass().getResource("/Icons/eliminar.png")));
         
-        listaProdConsultVentas_tbl.getColumnModel().getColumn(0).setPreferredWidth(150);
+        listaProdVenta_tbl.getColumnModel().getColumn(0).setPreferredWidth(150);
         
     }
 
@@ -169,25 +171,26 @@ public class View1 extends javax.swing.JFrame {
         EliminarProv_btn = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         listaProvEliminar_tbl = new javax.swing.JTable();
-        consultPanEdit_btn1 = new javax.swing.JButton();
+        consultProvEliminar_btn = new javax.swing.JButton();
         Ventas = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
-        listaProdConsultVentas_tbl = new javax.swing.JTable();
-        selecPanVenta_chbx = new javax.swing.JCheckBox();
+        listaProdVenta_tbl = new javax.swing.JTable();
+        selecProdConsultVenta_chbx = new javax.swing.JCheckBox();
         jLabel12 = new javax.swing.JLabel();
         nombrePanConsultVenta_txt = new javax.swing.JTextField();
         consultPanVenta_btn = new javax.swing.JButton();
         jScrollPane11 = new javax.swing.JScrollPane();
-        listaProdConsultVentas_tbl1 = new javax.swing.JTable();
+        listaProdConsultVentas_tbl = new javax.swing.JTable();
         jLabel13 = new javax.swing.JLabel();
-        nombrePanEdit_txt1 = new javax.swing.JTextField();
-        cantidadPanEdit_txt1 = new javax.swing.JTextField();
+        nombreProdVenta_txt = new javax.swing.JTextField();
+        cantidadProdVenta_txt = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         agregarProdVenta_btn = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        selecPanVenta_chbx1 = new javax.swing.JCheckBox();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        retirarProdVenta_btn = new javax.swing.JButton();
+        selecProdVenta_chbx = new javax.swing.JCheckBox();
+        comprarVenta_btn = new javax.swing.JButton();
+        cancelarVenta_btn = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -245,7 +248,7 @@ public class View1 extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Registrar_ProductoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(Registrar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
                     .addGroup(Registrar_ProductoLayout.createSequentialGroup()
                         .addGroup(Registrar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -300,7 +303,7 @@ public class View1 extends javax.swing.JFrame {
                                     .addComponent(cantidadPanReg_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(nombrePanReg_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -466,7 +469,7 @@ public class View1 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(precioPanEdit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -525,13 +528,13 @@ public class View1 extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nombrePanConsult_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(consultPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(Consultar_ProductoLayout.createSequentialGroup()
                     .addGap(13, 13, 13)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
                     .addGap(14, 14, 14)))
         );
         Consultar_ProductoLayout.setVerticalGroup(
@@ -544,10 +547,10 @@ public class View1 extends javax.swing.JFrame {
                         .addComponent(jLabel8)
                         .addComponent(selecConsultPan_chbx))
                     .addComponent(consultPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(413, Short.MAX_VALUE))
+                .addContainerGap(430, Short.MAX_VALUE))
             .addGroup(Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Consultar_ProductoLayout.createSequentialGroup()
-                    .addContainerGap(76, Short.MAX_VALUE)
+                    .addContainerGap(94, Short.MAX_VALUE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
         );
@@ -609,7 +612,7 @@ public class View1 extends javax.swing.JFrame {
             .addGroup(Eliminar_ProductoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(Eliminar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 678, Short.MAX_VALUE)
                     .addGroup(Eliminar_ProductoLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel9)
@@ -633,7 +636,7 @@ public class View1 extends javax.swing.JFrame {
                         .addComponent(eliminarPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(Eliminar_ProductoLayout.createSequentialGroup()
-                        .addContainerGap(17, Short.MAX_VALUE)
+                        .addContainerGap(35, Short.MAX_VALUE)
                         .addGroup(Eliminar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Eliminar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel9)
@@ -739,7 +742,7 @@ public class View1 extends javax.swing.JFrame {
                             .addGroup(Registrar_ProveedoresLayout.createSequentialGroup()
                                 .addGap(60, 60, 60)
                                 .addComponent(jLabel21)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                         .addComponent(registrarProv_btn)
                         .addGap(15, 15, 15))
                     .addGroup(Registrar_ProveedoresLayout.createSequentialGroup()
@@ -778,7 +781,7 @@ public class View1 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(direcProvReg_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -906,7 +909,7 @@ public class View1 extends javax.swing.JFrame {
                             .addComponent(cancelarEditProv_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(Modificar_ProveedoresLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE))
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 678, Short.MAX_VALUE))
                     .addGroup(Modificar_ProveedoresLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(selecEditProv_chbx)
@@ -1023,7 +1026,7 @@ public class View1 extends javax.swing.JFrame {
                         .addComponent(jLabel17)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(nombreProvConsult_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                         .addComponent(consultProv_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(Consultar_ProveedoresLayout.createSequentialGroup()
                         .addContainerGap()
@@ -1041,7 +1044,7 @@ public class View1 extends javax.swing.JFrame {
                         .addComponent(jLabel17))
                     .addComponent(consultProv_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1080,10 +1083,10 @@ public class View1 extends javax.swing.JFrame {
             listaProvEliminar_tbl.getColumnModel().getColumn(4).setResizable(false);
         }
 
-        consultPanEdit_btn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.png"))); // NOI18N
-        consultPanEdit_btn1.addActionListener(new java.awt.event.ActionListener() {
+        consultProvEliminar_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.png"))); // NOI18N
+        consultProvEliminar_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consultPanEdit_btn1ActionPerformed(evt);
+                consultProvEliminar_btnActionPerformed(evt);
             }
         });
 
@@ -1099,29 +1102,28 @@ public class View1 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel18)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nombreEliminarProv_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nombreEliminarProv_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(consultProvEliminar_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(consultPanEdit_btn1)
-                        .addGap(18, 18, 18)
-                        .addComponent(EliminarProv_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(EliminarProv_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(Eliminar_ProveedoresLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 678, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         Eliminar_ProveedoresLayout.setVerticalGroup(
             Eliminar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Eliminar_ProveedoresLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Eliminar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(Eliminar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(nombreEliminarProv_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel18)
-                        .addComponent(selecEliminarProv_chbx)
-                        .addComponent(EliminarProv_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(consultPanEdit_btn1))
+                .addGroup(Eliminar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nombreEliminarProv_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18)
+                    .addComponent(selecEliminarProv_chbx)
+                    .addComponent(EliminarProv_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(consultProvEliminar_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1129,7 +1131,7 @@ public class View1 extends javax.swing.JFrame {
 
         Panel_General.addTab("Proveedores", Proveedores);
 
-        listaProdConsultVentas_tbl.setModel(new javax.swing.table.DefaultTableModel(
+        listaProdVenta_tbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -1145,15 +1147,15 @@ public class View1 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane10.setViewportView(listaProdConsultVentas_tbl);
-        if (listaProdConsultVentas_tbl.getColumnModel().getColumnCount() > 0) {
-            listaProdConsultVentas_tbl.getColumnModel().getColumn(0).setResizable(false);
-            listaProdConsultVentas_tbl.getColumnModel().getColumn(1).setResizable(false);
-            listaProdConsultVentas_tbl.getColumnModel().getColumn(2).setResizable(false);
+        jScrollPane10.setViewportView(listaProdVenta_tbl);
+        if (listaProdVenta_tbl.getColumnModel().getColumnCount() > 0) {
+            listaProdVenta_tbl.getColumnModel().getColumn(0).setResizable(false);
+            listaProdVenta_tbl.getColumnModel().getColumn(1).setResizable(false);
+            listaProdVenta_tbl.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        selecPanVenta_chbx.setText("Seleccionado");
-        selecPanVenta_chbx.setEnabled(false);
+        selecProdConsultVenta_chbx.setText("Seleccionado");
+        selecProdConsultVenta_chbx.setEnabled(false);
 
         jLabel12.setText("Buscar :");
 
@@ -1164,7 +1166,7 @@ public class View1 extends javax.swing.JFrame {
             }
         });
 
-        listaProdConsultVentas_tbl1.setModel(new javax.swing.table.DefaultTableModel(
+        listaProdConsultVentas_tbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -1180,18 +1182,18 @@ public class View1 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane11.setViewportView(listaProdConsultVentas_tbl1);
-        if (listaProdConsultVentas_tbl1.getColumnModel().getColumnCount() > 0) {
-            listaProdConsultVentas_tbl1.getColumnModel().getColumn(0).setResizable(false);
-            listaProdConsultVentas_tbl1.getColumnModel().getColumn(1).setResizable(false);
-            listaProdConsultVentas_tbl1.getColumnModel().getColumn(2).setResizable(false);
+        jScrollPane11.setViewportView(listaProdConsultVentas_tbl);
+        if (listaProdConsultVentas_tbl.getColumnModel().getColumnCount() > 0) {
+            listaProdConsultVentas_tbl.getColumnModel().getColumn(0).setResizable(false);
+            listaProdConsultVentas_tbl.getColumnModel().getColumn(1).setResizable(false);
+            listaProdConsultVentas_tbl.getColumnModel().getColumn(2).setResizable(false);
         }
 
         jLabel13.setText("Producto :");
 
-        nombrePanEdit_txt1.setEnabled(false);
+        nombreProdVenta_txt.setEnabled(false);
 
-        cantidadPanEdit_txt1.setEnabled(false);
+        cantidadProdVenta_txt.setEnabled(false);
 
         jLabel14.setText("Cantidad :");
 
@@ -1199,20 +1201,20 @@ public class View1 extends javax.swing.JFrame {
         agregarProdVenta_btn.setText("Agregar");
         agregarProdVenta_btn.setEnabled(false);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/box.png"))); // NOI18N
-        jButton1.setText("Retirar");
-        jButton1.setEnabled(false);
+        retirarProdVenta_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/box.png"))); // NOI18N
+        retirarProdVenta_btn.setText("Retirar");
+        retirarProdVenta_btn.setEnabled(false);
 
-        selecPanVenta_chbx1.setText("Seleccionado");
-        selecPanVenta_chbx1.setEnabled(false);
+        selecProdVenta_chbx.setText("Seleccionado");
+        selecProdVenta_chbx.setEnabled(false);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cash-register.png"))); // NOI18N
-        jButton2.setText("Comprar");
-        jButton2.setEnabled(false);
+        comprarVenta_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cash-register.png"))); // NOI18N
+        comprarVenta_btn.setText("Comprar");
+        comprarVenta_btn.setEnabled(false);
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cancelar.png"))); // NOI18N
-        jButton3.setText("Cancelar Compra");
-        jButton3.setEnabled(false);
+        cancelarVenta_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cancelar.png"))); // NOI18N
+        cancelarVenta_btn.setText("Cancelar Compra");
+        cancelarVenta_btn.setEnabled(false);
 
         javax.swing.GroupLayout VentasLayout = new javax.swing.GroupLayout(Ventas);
         Ventas.setLayout(VentasLayout);
@@ -1229,35 +1231,35 @@ public class View1 extends javax.swing.JFrame {
                         .addComponent(consultPanVenta_btn))
                     .addGroup(VentasLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
-                        .addComponent(selecPanVenta_chbx)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                        .addComponent(selecProdConsultVenta_chbx)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(VentasLayout.createSequentialGroup()
                         .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(VentasLayout.createSequentialGroup()
                                 .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nombrePanEdit_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(nombreProdVenta_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(VentasLayout.createSequentialGroup()
                                         .addGap(40, 40, 40)
                                         .addComponent(jLabel13)))
                                 .addGap(8, 8, 8)
                                 .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(VentasLayout.createSequentialGroup()
-                                        .addComponent(cantidadPanEdit_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(cantidadProdVenta_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(agregarProdVenta_btn))
                                     .addGroup(VentasLayout.createSequentialGroup()
                                         .addGap(13, 13, 13)
                                         .addComponent(jLabel14))))
                             .addGroup(VentasLayout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(retirarProdVenta_btn)
                                 .addGap(12, 12, 12)
-                                .addComponent(selecPanVenta_chbx1)))
+                                .addComponent(selecProdVenta_chbx)))
                         .addGap(12, 12, 12))
                     .addGroup(VentasLayout.createSequentialGroup()
-                        .addComponent(jButton3)
+                        .addComponent(cancelarVenta_btn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(comprarVenta_btn)
                         .addContainerGap())))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VentasLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1267,7 +1269,7 @@ public class View1 extends javax.swing.JFrame {
                 .addGroup(VentasLayout.createSequentialGroup()
                     .addGap(22, 22, 22)
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(368, Short.MAX_VALUE)))
+                    .addContainerGap(394, Short.MAX_VALUE)))
         );
         VentasLayout.setVerticalGroup(
             VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1279,8 +1281,8 @@ public class View1 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(nombrePanEdit_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(cantidadPanEdit_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nombreProdVenta_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cantidadProdVenta_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(agregarProdVenta_btn))
                     .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(consultPanVenta_btn)
@@ -1289,24 +1291,37 @@ public class View1 extends javax.swing.JFrame {
                             .addComponent(jLabel12))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(selecPanVenta_chbx1)
-                    .addComponent(selecPanVenta_chbx))
+                    .addComponent(retirarProdVenta_btn)
+                    .addComponent(selecProdVenta_chbx)
+                    .addComponent(selecProdConsultVenta_chbx))
                 .addGap(18, 18, 18)
                 .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2))
+                    .addComponent(cancelarVenta_btn)
+                    .addComponent(comprarVenta_btn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
             .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VentasLayout.createSequentialGroup()
-                    .addContainerGap(102, Short.MAX_VALUE)
+                    .addContainerGap(120, Short.MAX_VALUE)
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(24, 24, 24)))
         );
 
         Panel_General.addTab("Ventas", Ventas);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 707, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 513, Short.MAX_VALUE)
+        );
+
+        Panel_General.addTab("Estadisticas", jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1539,9 +1554,9 @@ public class View1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_consultPanVenta_btnActionPerformed
 
-    private void consultPanEdit_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanEdit_btn1ActionPerformed
+    private void consultProvEliminar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultProvEliminar_btnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_consultPanEdit_btn1ActionPerformed
+    }//GEN-LAST:event_consultProvEliminar_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1599,22 +1614,21 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JButton agregarProdVenta_btn;
     private javax.swing.JButton cancelarEditPan_btn;
     private javax.swing.JButton cancelarEditProv_btn;
+    private javax.swing.JButton cancelarVenta_btn;
     private javax.swing.JTextField cantidadPanEdit_txt;
-    private javax.swing.JTextField cantidadPanEdit_txt1;
     private javax.swing.JTextField cantidadPanReg_txt;
+    private javax.swing.JTextField cantidadProdVenta_txt;
+    private javax.swing.JButton comprarVenta_btn;
     private javax.swing.JButton consultPanEdit_btn;
-    private javax.swing.JButton consultPanEdit_btn1;
     private javax.swing.JButton consultPanEliminar_btn;
     private javax.swing.JButton consultPanVenta_btn;
     private javax.swing.JButton consultPan_btn;
     private javax.swing.JButton consultProvEdit_btn;
+    private javax.swing.JButton consultProvEliminar_btn;
     private javax.swing.JButton consultProv_btn;
     private javax.swing.JTextField direcProvEdit_txt;
     private javax.swing.JTextField direcProvReg_txt;
     private javax.swing.JButton eliminarPan_btn;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1641,6 +1655,7 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
@@ -1658,7 +1673,7 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JTable listaPanesReg_tbl1;
     private javax.swing.JTable listaPanesReg_tbl2;
     private javax.swing.JTable listaProdConsultVentas_tbl;
-    private javax.swing.JTable listaProdConsultVentas_tbl1;
+    private javax.swing.JTable listaProdVenta_tbl;
     private javax.swing.JTable listaProvConsult_tbl;
     private javax.swing.JTable listaProvEliminar_tbl;
     private javax.swing.JTextField nitProvEdit_txt;
@@ -1668,9 +1683,9 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JTextField nombrePanConsultVenta_txt;
     private javax.swing.JTextField nombrePanConsult_txt;
     private javax.swing.JTextField nombrePanEdit_txt;
-    private javax.swing.JTextField nombrePanEdit_txt1;
     private javax.swing.JTextField nombrePanEliminar_txt;
     private javax.swing.JTextField nombrePanReg_txt;
+    private javax.swing.JTextField nombreProdVenta_txt;
     private javax.swing.JTextField nombreProvConsultEdit_txt;
     private javax.swing.JTextField nombreProvConsult_txt;
     private javax.swing.JTextField nombreProvEdit_txt;
@@ -1680,14 +1695,15 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> provePanReg_cmbx;
     private javax.swing.JButton registrarPan_btn;
     private javax.swing.JButton registrarProv_btn;
+    private javax.swing.JButton retirarProdVenta_btn;
     private javax.swing.JCheckBox selecConsultPan_chbx;
     private javax.swing.JCheckBox selecConsultProv_chbx;
     private javax.swing.JCheckBox selecEditPan_chbx;
     private javax.swing.JCheckBox selecEditProv_chbx;
     private javax.swing.JCheckBox selecEliminarProv_chbx;
     private javax.swing.JCheckBox selecPanEliminar_chbx;
-    private javax.swing.JCheckBox selecPanVenta_chbx;
-    private javax.swing.JCheckBox selecPanVenta_chbx1;
+    private javax.swing.JCheckBox selecProdConsultVenta_chbx;
+    private javax.swing.JCheckBox selecProdVenta_chbx;
     private javax.swing.JTextField serviProvEdit_txt;
     private javax.swing.JTextField serviProvReg_txt;
     private javax.swing.JTextField telefonoProvEdit_txt;
