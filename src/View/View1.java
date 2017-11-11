@@ -1,3 +1,4 @@
+
 package View;
 
 import Controller.*;
@@ -1039,13 +1040,13 @@ public class View1 extends javax.swing.JFrame {
             Eliminar_Producto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Eliminar_Producto1Layout.createSequentialGroup()
                 .addContainerGap()
-<<<<<<< HEAD
+
                 .addGroup(Eliminar_Producto1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nombreEliminarProv_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18)
                     .addComponent(selecEliminarProv_chbx)
                     .addComponent(EliminarProv_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-=======
+
                 .addGroup(Eliminar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(consultProvEliminar_btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(Eliminar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1053,7 +1054,7 @@ public class View1 extends javax.swing.JFrame {
                         .addComponent(jLabel18)
                         .addComponent(selecEliminarProv_chbx)
                         .addComponent(EliminarProv_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
->>>>>>> batty
+
                 .addGap(19, 19, 19)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
                 .addContainerGap())
