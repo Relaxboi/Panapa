@@ -5,6 +5,7 @@ import Controller.ProveedorController;
 import Model.*;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class View1 extends javax.swing.JFrame {
@@ -1203,20 +1204,19 @@ public class View1 extends javax.swing.JFrame {
     }
 
     private void consultPanEdit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanEdit_btnActionPerformed
-        Consulta = (DefaultTableModel) listaPanesEdit_tbl.getModel();
-        if (ValConsult(nombrePanConsultEdit_txt.getText(), paco.Read(nombrePanConsultEdit_txt.getText().toUpperCase()))) {
-            paco.Tablas(Consulta, paco.Read(nombrePanConsultEdit_txt.getText().toUpperCase()));
-        }
-        Consulta = null;
+        Consult_General(nombrePanConsultEdit_txt.getText(), listaPanesEdit_tbl);
     }//GEN-LAST:event_consultPanEdit_btnActionPerformed
 
+    private void Consult_General(String s, JTable Tabla){
+       Consulta = (DefaultTableModel) Tabla.getModel();
+        if (ValConsult(s, Proveedor.Read(s.toUpperCase()))) {
+            paco.Tablas(Consulta, paco.Read(s.toUpperCase()));
+        }
+        Consulta = null; 
+    }
 
     private void consultPan_btn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPan_btn
-        Consulta = (DefaultTableModel) listaPanesConsult_tbl.getModel();
-        if (ValConsult(nombrePanConsult_txt.getText(), paco.Read(nombrePanConsult_txt.getText().toUpperCase()))) {
-            paco.Tablas(Consulta, paco.Read(nombrePanConsult_txt.getText().toUpperCase()));
-        }
-        Consulta = null;
+        Consult_General(nombrePanConsult_txt.getText(), listaPanesConsult_tbl);
     }//GEN-LAST:event_consultPan_btn
 
     private void cancelarEditPan_btnmodificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarEditPan_btnmodificarPan
@@ -1276,11 +1276,11 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_EditPan_btnActionPerformed
 
     private void ProveedoresActualizar_panel(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProveedoresActualizar_panel
-        // TODO add your handling code here:
+        Listas();
     }//GEN-LAST:event_ProveedoresActualizar_panel
 
     private void consultProv_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultProv_btnActionPerformed
-        // TODO add your handling code here:
+        Consult_General(nombreProvConsult_txt.getText(), listaProvConsult_tbl);
     }//GEN-LAST:event_consultProv_btnActionPerformed
 
     private void nombreProvConsult_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreProvConsult_txtActionPerformed
@@ -1288,11 +1288,7 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_nombreProvConsult_txtActionPerformed
 
     private void consultProvEdit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultProvEdit_btnActionPerformed
-        Consulta = (DefaultTableModel) listaProveedoresEdit_tbl.getModel();
-        if (ValConsult(nombreProvConsultEdit_txt.getText(), Proveedor.Read(nombreProvConsultEdit_txt.getText().toUpperCase()))) {
-            paco.Tablas(Consulta, Proveedor.Read(nombreProvConsultEdit_txt.getText().toUpperCase()));
-        }
-        Consulta = null;
+        Consult_General(nombreProvEdit_txt.getText(), listaProveedoresEdit_tbl);
     }//GEN-LAST:event_consultProvEdit_btnActionPerformed
 
     private void registrarProv_btnregistrarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarProv_btnregistrarPan
@@ -1342,11 +1338,7 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarEditProv_btnmodificarPan
 
     private void consultPanEliminar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanEliminar_btnActionPerformed
-        Consulta = (DefaultTableModel) listaPanesEliminar_tbl.getModel();
-        if (ValConsult(nombrePanEliminar_txt.getText(), paco.Read(nombrePanEliminar_txt.getText().toUpperCase()))) {
-            paco.Tablas(Consulta, paco.Read(nombrePanEliminar_txt.getText().toUpperCase()));
-        }
-        Consulta = null;
+        Consult_General(nombrePanEliminar_txt.getText(), listaPanesEliminar_tbl);
      }//GEN-LAST:event_consultPanEliminar_btnActionPerformed
 
     private void LimpiarReg_Prov() {
