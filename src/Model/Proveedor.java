@@ -2,6 +2,7 @@
 package Model;
 
 public class Proveedor {
+    
     private String sId;
     private String sNombre;
     private String sServicio;
@@ -35,4 +36,5 @@ public class Proveedor {
     public String getsDireccion() {return sDireccion;}
 
     public void setsDireccion(String sDireccion) {this.sDireccion = sDireccion;}
+    
 }

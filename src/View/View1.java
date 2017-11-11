@@ -1551,6 +1551,7 @@ public class View1 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_eliminarPan_btnActionPerformed
 
+<<<<<<< HEAD
     private void consultPanVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanVenta_btnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_consultPanVenta_btnActionPerformed
@@ -1559,6 +1560,8 @@ public class View1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_consultProvEliminar_btnActionPerformed
 
+=======
+>>>>>>> parent of f48e8c7... Merge branch 'Fernando'
     /**
      * @param args the command line arguments
      */
@@ -1673,8 +1676,11 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JTable listaPanesReg_tbl;
     private javax.swing.JTable listaPanesReg_tbl1;
     private javax.swing.JTable listaPanesReg_tbl2;
+<<<<<<< HEAD
     private javax.swing.JTable listaProdConsultVentas_tbl;
     private javax.swing.JTable listaProdVenta_tbl;
+=======
+>>>>>>> parent of f48e8c7... Merge branch 'Fernando'
     private javax.swing.JTable listaProvConsult_tbl;
     private javax.swing.JTable listaProvEliminar_tbl;
     private javax.swing.JTextField nitProvEdit_txt;

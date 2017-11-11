@@ -7,73 +7,44 @@ import java.util.ArrayList;
 
 public class ProveedorController {
     ArrayList<Proveedor> ListaProveedores = new ArrayList();
-    ArrayList<Object[]> Proveedores = new ArrayList();  
+
+    Object[][] ListaProveedorMtz = new Object[getListaPan().size()][5];
 
 
-    public void Create(Proveedor Proveedor) {//Crea un nuevo proveedor
+    public void Create(Proveedor Proveedor) {//Crea un tipo de pan - datos en cola
         ListaProveedores.add(Proveedor);
         
     }
 
-    public ArrayList Read(String s) {//Busca leer/buscar
-        String Palabra = "";
-        ArrayList<Object[]> A = new ArrayList<>();
-        A.clear();
-        for (int i = 0; i < getListaProveedores().size(); i++) {
-            Palabra = "";
-            for (int b = 0; b < getListaProveedores().get(i).getsNombre().length(); b++) {
-                if (getListaProveedores().get(i).getsNombre().charAt(b) != ' ') {
-                    Palabra += getListaProveedores().get(i).getsNombre().charAt(b);
-                    if (Palabra.equals(s)) {
-                        A.add(new Object[]{getListaProveedores().get(i).getsNombre(), getListaProveedores().get(i).getsServicio(), 
-                            getListaProveedores().get(i).getsTelefono(),  getListaProveedores().get(i).getsDireccion(), getListaProveedores().get(i).getsId()});
-                        break;
-                    }
+    public void Read(String s) {//Busca leer/buscar
+        
+    }
 
-                } else {
-                    Palabra = "";
-                }
-            }
+    public void Uptade(int index) {//Actualizar o modificar
+
+    }
+
+    public void Delete() {//Eliminar
+    }
+
+    public void Listar() {
+        ListaProveedorMtz = new Object[getListaPan().size()][3];
+        
+        for (int i = 0; i < getListaPan().size(); i++) {
+            ListaProveedorMtz[i][0] = getListaPan().get(i).getsNombre();
+            ListaProveedorMtz[i][1] = getListaPan().get(i).getsServicio();
+            ListaProveedorMtz[i][2] = getListaPan().get(i).getsTelefono();
+            ListaProveedorMtz[i][3] = getListaPan().get(i).getsDireccion();
         }
-        return A;
+
     }
 
-    public void Uptade(int index, Proveedor p1) {//Actualizar o modificar
-        getListaProveedores().get(index).setsNombre(p1.getsNombre());
-        getListaProveedores().get(index).setsServicio(p1.getsServicio());
-        getListaProveedores().get(index).setsTelefono(p1.getsTelefono());
-        getListaProveedores().get(index).setsDireccion(p1.getsDireccion());
-        getListaProveedores().get(index).setsId(p1.getsId());
-    }
+    //Set and get del ArrayList
+    public ArrayList<Proveedor> getListaPan() {return ListaProveedores;}
 
-    public void Delete(int index) {//Eliminar
-        getListaProveedores().remove(index);       
-    }
+    public void setListaPan(ArrayList<Proveedor> ListaPan) {this.ListaProveedores = ListaPan;}
 
-    public ArrayList Listar() {
-        getProveedores().clear();
-        for (int i = 0; i < getListaProveedores().size(); i++) {
-            getProveedores().add(new Object[]{getListaProveedores().get(i).getsNombre(), 
-                getListaProveedores().get(i).getsServicio(), getListaProveedores().get(i).getsTelefono(), 
-                getListaProveedores().get(i).getsDireccion(), getListaProveedores().get(i).getsId()});
-        }
-        return getProveedores();
-    }
-    //Set and Get
-    public ArrayList<Proveedor> getListaProveedores() {
-        return ListaProveedores;
-    }
+    public Object[][] getListaPanesMtz() {return ListaProveedorMtz;}
 
-    public void setListaProveedores(ArrayList<Proveedor> ListaProveedores) {
-        this.ListaProveedores = ListaProveedores;
-    }
-
-    public ArrayList<Object[]> getProveedores() {
-        return Proveedores;
-    }
-
-    public void setProveedores(ArrayList<Object[]> Proveedores) {
-        this.Proveedores = Proveedores;
-    }
-
+    public void setListaPanesMtz(Object[][] ListaProveedorMtz) {this.ListaProveedorMtz = ListaProveedorMtz;}
 }
