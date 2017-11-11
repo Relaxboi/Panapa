@@ -26,7 +26,7 @@ public class View1 extends javax.swing.JFrame {
         IconosPanel();
     }
 
-    public void IconosPanel() {
+    public void IconosPanel() {//ICONOS
         //Productos
         Panel_General.setIconAt(0, new javax.swing.ImageIcon(getClass().getResource("/Icons/groceries.png")));
         //Proveedores
