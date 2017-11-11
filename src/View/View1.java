@@ -23,7 +23,9 @@ public class View1 extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         setLocationRelativeTo(null);
+        IconosPanel();
     }
+
     public void IconosPanel() {
         //Productos
         Panel_General.setIconAt(0, new javax.swing.ImageIcon(getClass().getResource("/Icons/pack.png")));
@@ -33,7 +35,7 @@ public class View1 extends javax.swing.JFrame {
         Panel_General.setIconAt(2, new javax.swing.ImageIcon(getClass().getResource("/Icons/cart.png")));
         //Estadisticas
         Panel_General.setIconAt(3, new javax.swing.ImageIcon(getClass().getResource("/Icons/estadisticas.png")));
-        
+
         //Prod_Registrar
         Productos.setIconAt(0, new javax.swing.ImageIcon(getClass().getResource("/Icons/cash-register_2.png")));
         //Prod_Modificar
@@ -51,9 +53,9 @@ public class View1 extends javax.swing.JFrame {
         Proveedores.setIconAt(2, new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.png")));
         //Prov_Modificar
         Proveedores.setIconAt(3, new javax.swing.ImageIcon(getClass().getResource("/Icons/eliminar.png")));
-        
+
         listaProdVenta_tbl.getColumnModel().getColumn(0).setPreferredWidth(150);
-        
+
     }
 
     //obj
@@ -531,7 +533,7 @@ public class View1 extends javax.swing.JFrame {
                         .addComponent(jLabel8)
                         .addComponent(selecConsultPan_chbx))
                     .addComponent(consultPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(430, Short.MAX_VALUE))
+                .addContainerGap(412, Short.MAX_VALUE))
             .addGroup(Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Consultar_ProductoLayout.createSequentialGroup()
                     .addContainerGap(94, Short.MAX_VALUE)
@@ -598,7 +600,7 @@ public class View1 extends javax.swing.JFrame {
                 .addGroup(Eliminar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 678, Short.MAX_VALUE)
                     .addGroup(Eliminar_ProductoLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 52, Short.MAX_VALUE)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(Eliminar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -619,8 +621,8 @@ public class View1 extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(eliminarPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(Eliminar_ProductoLayout.createSequentialGroup()
-                        .addContainerGap(35, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Eliminar_ProductoLayout.createSequentialGroup()
+                        .addContainerGap(10, Short.MAX_VALUE)
                         .addGroup(Eliminar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Eliminar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel9)
@@ -726,7 +728,7 @@ public class View1 extends javax.swing.JFrame {
                             .addGroup(Registrar_ProveedoresLayout.createSequentialGroup()
                                 .addGap(60, 60, 60)
                                 .addComponent(jLabel21)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                         .addComponent(registrarProv_btn)
                         .addGap(15, 15, 15))
                     .addGroup(Registrar_ProveedoresLayout.createSequentialGroup()
@@ -948,8 +950,8 @@ public class View1 extends javax.swing.JFrame {
                         .addComponent(selecEditProv_chbx, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(consultProvEdit_btn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42))
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49))
         );
 
         Proveedores.addTab("Modificar Prooverdor", Modificar_Proveedores);
@@ -1028,7 +1030,7 @@ public class View1 extends javax.swing.JFrame {
                         .addComponent(jLabel17))
                     .addComponent(consultProv_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1061,6 +1063,11 @@ public class View1 extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        listaProvEliminar_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaProvEliminar_tblMouseClicked(evt);
             }
         });
         jScrollPane8.setViewportView(listaProvEliminar_tbl);
@@ -1098,7 +1105,7 @@ public class View1 extends javax.swing.JFrame {
                         .addComponent(EliminarProv_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(Eliminar_ProveedoresLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 678, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         Eliminar_ProveedoresLayout.setVerticalGroup(
@@ -1106,14 +1113,15 @@ public class View1 extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Eliminar_ProveedoresLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(Eliminar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(consultProvEliminar_btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(Eliminar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(nombreEliminarProv_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel18)
-                        .addComponent(selecEliminarProv_chbx)
-                        .addComponent(EliminarProv_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(Eliminar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(consultProvEliminar_btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(Eliminar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nombreEliminarProv_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel18)
+                            .addComponent(selecEliminarProv_chbx)))
+                    .addComponent(EliminarProv_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1647,6 +1655,15 @@ public class View1 extends javax.swing.JFrame {
 
     private void EliminarProv_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarProv_btnActionPerformed
     }//GEN-LAST:event_EliminarProv_btnActionPerformed
+
+    private void listaProvEliminar_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProvEliminar_tblMouseClicked
+        int posEliminarPan = 0;
+        for (int i = 0; i < paco.getListaPan().size(); i++) {
+            if (listaPanesEdit_tbl.getValueAt(listaPanesEliminar_tbl.getSelectedRow(), 0).equals(paco.getListaPan().get(i).getNombreTipo())) {
+                posEliminarPan = i;
+            }
+        }
+    }//GEN-LAST:event_listaProvEliminar_tblMouseClicked
 
     /**
      * @param args the command line arguments
