@@ -794,6 +794,11 @@ public class View1 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        listaProveedoresEdit_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaProveedoresEdit_tblMouseClicked(evt);
+            }
+        });
         jScrollPane6.setViewportView(listaProveedoresEdit_tbl);
         if (listaProveedoresEdit_tbl.getColumnModel().getColumnCount() > 0) {
             listaProveedoresEdit_tbl.getColumnModel().getColumn(0).setResizable(false);
@@ -803,13 +808,23 @@ public class View1 extends javax.swing.JFrame {
             listaProveedoresEdit_tbl.getColumnModel().getColumn(4).setResizable(false);
         }
 
+        nombreProvEdit_txt.setEnabled(false);
+
         jLabel23.setText("Nombre del Proveedor : ");
+
+        serviProvEdit_txt.setEnabled(false);
 
         jLabel24.setText("Producto/Servicio :");
 
+        direcProvEdit_txt.setEnabled(false);
+
         jLabel25.setText("Direccion :");
 
+        telefonoProvEdit_txt.setEnabled(false);
+
         jLabel26.setText("Telefono :");
+
+        nitProvEdit_txt.setEnabled(false);
 
         jLabel27.setText("NIT :");
 
@@ -859,11 +874,11 @@ public class View1 extends javax.swing.JFrame {
                                 .addGroup(Modificar_ProveedoresLayout.createSequentialGroup()
                                     .addGroup(Modificar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(Modificar_ProveedoresLayout.createSequentialGroup()
-                                            .addGap(32, 32, 32)
-                                            .addComponent(nombreProvEdit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(Modificar_ProveedoresLayout.createSequentialGroup()
                                             .addGap(55, 55, 55)
-                                            .addComponent(jLabel23)))
+                                            .addComponent(jLabel23))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Modificar_ProveedoresLayout.createSequentialGroup()
+                                            .addContainerGap()
+                                            .addComponent(nombreProvEdit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(Modificar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(Modificar_ProveedoresLayout.createSequentialGroup()
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -886,9 +901,11 @@ public class View1 extends javax.swing.JFrame {
                                 .addGap(45, 45, 45)))
                         .addGap(12, 12, 12)
                         .addGroup(Modificar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel27)
-                            .addComponent(nitProvEdit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(nitProvEdit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Modificar_ProveedoresLayout.createSequentialGroup()
+                                .addComponent(jLabel27)
+                                .addGap(42, 42, 42)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                         .addGroup(Modificar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(EditProv_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(GuardarEditProv_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -920,14 +937,10 @@ public class View1 extends javax.swing.JFrame {
                         .addComponent(cancelarEditProv_btn))
                     .addGroup(Modificar_ProveedoresLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(Modificar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(Modificar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel23)
-                                .addComponent(jLabel26)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nombreProvEdit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(Modificar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel23)
+                            .addComponent(jLabel26))
+                        .addGap(41, 41, 41)
                         .addGroup(Modificar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel25)
                             .addComponent(jLabel24))
@@ -937,11 +950,15 @@ public class View1 extends javax.swing.JFrame {
                             .addComponent(direcProvEdit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(Modificar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(Modificar_ProveedoresLayout.createSequentialGroup()
-                            .addGap(33, 33, 33)
+                            .addGap(5, 5, 5)
+                            .addComponent(jLabel27)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(nitProvEdit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Modificar_ProveedoresLayout.createSequentialGroup()
                             .addGap(15, 15, 15)
-                            .addComponent(telefonoProvEdit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(Modificar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(telefonoProvEdit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(nombreProvEdit_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(Modificar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Modificar_ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1577,10 +1594,6 @@ public class View1 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_EditProv_btnActionPerformed
 
-    private void consultPanVenta_btnActionPerformed(java.awt.ActiveEvent evt) {
-
-    }
-
     private void GuardarEditProv_btnmodificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarEditProv_btnmodificarPan
         int posEditProv = Integer.parseInt("" + this.indexModProv_tbl);
         if (Val_Prov(nitProvEdit_txt.getText(), nombreProvEdit_txt.getText(), serviProvEdit_txt.getText(), telefonoProvEdit_txt.getText(), direcProvEdit_txt.getText())) {
@@ -1664,6 +1677,10 @@ public class View1 extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_listaProvEliminar_tblMouseClicked
+
+    private void consultPanVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanVenta_btnActionPerformed
+       
+    }//GEN-LAST:event_consultPanVenta_btnActionPerformed
 
     /**
      * @param args the command line arguments
