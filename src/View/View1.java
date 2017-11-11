@@ -13,7 +13,7 @@ public class View1 extends javax.swing.JFrame {
     //instancia de los modelos
     PanController paco = new PanController();
     ProveedorController Proveedor = new ProveedorController();
-
+    //Indice
     Object indexMod_tbl = null;
     Object indexElim_tbl = null;
     Object indexModProv_tbl = null;
