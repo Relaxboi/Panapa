@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package View;
 
 import Controller.PanController;
@@ -19,13 +15,13 @@ import javax.swing.table.DefaultTableModel;
 public class View1 extends javax.swing.JFrame {
 
     private DefaultTableModel Consulta;
-<<<<<<< HEAD
+
     /**
      * Creates new form View1
      */
-=======
+
     //instancia
->>>>>>> Fernando
+
     PanController paco = new PanController();
 
     Object indexMod_tbl = null;
