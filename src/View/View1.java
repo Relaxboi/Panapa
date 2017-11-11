@@ -1,6 +1,12 @@
 package View;
+<<<<<<< HEAD
 import Controller.PanController;
 import Model.Pan;
+=======
+
+import Controller.*;
+import Model.*;
+>>>>>>> Fernando
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
