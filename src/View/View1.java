@@ -15,6 +15,7 @@ import javax.swing.table.DefaultTableModel;
 public class View1 extends javax.swing.JFrame {
 
     private DefaultTableModel Consulta;
+<<<<<<< HEAD
 
     /**
      * Creates new form View1
@@ -22,6 +23,9 @@ public class View1 extends javax.swing.JFrame {
 
     //instancia
 
+=======
+    //instancia de los modelos
+>>>>>>> Fernando
     PanController paco = new PanController();
 
     Object indexMod_tbl = null;
