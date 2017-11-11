@@ -1,6 +1,4 @@
-
 package View;
-
 import Controller.PanController;
 import Model.Pan;
 import java.util.ArrayList;
@@ -15,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
 public class View1 extends javax.swing.JFrame {
 
     private DefaultTableModel Consulta;
-<<<<<<< HEAD
+
 
     /**
      * Creates new form View1
@@ -23,9 +21,9 @@ public class View1 extends javax.swing.JFrame {
 
     //instancia
 
-=======
+
     //instancia de los modelos
->>>>>>> Fernando
+
     PanController paco = new PanController();
 
     Object indexMod_tbl = null;
@@ -1555,7 +1553,7 @@ public class View1 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_eliminarPan_btnActionPerformed
 
-<<<<<<< HEAD
+
     private void consultPanVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanVenta_btnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_consultPanVenta_btnActionPerformed
@@ -1564,8 +1562,8 @@ public class View1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_consultProvEliminar_btnActionPerformed
 
-=======
->>>>>>> parent of f48e8c7... Merge branch 'Fernando'
+
+
     /**
      * @param args the command line arguments
      */
@@ -1680,11 +1678,11 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JTable listaPanesReg_tbl;
     private javax.swing.JTable listaPanesReg_tbl1;
     private javax.swing.JTable listaPanesReg_tbl2;
-<<<<<<< HEAD
+
     private javax.swing.JTable listaProdConsultVentas_tbl;
     private javax.swing.JTable listaProdVenta_tbl;
-=======
->>>>>>> parent of f48e8c7... Merge branch 'Fernando'
+
+
     private javax.swing.JTable listaProvConsult_tbl;
     private javax.swing.JTable listaProvEliminar_tbl;
     private javax.swing.JTextField nitProvEdit_txt;
