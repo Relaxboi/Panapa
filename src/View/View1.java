@@ -25,8 +25,11 @@ import javax.swing.table.DefaultTableModel;
 public class View1 extends javax.swing.JFrame {
 
     private DefaultTableModel Consulta;
+<<<<<<< HEAD
 
 <<<<<<< HEAD
+=======
+>>>>>>> parent of d9ce7d4... Merge branch 'Fernando'
 
     /**
      * Creates new form View1
@@ -34,11 +37,14 @@ public class View1 extends javax.swing.JFrame {
 
     //instancia
 
+<<<<<<< HEAD
 
     //instancia de los modelos
 
 =======
 >>>>>>> parent of 49c8db6... Merge branch 'Fernando'
+=======
+>>>>>>> parent of d9ce7d4... Merge branch 'Fernando'
     PanController paco = new PanController();
     ProveedorController Proveedor = new ProveedorController();
 
