@@ -7,11 +7,8 @@ package View;
 
 import Controller.PanController;
 import Model.Pan;
-<<<<<<< HEAD
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
-=======
->>>>>>> 35df3a0e93b00985fcc7fd494ee3eaec268f945e
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
