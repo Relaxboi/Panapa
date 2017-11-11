@@ -288,9 +288,8 @@ public class View1 extends javax.swing.JFrame {
                                 .addGroup(Registrar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(cantidadPanReg_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(nombrePanReg_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE))
         );
 
         Productos.addTab("Registrar Producto", Registrar_Producto);
@@ -645,6 +644,8 @@ public class View1 extends javax.swing.JFrame {
             }
         });
 
+        nombreProvReg_txt.setEnabled(false);
+
         jLabel10.setText("Nombre del Proveedor : ");
 
         listaProveedorReg_tbl.setModel(new javax.swing.table.DefaultTableModel(
@@ -680,13 +681,21 @@ public class View1 extends javax.swing.JFrame {
             }
         });
 
+        serviProvReg_txt.setEnabled(false);
+
         jLabel19.setText("Producto/Servicio :");
+
+        telefonoProvReg_txt.setEnabled(false);
 
         jLabel20.setText("Telefono :");
 
         jLabel21.setText("Direccion :");
 
+        direcProvReg_txt.setEnabled(false);
+
         jLabel22.setText("NIT :");
+
+        nitProvReg_txt.setEnabled(false);
 
         javax.swing.GroupLayout Registrar_ProveedoresLayout = new javax.swing.GroupLayout(Registrar_Proveedores);
         Registrar_Proveedores.setLayout(Registrar_ProveedoresLayout);
@@ -728,7 +737,7 @@ public class View1 extends javax.swing.JFrame {
                             .addGroup(Registrar_ProveedoresLayout.createSequentialGroup()
                                 .addGap(60, 60, 60)
                                 .addComponent(jLabel21)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                         .addComponent(registrarProv_btn)
                         .addGap(15, 15, 15))
                     .addGroup(Registrar_ProveedoresLayout.createSequentialGroup()
@@ -766,9 +775,9 @@ public class View1 extends javax.swing.JFrame {
                                 .addComponent(jLabel21)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(direcProvReg_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(12, 12, 12))
         );
 
         Proveedores.addTab("Registrar Prooverdor", Registrar_Proveedores);
@@ -1097,11 +1106,6 @@ public class View1 extends javax.swing.JFrame {
         }
 
         consultProvEliminar_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.png"))); // NOI18N
-        consultProvEliminar_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consultProvEliminar_btnActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout Eliminar_ProveedoresLayout = new javax.swing.GroupLayout(Eliminar_Proveedores);
         Eliminar_Proveedores.setLayout(Eliminar_ProveedoresLayout);

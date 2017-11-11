@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
-        <file>
-            <url>src/Controller/PanController.java</url>
-            <bookmark id="1">
-                <name/>
-                <line>47</line>
-                <key/>
-            </bookmark>
-        </file>
-    </editor-bookmarks>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Copia%20de%20Seguridad%20(Mis%20Documentos)/Mis%20Documentos/NetBeansProjects/Panapa%201.1.0/src/Controller/PanController.java</file>
-            <file>file:/D:/Copia%20de%20Seguridad%20(Mis%20Documentos)/Mis%20Documentos/NetBeansProjects/Panapa%201.1.0/src/Model/Pan.java</file>
-            <file>file:/D:/Copia%20de%20Seguridad%20(Mis%20Documentos)/Mis%20Documentos/NetBeansProjects/Panapa%201.1.0/src/View/View1.java</file>
+            <file>file:/C:/Users/Gamer/Documents/NetBeansProjects/Panapa/src/Controller/PanController.java</file>
+            <file>file:/C:/Users/Gamer/Documents/NetBeansProjects/Panapa/src/View/View1.java</file>
+            <file>file:/C:/Users/Gamer/Documents/NetBeansProjects/Panapa/src/Model/Proveedor.java</file>
+            <file>file:/C:/Users/Gamer/Documents/NetBeansProjects/Panapa/src/Controller/ProveedorController.java</file>
         </group>
     </open-files>
 </project-private>
