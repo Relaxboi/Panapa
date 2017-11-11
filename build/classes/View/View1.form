@@ -23,10 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <Component id="Panel_General" min="-2" pref="686" max="-2" attributes="0"/>
-              <EmptySpace pref="49" max="32767" attributes="0"/>
-          </Group>
+          <Component id="Panel_General" min="-2" pref="686" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -486,13 +483,13 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Component id="selecConsultPan_chbx" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="nombrePanConsult_txt" min="-2" pref="127" max="-2" attributes="0"/>
-                          <EmptySpace pref="101" max="32767" attributes="0"/>
+                          <Component id="nombrePanConsult_txt" min="-2" pref="160" max="-2" attributes="0"/>
+                          <EmptySpace pref="38" max="32767" attributes="0"/>
                           <Component id="consultPan_btn" min="-2" pref="268" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -509,13 +506,13 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="selecConsultPan_chbx" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="consultPan_btn" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                              <Group type="103" alignment="3" groupAlignment="3" attributes="0">
                                   <Component id="nombrePanConsult_txt" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="selecConsultPan_chbx" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="consultPan_btn" min="-2" pref="44" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="413" max="32767" attributes="0"/>
                       </Group>
@@ -639,14 +636,14 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="eliminarPan_btn" min="-2" pref="44" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="1" attributes="0">
+                              <Group type="102" attributes="0">
                                   <EmptySpace pref="17" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" alignment="1" groupAlignment="3" attributes="0">
@@ -657,11 +654,11 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="selecPanEliminar_chbx" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jScrollPane4" min="-2" pref="362" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jScrollPane4" min="-2" pref="350" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -764,7 +761,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="Registrar_Producto1">
+            <Container class="javax.swing.JPanel" name="Registrar_Proveedores">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Registrar Prooverdor">
@@ -988,7 +985,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="Modificar_Producto1">
+            <Container class="javax.swing.JPanel" name="Modificar_Proveedores">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Modificar Prooverdor">
@@ -1289,7 +1286,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="Consultar_Producto1">
+            <Container class="javax.swing.JPanel" name="Consultar_Proveedores">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Consultar Prooverdor">
@@ -1326,16 +1323,16 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="consultProv_btn" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                              <Group type="103" alignment="3" groupAlignment="3" attributes="0">
                                   <Component id="selecConsultProv_chbx" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="nombreProvConsult_txt" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                                   <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="consultProv_btn" min="-2" pref="44" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jScrollPane7" pref="382" max="32767" attributes="0"/>
+                          <Component id="jScrollPane7" pref="383" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -1425,7 +1422,7 @@
                 </Container>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="Eliminar_Producto1">
+            <Container class="javax.swing.JPanel" name="Eliminar_Proveedores">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Eliminar Prooverdor">
