@@ -18,7 +18,6 @@ public class PanController {
         String Palabra = "";
         ArrayList<Object[]> A = new ArrayList<>();
         A.clear();
-        Object[] H = new Object[3];
         for (int i = 0; i < ListaPan.size(); i++) {
             Palabra = "";
             for (int b = 0; b < ListaPan.get(i).getNombreTipo().length(); b++) {
@@ -77,5 +76,4 @@ public class PanController {
             Table.addRow(Array.get(i));
         }
     }
-
 }
