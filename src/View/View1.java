@@ -1,7 +1,6 @@
 package View;
 
-import Controller.PanController;
-import Controller.ProveedorController;
+import Controller.*;
 import Model.*;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
