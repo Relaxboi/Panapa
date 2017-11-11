@@ -1482,7 +1482,7 @@ public class View1 extends javax.swing.JFrame {
         }
         Consulta = null;
     }
-    
+
     private void Consult_GeneralProv(String s, JTable Tabla) {
         Consulta = (DefaultTableModel) Tabla.getModel();
         if (ValConsult(s, Proveedor.Read(s.toUpperCase()))) {
@@ -1669,25 +1669,38 @@ public class View1 extends javax.swing.JFrame {
         nitProvEdit_txt.setText(Proveedor.getListaProveedores().get(posEditProv).getsId());
     }//GEN-LAST:event_listaProveedoresEdit_tblMouseClicked
 
-    private void EliminarProv_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarProv_btnActionPerformed
-    }//GEN-LAST:event_EliminarProv_btnActionPerformed
-
     private void listaProvEliminar_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProvEliminar_tblMouseClicked
-        int posEliminarPan = 0;
+        int posEliminarProv = 0;
         for (int i = 0; i < paco.getListaPan().size(); i++) {
-            if (listaPanesEdit_tbl.getValueAt(listaPanesEliminar_tbl.getSelectedRow(), 0).equals(paco.getListaPan().get(i).getNombreTipo())) {
-                posEliminarPan = i;
+            if (listaProvEliminar_tbl.getValueAt(listaProvEliminar_tbl.getSelectedRow(), 0).equals(Proveedor.getListaProveedores().get(i).getsNombre())) {
+                posEliminarProv = i;
             }
         }
+        //igualar posicion global con posicion local
+        this.indexElim_tbl = posEliminarProv;
+        selecPanEliminar_chbx.setSelected(true);
+        selecEliminarProv_chbx.setText(Proveedor.getListaProveedores().get(posEliminarProv).getsNombre());
     }//GEN-LAST:event_listaProvEliminar_tblMouseClicked
 
     private void consultPanVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanVenta_btnActionPerformed
-       
+
     }//GEN-LAST:event_consultPanVenta_btnActionPerformed
 
     private void consultProvEliminar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultProvEliminar_btnActionPerformed
-       Consult_GeneralProv(nombreEliminarProv_txt.getText(), listaProvEliminar_tbl);
+        Consult_GeneralProv(nombreEliminarProv_txt.getText(), listaProvEliminar_tbl);
     }//GEN-LAST:event_consultProvEliminar_btnActionPerformed
+
+    private void EliminarProv_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarProv_btnActionPerformed
+        int opcEliminarProv = JOptionPane.showConfirmDialog(null, "¿ Desea Eliminar " + Proveedor.getListaProveedores().get(Integer.parseInt(this.indexElim_tbl.toString())).getsNombre()+ "?");
+        switch (opcEliminarProv) {
+            case (0):
+                Proveedor.Delete(Integer.parseInt(this.indexElim_tbl.toString()));
+                selecEliminarProv_chbx.setText("Seleccionado");
+                Listas();
+                break;
+        }
+        selecPanEliminar_chbx.setSelected(true);
+    }//GEN-LAST:event_EliminarProv_btnActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
