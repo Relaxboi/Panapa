@@ -3,6 +3,7 @@ import Controller.PanController;
 <<<<<<< HEAD
 import Model.Pan;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 import Controller.*;
@@ -12,6 +13,8 @@ import Model.*;
 import Controller.ProveedorController;
 import Model.*;
 >>>>>>> parent of 49c8db6... Merge branch 'Fernando'
+=======
+>>>>>>> parent of c2d8008... Merge branch 'Fernando'
 =======
 >>>>>>> parent of c2d8008... Merge branch 'Fernando'
 import java.util.ArrayList;
