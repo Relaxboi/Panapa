@@ -1473,7 +1473,7 @@ public class View1 extends javax.swing.JFrame {
                     Integer.parseInt(cantidadPanEdit_txt.getText()), "")
             );
             Listas();
-            ObjEditPan(true);
+            ObjEditPan(false);
             VaciarMod_txt();
         }
     }//GEN-LAST:event_modificarPan
