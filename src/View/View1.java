@@ -1478,8 +1478,11 @@ public class View1 extends javax.swing.JFrame {
                     Integer.parseInt(cantidadPanEdit_txt.getText()), "")
             );
             Listas();
+
             ObjEditPan(false);
+
             VaciarMod_txt();
+
         }
     }//GEN-LAST:event_modificarPan
 
@@ -1567,6 +1570,14 @@ public class View1 extends javax.swing.JFrame {
         direcProvEdit_txt.setText(null);
     }
 
+    private void LimpiarReg_Prov() {
+        nombreProvReg_txt.setText(null);
+        telefonoProvReg_txt.setText(null);
+        serviProvReg_txt.setText(null);
+        nitProvReg_txt.setText(null);
+        direcProvReg_txt.setText(null);
+    }
+
     private void EditPan_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditPan_btnActionPerformed
         int opcEditPan = JOptionPane.showConfirmDialog(null, "¿Desea Modificar el Producto?");
         switch (opcEditPan) {
@@ -1642,13 +1653,6 @@ public class View1 extends javax.swing.JFrame {
         Consult_GeneralPan(nombrePanEliminar_txt.getText(), listaPanesEliminar_tbl);
      }//GEN-LAST:event_consultPanEliminar_btnActionPerformed
 
-    private void LimpiarReg_Prov() {
-        nombreProvReg_txt.setText(null);
-        telefonoProvReg_txt.setText(null);
-        serviProvReg_txt.setText(null);
-        nitProvReg_txt.setText(null);
-        direcProvReg_txt.setText(null);
-    }
 
     private void selecProdEliminar_tbl(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selecProdEliminar_tbl
         //Posicion en tabla eliminar
