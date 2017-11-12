@@ -23,8 +23,10 @@ public class View1 extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         setLocationRelativeTo(null);
-        IconosPanel();   
         Listas();
+        IconosPanel();
+        ComboBox();
+
     }
 
     public void IconosPanel() {//ICONOS
@@ -1359,7 +1361,11 @@ public class View1 extends javax.swing.JFrame {
 // Evento del boton para registrar y tabular el producto
     private void registrarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarPan
         if (Val_Panes(nombrePanReg_txt.getText(), precioPanReg_txt.getText(), cantidadPanReg_txt.getText())) {
-            paco.Create(new Pan(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), "f2"));
+            if (provePanReg_cmbx.getSelectedItem().toString().equals("Seleccione")) {
+                paco.Create(new Pan(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), "f2"));
+            } else {
+                paco.Create(new Pan(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), "f2", provePanReg_cmbx.getSelectedItem().toString()));
+            }
             Listas();
             VaciarReg_txt();
         }
@@ -1424,6 +1430,20 @@ public class View1 extends javax.swing.JFrame {
         Consulta = (DefaultTableModel) listaProvEliminar_tbl.getModel();
         paco.Tablas(Consulta, Proveedor.Listar());
         Consulta = null;
+        //tabla de Eliminar
+        Consulta = (DefaultTableModel) listaProdConsultVentas_tbl.getModel();
+        paco.Tablas(Consulta, paco.Listar());
+        Consulta = null;
+        //Llenar Combobox
+        ComboBox();
+    }
+
+    private void ComboBox() {
+        provePanReg_cmbx.removeAllItems();
+        provePanReg_cmbx.addItem("Seleccione");
+        for (int i = 0; i < Proveedor.getListaProveedores().size(); i++) {
+            provePanReg_cmbx.addItem(Proveedor.getListaProveedores().get(i).getsNombre());
+        }
     }
 
     private void nombrePanConsult_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombrePanConsult_txtActionPerformed
@@ -1694,7 +1714,7 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_listaProvEliminar_tblMouseClicked
 
     private void consultPanVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanVenta_btnActionPerformed
-
+        Consult_GeneralPan(nombrePanConsultVenta_txt.getText(), listaProdConsultVentas_tbl);
     }//GEN-LAST:event_consultPanVenta_btnActionPerformed
 
     private void consultProvEliminar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultProvEliminar_btnActionPerformed
