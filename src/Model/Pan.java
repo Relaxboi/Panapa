@@ -7,6 +7,7 @@ public class Pan {
     private int precio;
     private int cantidad;
     private String id;
+    private String sProveedor;
 
     //Constructores - Sobrecarga
     public Pan(String nombreTipo, int precio, int cantidad, String id) {
@@ -17,6 +18,22 @@ public class Pan {
     }
 
     public Pan() {
+    }
+
+    public Pan(String nombreTipo, int precio, int cantidad, String id, String sProveedor) {
+        this.nombreTipo = nombreTipo;
+        this.precio = precio;
+        this.cantidad = cantidad;
+        this.id = id;
+        this.sProveedor = sProveedor;
+    }
+
+    public String getsProveedor() {
+        return sProveedor;
+    }
+
+    public void setsProveedor(String sProveedor) {
+        this.sProveedor = sProveedor;
     }
 
     public String getNombreTipo() {
