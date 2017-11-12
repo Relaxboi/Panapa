@@ -24,6 +24,7 @@ public class View1 extends javax.swing.JFrame {
         setResizable(false);
         setLocationRelativeTo(null);
         IconosPanel();
+        ComboBox();
     }
 
     public void IconosPanel() {//ICONOS
@@ -1420,8 +1421,22 @@ public class View1 extends javax.swing.JFrame {
         Consulta = (DefaultTableModel) listaProvEliminar_tbl.getModel();
         paco.Tablas(Consulta, Proveedor.Listar());
         Consulta = null;
+        //tabla de Eliminar
+        Consulta = (DefaultTableModel) listaProdConsultVentas_tbl.getModel();
+        paco.Tablas(Consulta, paco.Listar());
+        Consulta = null;
+        //Llenar Combobox
+        ComboBox();
     }
 
+    private void ComboBox(){
+        provePanReg_cmbx.removeAllItems();
+        provePanReg_cmbx.addItem("Seleccione");
+        for(int i = 0; i < Proveedor.getListaProveedores().size(); i++){
+            provePanReg_cmbx.addItem(Proveedor.getListaProveedores().get(i).getsNombre());
+        }
+    }
+    
     private void nombrePanConsult_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombrePanConsult_txtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nombrePanConsult_txtActionPerformed
@@ -1690,7 +1705,7 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_listaProvEliminar_tblMouseClicked
 
     private void consultPanVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanVenta_btnActionPerformed
-
+        Consult_GeneralPan(nombrePanConsultVenta_txt.getText(), listaProdConsultVentas_tbl);
     }//GEN-LAST:event_consultPanVenta_btnActionPerformed
 
     private void consultProvEliminar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultProvEliminar_btnActionPerformed
