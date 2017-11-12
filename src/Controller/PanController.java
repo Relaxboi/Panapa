@@ -26,13 +26,13 @@ public class PanController {
 
     public void Create(Pan Pan1) {//Crea un tipo de pan - datos en cola
  
-        DBObject document = new BasicDBObject()
+        DBObject documentJSON = new BasicDBObject()
                 .append("nombreTipo",Pan1.getNombreTipo())
                 .append("precio", Pan1.getPrecio())
                 .append("cantidad", Pan1.getCantidad())
-                .append("id", UUID.randomUUID().toString());
+                .append("id", UUID.randomUUID().toString());                
         
-        collection.insert(document);
+        collection.insert(documentJSON);
         
     }
 
@@ -46,7 +46,9 @@ public class PanController {
                 if (ListaPan.get(i).getNombreTipo().charAt(b) != ' ') {
                     Palabra += ListaPan.get(i).getNombreTipo().charAt(b);
                     if (Palabra.equals(s)) {
-                        A.add(new Object[]{ListaPan.get(i).getNombreTipo(), "" + ListaPan.get(i).getCantidad(), "" + ListaPan.get(i).getPrecio()});
+                        A.add(new Object[]{ListaPan.get(i).getNombreTipo(),
+                            "" + ListaPan.get(i).getCantidad(),
+                            "" + ListaPan.get(i).getPrecio()});
                         break;
                     }
 

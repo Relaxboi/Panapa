@@ -7,7 +7,7 @@ import com.mongodb.ServerAddress;
 
 public class MongoConexion {
 
-    private String ip = "192.168.1.67";
+    private String ip = "192.168.1.63";
     private String database = "panapa";
     private int port = 27017;
 
