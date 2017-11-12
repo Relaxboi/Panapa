@@ -23,7 +23,8 @@ public class View1 extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         setLocationRelativeTo(null);
-        IconosPanel();
+        IconosPanel();   
+        Listas();
     }
 
     public void IconosPanel() {//ICONOS

@@ -1,17 +1,39 @@
 package Controller;
 
 import Model.Pan;
+import Persistence.MongoConexion;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 import java.util.ArrayList;
+import java.util.UUID;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class PanController {
-
+    
+    // Conexión a la base de datos noSQL [MongoDB] //
+    MongoConexion mc = new MongoConexion();
+    DBCollection collection = mc.getDB().getCollection("pan");
+    
     ArrayList<Pan> ListaPan = new ArrayList();
     ArrayList<Object[]> Panes = new ArrayList();    
+    
+    public PanController(){
+ 
+    }
 
     public void Create(Pan Pan1) {//Crea un tipo de pan - datos en cola
-        ListaPan.add(Pan1);
-
+ 
+        DBObject document = new BasicDBObject()
+                .append("nombreTipo",Pan1.getNombreTipo())
+                .append("precio", Pan1.getPrecio())
+                .append("cantidad", Pan1.getCantidad())
+                .append("id", UUID.randomUUID().toString());
+        
+        collection.insert(document);
+        
     }
 
     public ArrayList Read(String s) {//Busca leer/buscar
@@ -37,24 +59,47 @@ public class PanController {
     }
 
     public void Uptade(int index, Pan p1) {//Actualizar o modificar
-        getListaPan().get(index).setNombreTipo(p1.getNombreTipo());
-        getListaPan().get(index).setCantidad(p1.getCantidad());
-        getListaPan().get(index).setPrecio(p1.getPrecio());
-        getListaPan().get(index).setId(p1.getId());
-    }
-
-    public void Delete(int index) {//Eliminar
-        ListaPan.remove(index);
+        
+        String Id = ListaPan.get(index).getId();
+        
+        DBObject document = new BasicDBObject()
+                .append("nombreTipo",p1.getNombreTipo())
+                .append("precio", p1.getPrecio())
+                .append("cantidad", p1.getCantidad())
+                .append("id", Id);       
+        collection.update(new BasicDBObject("id",Id),document);
         
     }
 
+    public void Delete(int index) {//Eliminar
+        collection.remove(new BasicDBObject("id",ListaPan.get(index).getId()));
+        ListaPan.remove(index);                            
+    }
+
     public ArrayList Listar() {
+             
         Panes.clear();
-        for (int i = 0; i < getListaPan().size(); i++) {
+        DBCursor cursor = collection.find();
+        try {
+            while (cursor.hasNext()) {
+            DBObject cur = cursor.next();
+            
+            ListaPan.add(
+                new Pan(cur.get("nombreTipo").toString(),
+                        Integer.parseInt(cur.get("precio").toString()),
+                        Integer.parseInt(cur.get("cantidad").toString()),
+                        cur.get("id").toString())
+            );
+            
             Panes.add(new Object[]{
-                getListaPan().get(i).getNombreTipo(), 
-                getListaPan().get(i).getCantidad(), 
-                getListaPan().get(i).getPrecio()});
+                cur.get("nombreTipo").toString(),
+                cur.get("cantidad").toString(),
+                cur.get("precio").toString(),
+                cur.get("id").toString()
+            });
+        }
+        } finally {
+            cursor.close();
         }
         return Panes;
     }
@@ -69,6 +114,7 @@ public class PanController {
     }
 
     public void Tablas(DefaultTableModel Table, ArrayList<Object[]> Array) {
+        
         while(Table.getRowCount() != 0){
             Table.removeRow(0);
         }
