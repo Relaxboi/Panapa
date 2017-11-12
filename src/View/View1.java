@@ -496,6 +496,11 @@ public class View1 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        listaPanesConsult_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaPanesConsult_tblMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(listaPanesConsult_tbl);
         if (listaPanesConsult_tbl.getColumnModel().getColumnCount() > 0) {
             listaPanesConsult_tbl.getColumnModel().getColumn(0).setResizable(false);
@@ -1006,6 +1011,11 @@ public class View1 extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        listaProvConsult_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaProvConsult_tblMouseClicked(evt);
             }
         });
         jScrollPane7.setViewportView(listaProvConsult_tbl);
@@ -1732,6 +1742,24 @@ public class View1 extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_EliminarProv_btnActionPerformed
+
+    private void listaPanesConsult_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaPanesConsult_tblMouseClicked
+        int posConsult = 0;
+        for (int i = 0; i < paco.getListaPan().size(); i++) {
+            if (listaPanesEliminar_tbl.getValueAt(listaPanesConsult_tbl.getSelectedRow(), 0).equals(paco.getListaPan().get(i).getNombreTipo())) {
+                posConsult = i;
+            }
+        }
+        selecConsultPan_chbx.setText(paco.getListaPan().get(posConsult).getNombreTipo());    }//GEN-LAST:event_listaPanesConsult_tblMouseClicked
+
+    private void listaProvConsult_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProvConsult_tblMouseClicked
+        int posConsultProv = 0;
+        for (int i = 0; i < Proveedor.getListaProveedores().size(); i++) {
+            if (listaProveedoresEdit_tbl.getValueAt(listaProvConsult_tbl.getSelectedRow(), 0).equals(Proveedor.getListaProveedores().get(i).getsNombre())) {
+                posConsultProv = i;
+            }
+        }
+        selecConsultProv_chbx.setText(Proveedor.getListaProveedores().get(posConsultProv).getsNombre());    }//GEN-LAST:event_listaProvConsult_tblMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
