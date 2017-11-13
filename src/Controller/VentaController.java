@@ -38,7 +38,7 @@ public class VentaController {
         
         for(int i = 0; i < CompraLista.size(); i++){
             
-            Compra.add(new Object[]{CompraLista.get(i).getNombreTipo(), CompraLista.get(i).getCantidad(), CompraLista.get(i).getPrecio()});
+            Compra.add(new Object[]{CompraLista.get(i).getNombreTipo(), CompraLista.get(i).getCantidad(), CompraLista.get(i).getiGanancias()});
             
         }
         
