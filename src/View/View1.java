@@ -1281,7 +1281,7 @@ public class View1 extends javax.swing.JFrame {
         });
 
         totalProdVenta.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        totalProdVenta.setText("Total de la venta: ");
+        totalProdVenta.setText("Total de la venta: 0.0");
 
         javax.swing.GroupLayout VentasLayout = new javax.swing.GroupLayout(Ventas);
         Ventas.setLayout(VentasLayout);
