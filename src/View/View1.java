@@ -65,7 +65,7 @@ public class View1 extends javax.swing.JFrame {
 
     }
 
-    //obj
+//obj
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -1288,10 +1288,6 @@ public class View1 extends javax.swing.JFrame {
             }
         });
 
-
-        totalProdVenta.setFont(new java.awt.Font("Book Antiqua", 0, 18)); // NOI18N
-        totalProdVenta.setText("Total de la venta: ");
-
         totalProdVenta.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         totalProdVenta.setText("Total de la venta: 0.0");
 
@@ -1304,7 +1300,6 @@ public class View1 extends javax.swing.JFrame {
         jLabel28.setText("Identificacion :");
 
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/boss.png"))); // NOI18N
-
 
         javax.swing.GroupLayout VentasLayout = new javax.swing.GroupLayout(Ventas);
         Ventas.setLayout(VentasLayout);
@@ -1430,11 +1425,7 @@ public class View1 extends javax.swing.JFrame {
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(totalProdVenta)
-
-                .addContainerGap(43, Short.MAX_VALUE))
-
                 .addContainerGap())
-
             .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VentasLayout.createSequentialGroup()
                     .addContainerGap(102, Short.MAX_VALUE)
