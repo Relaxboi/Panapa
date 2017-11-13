@@ -1,5 +1,6 @@
-package View;
 
+
+package View;
 import Controller.*;
 import Model.*;
 import java.awt.HeadlessException;
@@ -18,6 +19,7 @@ public class View1 extends javax.swing.JFrame {
     private FacturaController Compra = new FacturaController();
     //Indice
     private Object indexMod_tbl = null;
+    private Object indexEstadistica = null;
     private Object indexElim_tbl = null;
     private Object indexModProv_tbl = null;
     private Object indexProdConsult_tbl = null;
@@ -192,7 +194,7 @@ public class View1 extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         pagoClientVenta_txt = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
-<<<<<<< HEAD
+        totalProdVenta = new javax.swing.JTextField();
         Estadisticas = new javax.swing.JPanel();
         Contenedor_Stast = new javax.swing.JTabbedPane();
         Historial_ventas = new javax.swing.JPanel();
@@ -206,10 +208,6 @@ public class View1 extends javax.swing.JFrame {
         selecEditPan_chbx1 = new javax.swing.JCheckBox();
         consultPanEdit_btn1 = new javax.swing.JButton();
         Datos_ventas = new javax.swing.JPanel();
-=======
-        totalProdVenta = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
->>>>>>> 389ce4a62631e225f44ef7ca85f310fee6de0c30
 
         jButton1.setText("jButton1");
 
@@ -1351,7 +1349,7 @@ public class View1 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VentasLayout.createSequentialGroup()
-                        .addGap(0, 3, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VentasLayout.createSequentialGroup()
                                 .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1487,6 +1485,11 @@ public class View1 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        listaProdVenta_tbl1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaProdVenta_tbl1MouseClicked(evt);
+            }
+        });
         jScrollPane12.setViewportView(listaProdVenta_tbl1);
         if (listaProdVenta_tbl1.getColumnModel().getColumnCount() > 0) {
             listaProdVenta_tbl1.getColumnModel().getColumn(0).setResizable(false);
@@ -1599,11 +1602,11 @@ public class View1 extends javax.swing.JFrame {
         Estadisticas.setLayout(EstadisticasLayout);
         EstadisticasLayout.setHorizontalGroup(
             EstadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Contenedor_Stast, javax.swing.GroupLayout.DEFAULT_SIZE, 681, Short.MAX_VALUE)
+            .addComponent(Contenedor_Stast)
         );
         EstadisticasLayout.setVerticalGroup(
             EstadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Contenedor_Stast, javax.swing.GroupLayout.DEFAULT_SIZE, 495, Short.MAX_VALUE)
+            .addComponent(Contenedor_Stast)
         );
 
         Panel_General.addTab("Estadisticas", Estadisticas);
@@ -1699,6 +1702,10 @@ public class View1 extends javax.swing.JFrame {
         Consulta = null;
         Consulta = (DefaultTableModel) listaProdVenta_tbl.getModel();
         paco.Tablas(Consulta, Compra.ListarVenta());
+        Consulta = null;
+        //tabñla eliminar
+        Consulta = (DefaultTableModel) listaProdVenta_tbl1.getModel();
+        paco.Tablas(Consulta, Compra.ListarCliente());
         Consulta = null;
         //Llenar Combobox
         ComboBox();
@@ -2106,7 +2113,25 @@ public class View1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_totalProdVentaActionPerformed
 
+    private void listaProdVenta_tbl1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProdVenta_tbl1MouseClicked
+        indexEstadistica = CheckBoxVenta(listaProdVenta_tbl1, selecEditPan_chbx1);
+        //tabñla eliminar
+        Consulta = (DefaultTableModel) listaProdVenta_tbl2.getModel();
+        paco.Tablas(Consulta, Compra.ListarTablaProducto(Integer.parseInt(indexEstadistica.toString())));
+        Consulta = null;
+    }//GEN-LAST:event_listaProdVenta_tbl1MouseClicked
 
+    private int CheckBoxVenta(JTable Tabla, JCheckBox Check) {
+        int posConsult = 0;
+        for (int i = 0; i < Compra.getCliente().size(); i++) {
+            if (Tabla.getValueAt(Tabla.getSelectedRow(), 0).equals(Compra.getCliente().get(i).getsNombre())) {
+                posConsult = i;
+            }
+        }
+        Check.setSelected(true);
+        return posConsult;
+    }
+    
     private int CheckBoxProducto(JTable Tabla, JCheckBox Check) {
         int posConsult = 0;
         for (int i = 0; i < paco.getListaPan().size(); i++) {
@@ -2142,7 +2167,7 @@ public class View1 extends javax.swing.JFrame {
                 V = false;
             } else {
                 Compra.Create(new Client(nombreClientVenta_txt.getText().toUpperCase(), idClientVenta_txt.getText().toUpperCase(), Integer.parseInt(pagoClientVenta_txt.getText()),
-                        (Integer.parseInt(pagoClientVenta_txt.getText()) - total)));
+                        (Integer.parseInt(pagoClientVenta_txt.getText()) - total), total));
             }
         } catch (HeadlessException | NumberFormatException e) {
             V = false;
