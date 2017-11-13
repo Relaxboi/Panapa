@@ -1802,7 +1802,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="6" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="retirarProdVenta_btn" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="selecProdVenta_chbx" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1816,19 +1816,10 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jScrollPane10" min="-2" pref="218" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-<<<<<<< HEAD
                       <Component id="totalProdVenta" min="-2" max="-2" attributes="0"/>
-
-                      <EmptySpace pref="43" max="32767" attributes="0"/>
-
-=======
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="totalProdVenta" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cancelarVenta_btn" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
->>>>>>> master
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="cancelarVenta_btn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
