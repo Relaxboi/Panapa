@@ -1,7 +1,7 @@
 //Intanciando el pan
 package Model;
 
-public class Pan {
+public class Producto {
 
     private String nombreTipo;
     private int precio;
@@ -10,17 +10,17 @@ public class Pan {
     private String sProveedor;
 
     //Constructores - Sobrecarga
-    public Pan(String nombreTipo, int precio, int cantidad, String id) {
+    public Producto(String nombreTipo, int precio, int cantidad, String id) {
         this.nombreTipo = nombreTipo;
         this.precio = precio;
         this.cantidad = cantidad;
         this.id = id;
     }
 
-    public Pan() {
+    public Producto() {
     }
 
-    public Pan(String nombreTipo, int precio, int cantidad, String id, String sProveedor) {
+    public Producto(String nombreTipo, int precio, int cantidad, String id, String sProveedor) {
         this.nombreTipo = nombreTipo;
         this.precio = precio;
         this.cantidad = cantidad;

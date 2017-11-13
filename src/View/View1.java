@@ -3,6 +3,7 @@ package View;
 import Controller.*;
 import Model.*;
 import java.util.ArrayList;
+import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -11,7 +12,7 @@ public class View1 extends javax.swing.JFrame {
 
     private DefaultTableModel Consulta;
     //instancia de los modelos
-    PanController paco = new PanController();
+    ProductoController paco = new ProductoController();
     ProveedorController Proveedor = new ProveedorController();
     //Indice
     Object indexMod_tbl = null;
@@ -1209,6 +1210,11 @@ public class View1 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        listaProdConsultVentas_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaProdConsultVentas_tblMouseClicked(evt);
+            }
+        });
         jScrollPane11.setViewportView(listaProdConsultVentas_tbl);
         if (listaProdConsultVentas_tbl.getColumnModel().getColumnCount() > 0) {
             listaProdConsultVentas_tbl.getColumnModel().getColumn(0).setResizable(false);
@@ -1367,9 +1373,9 @@ public class View1 extends javax.swing.JFrame {
     private void registrarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarPan
         if (Val_Panes(nombrePanReg_txt.getText(), precioPanReg_txt.getText(), cantidadPanReg_txt.getText())) {
             if (provePanReg_cmbx.getSelectedItem().toString().equals("Seleccione")) {
-                paco.Create(new Pan(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), "f2"));
+                paco.Create(new Producto(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), "f2"));
             } else {
-                paco.Create(new Pan(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), "f2", provePanReg_cmbx.getSelectedItem().toString()));
+                paco.Create(new Producto(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), "f2", provePanReg_cmbx.getSelectedItem().toString()));
             }
             Listas();
             VaciarReg_txt();
@@ -1458,26 +1464,18 @@ public class View1 extends javax.swing.JFrame {
 
     private void selecProdModif_tbl(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selecProdModif_tbl
         // rowAtPoint -> ( EVENTO 'evt' . getPoint() 'posicion' );
-        int posEditPan = 0;
-        for (int i = 0; i < paco.getListaPan().size(); i++) {
-            if (listaPanesEdit_tbl.getValueAt(listaPanesEdit_tbl.getSelectedRow(), 0).equals(paco.getListaPan().get(i).getNombreTipo())) {
-                posEditPan = i;
-            }
-        }
-        this.indexMod_tbl = posEditPan;
-        selecEditPan_chbx.setSelected(true);
+        this.indexMod_tbl = CheckBoxProducto(listaPanesEdit_tbl, selecEditPan_chbx);
         EditPan_btn.setEnabled(true);
-        nombrePanEdit_txt.setText(paco.getListaPan().get(posEditPan).getNombreTipo());
-
-        cantidadPanEdit_txt.setText(paco.getListaPan().get(posEditPan).getCantidad() + "");
-        precioPanEdit_txt.setText(paco.getListaPan().get(posEditPan).getPrecio() + "");
+        nombrePanEdit_txt.setText(paco.getListaPan().get(Integer.parseInt(indexMod_tbl.toString())).getNombreTipo());
+        cantidadPanEdit_txt.setText(paco.getListaPan().get(Integer.parseInt(indexMod_tbl.toString())).getCantidad() + "");
+        precioPanEdit_txt.setText(paco.getListaPan().get(Integer.parseInt(indexMod_tbl.toString())).getPrecio() + "");
 
     }//GEN-LAST:event_selecProdModif_tbl
 
     private void modificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarPan
         int posEditPan = Integer.parseInt("" + this.indexMod_tbl);
         if (Val_Panes(nombrePanEdit_txt.getText(), precioPanEdit_txt.getText(), cantidadPanEdit_txt.getText())) {
-            paco.Uptade(posEditPan, new Pan(
+            paco.Uptade(posEditPan, new Producto(
                     nombrePanEdit_txt.getText().toUpperCase(),
                     Integer.parseInt(precioPanEdit_txt.getText()),
                     Integer.parseInt(cantidadPanEdit_txt.getText()), "")
@@ -1656,18 +1654,8 @@ public class View1 extends javax.swing.JFrame {
     }
 
     private void selecProdEliminar_tbl(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selecProdEliminar_tbl
-        //Posicion en tabla eliminar
-        int posEliminarProd = 0;
-        for (int i = 0; i < paco.getListaPan().size(); i++) {
-            if (listaPanesEliminar_tbl.getValueAt(listaPanesEliminar_tbl.getSelectedRow(), 0).equals(paco.getListaPan().get(i).getNombreTipo())) {
-                posEliminarProd = i;
-            }
-        }
         //igualar posicion global con posicion local
-        this.indexElim_tbl = posEliminarProd;
-        selecPanEliminar_chbx.setSelected(true);
-        selecPanEliminar_chbx.setText(paco.getListaPan().get(posEliminarProd).getNombreTipo());
-
+        this.indexElim_tbl = CheckBoxProducto(listaPanesEliminar_tbl, selecPanEliminar_chbx);
     }//GEN-LAST:event_selecProdEliminar_tbl
 
     private void eliminarPan_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarPan_btnActionPerformed
@@ -1689,33 +1677,18 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_eliminarPan_btnActionPerformed
 
     private void listaProveedoresEdit_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProveedoresEdit_tblMouseClicked
-        int posEditProv = 0;
-        for (int i = 0; i < Proveedor.getListaProveedores().size(); i++) {
-            if (listaProveedoresEdit_tbl.getValueAt(listaProveedoresEdit_tbl.getSelectedRow(), 0).equals(Proveedor.getListaProveedores().get(i).getsNombre())) {
-                posEditProv = i;
-            }
-        }
-        this.indexModProv_tbl = posEditProv;
-        selecEditProv_chbx.setSelected(true);
-        EditProv_btn.setEnabled(true);
-        nombreProvEdit_txt.setText(Proveedor.getListaProveedores().get(posEditProv).getsNombre());
-        telefonoProvEdit_txt.setText(Proveedor.getListaProveedores().get(posEditProv).getsTelefono());
-        serviProvEdit_txt.setText(Proveedor.getListaProveedores().get(posEditProv).getsServicio());
-        direcProvEdit_txt.setText(Proveedor.getListaProveedores().get(posEditProv).getsDireccion());
-        nitProvEdit_txt.setText(Proveedor.getListaProveedores().get(posEditProv).getsId());
+        this.indexModProv_tbl = CheckBoxProv(listaProveedoresEdit_tbl, selecEditProv_chbx);
+        EditProv_btn.setEnabled(true); 
+        nombreProvEdit_txt.setText(Proveedor.getListaProveedores().get(Integer.parseInt(indexModProv_tbl.toString())).getsNombre());
+        telefonoProvEdit_txt.setText(Proveedor.getListaProveedores().get(Integer.parseInt(indexModProv_tbl.toString())).getsTelefono());
+        serviProvEdit_txt.setText(Proveedor.getListaProveedores().get(Integer.parseInt(indexModProv_tbl.toString())).getsServicio());
+        direcProvEdit_txt.setText(Proveedor.getListaProveedores().get(Integer.parseInt(indexModProv_tbl.toString())).getsDireccion());
+        nitProvEdit_txt.setText(Proveedor.getListaProveedores().get(Integer.parseInt(indexModProv_tbl.toString())).getsId());
     }//GEN-LAST:event_listaProveedoresEdit_tblMouseClicked
 
     private void listaProvEliminar_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProvEliminar_tblMouseClicked
-        int posEliminarProv = 0;
-        for (int i = 0; i < Proveedor.getListaProveedores().size(); i++) {
-            if (listaProvEliminar_tbl.getValueAt(listaProvEliminar_tbl.getSelectedRow(), 0).equals(Proveedor.getListaProveedores().get(i).getsNombre())) {
-                posEliminarProv = i;
-            }
-        }
         //igualar posicion global con posicion local
-        this.indexElim_tbl = posEliminarProv;
-        selecPanEliminar_chbx.setSelected(true);
-        selecEliminarProv_chbx.setText(Proveedor.getListaProveedores().get(posEliminarProv).getsNombre());
+        this.indexElim_tbl = CheckBoxProv(listaProvEliminar_tbl, selecEliminarProv_chbx);
     }//GEN-LAST:event_listaProvEliminar_tblMouseClicked
 
     private void consultPanVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanVenta_btnActionPerformed
@@ -1744,23 +1717,38 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_EliminarProv_btnActionPerformed
 
     private void listaPanesConsult_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaPanesConsult_tblMouseClicked
+        CheckBoxProducto(listaPanesConsult_tbl, selecConsultPan_chbx);
+    }//GEN-LAST:event_listaPanesConsult_tblMouseClicked
+
+    private void listaProvConsult_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProvConsult_tblMouseClicked
+        CheckBoxProv(listaProvConsult_tbl, selecConsultProv_chbx);
+    }//GEN-LAST:event_listaProvConsult_tblMouseClicked
+
+    private void listaProdConsultVentas_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProdConsultVentas_tblMouseClicked
+        CheckBoxProducto(listaProdConsultVentas_tbl, selecProdConsultVenta_chbx);
+    }//GEN-LAST:event_listaProdConsultVentas_tblMouseClicked
+
+    private int CheckBoxProducto(JTable Tabla, JCheckBox Check){
         int posConsult = 0;
         for (int i = 0; i < paco.getListaPan().size(); i++) {
-            if (listaPanesEliminar_tbl.getValueAt(listaPanesConsult_tbl.getSelectedRow(), 0).equals(paco.getListaPan().get(i).getNombreTipo())) {
+            if (Tabla.getValueAt(Tabla.getSelectedRow(), 0).equals(paco.getListaPan().get(i).getNombreTipo())) {
                 posConsult = i;
             }
         }
-        selecConsultPan_chbx.setText(paco.getListaPan().get(posConsult).getNombreTipo());    }//GEN-LAST:event_listaPanesConsult_tblMouseClicked
-
-    private void listaProvConsult_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProvConsult_tblMouseClicked
-        int posConsultProv = 0;
+        Check.setSelected(true);
+        return posConsult;
+    }
+    private int CheckBoxProv(JTable Tabla, JCheckBox Check){
+        int posConsult = 0;
         for (int i = 0; i < Proveedor.getListaProveedores().size(); i++) {
-            if (listaProveedoresEdit_tbl.getValueAt(listaProvConsult_tbl.getSelectedRow(), 0).equals(Proveedor.getListaProveedores().get(i).getsNombre())) {
-                posConsultProv = i;
+            if (Tabla.getValueAt(Tabla.getSelectedRow(), 0).equals(Proveedor.getListaProveedores().get(i).getsNombre())) {
+                posConsult = i;
             }
         }
-        selecConsultProv_chbx.setText(Proveedor.getListaProveedores().get(posConsultProv).getsNombre());    }//GEN-LAST:event_listaProvConsult_tblMouseClicked
-
+        Check.setSelected(true);
+        return posConsult;
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
