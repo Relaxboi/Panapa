@@ -2,7 +2,9 @@ package View;
 
 import Controller.*;
 import Model.*;
+import java.awt.HeadlessException;
 import java.util.ArrayList;
+import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -11,12 +13,15 @@ public class View1 extends javax.swing.JFrame {
 
     private DefaultTableModel Consulta;
     //instancia de los modelos
-    PanController paco = new PanController();
+    ProductoController paco = new ProductoController();
     ProveedorController Proveedor = new ProveedorController();
+    VentaController Compra = new VentaController();
     //Indice
     Object indexMod_tbl = null;
     Object indexElim_tbl = null;
     Object indexModProv_tbl = null;
+    Object indexProdConsult_tbl = null;
+    Object indexProdVenta_tbl = null;
     //PACO es instanciar al PanController 
 
     public View1() {
@@ -1174,6 +1179,11 @@ public class View1 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        listaProdVenta_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaProdVenta_tblMouseClicked(evt);
+            }
+        });
         jScrollPane10.setViewportView(listaProdVenta_tbl);
         if (listaProdVenta_tbl.getColumnModel().getColumnCount() > 0) {
             listaProdVenta_tbl.getColumnModel().getColumn(0).setResizable(false);
@@ -1209,6 +1219,11 @@ public class View1 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        listaProdConsultVentas_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaProdConsultVentas_tblMouseClicked(evt);
+            }
+        });
         jScrollPane11.setViewportView(listaProdConsultVentas_tbl);
         if (listaProdConsultVentas_tbl.getColumnModel().getColumnCount() > 0) {
             listaProdConsultVentas_tbl.getColumnModel().getColumn(0).setResizable(false);
@@ -1227,10 +1242,20 @@ public class View1 extends javax.swing.JFrame {
         agregarProdVenta_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cart.png"))); // NOI18N
         agregarProdVenta_btn.setText("Agregar");
         agregarProdVenta_btn.setEnabled(false);
+        agregarProdVenta_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarProdVenta_btnActionPerformed(evt);
+            }
+        });
 
         retirarProdVenta_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/box.png"))); // NOI18N
         retirarProdVenta_btn.setText("Retirar");
         retirarProdVenta_btn.setEnabled(false);
+        retirarProdVenta_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                retirarProdVenta_btnActionPerformed(evt);
+            }
+        });
 
         selecProdVenta_chbx.setText("Seleccionado");
         selecProdVenta_chbx.setEnabled(false);
@@ -1238,10 +1263,20 @@ public class View1 extends javax.swing.JFrame {
         comprarVenta_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cash-register.png"))); // NOI18N
         comprarVenta_btn.setText("Comprar");
         comprarVenta_btn.setEnabled(false);
+        comprarVenta_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comprarVenta_btnActionPerformed(evt);
+            }
+        });
 
         cancelarVenta_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cancelar.png"))); // NOI18N
         cancelarVenta_btn.setText("Cancelar Compra");
         cancelarVenta_btn.setEnabled(false);
+        cancelarVenta_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarVenta_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout VentasLayout = new javax.swing.GroupLayout(Ventas);
         Ventas.setLayout(VentasLayout);
@@ -1367,9 +1402,9 @@ public class View1 extends javax.swing.JFrame {
     private void registrarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarPan
         if (Val_Panes(nombrePanReg_txt.getText(), precioPanReg_txt.getText(), cantidadPanReg_txt.getText())) {
             if (provePanReg_cmbx.getSelectedItem().toString().equals("Seleccione")) {
-                paco.Create(new Pan(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), "f2"));
+                paco.Create(new Producto(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), "f2"));
             } else {
-                paco.Create(new Pan(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), "f2", provePanReg_cmbx.getSelectedItem().toString()));
+                paco.Create(new Producto(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), "f2", provePanReg_cmbx.getSelectedItem().toString()));
             }
             Listas();
             VaciarReg_txt();
@@ -1439,6 +1474,9 @@ public class View1 extends javax.swing.JFrame {
         Consulta = (DefaultTableModel) listaProdConsultVentas_tbl.getModel();
         paco.Tablas(Consulta, paco.Listar());
         Consulta = null;
+        Consulta = (DefaultTableModel) listaProdVenta_tbl.getModel();
+        paco.Tablas(Consulta, Compra.ListarVenta());
+        Consulta = null;
         //Llenar Combobox
         ComboBox();
     }
@@ -1458,32 +1496,24 @@ public class View1 extends javax.swing.JFrame {
 
     private void selecProdModif_tbl(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selecProdModif_tbl
         // rowAtPoint -> ( EVENTO 'evt' . getPoint() 'posicion' );
-        int posEditPan = 0;
-        for (int i = 0; i < paco.getListaPan().size(); i++) {
-            if (listaPanesEdit_tbl.getValueAt(listaPanesEdit_tbl.getSelectedRow(), 0).equals(paco.getListaPan().get(i).getNombreTipo())) {
-                posEditPan = i;
-            }
-        }
-        this.indexMod_tbl = posEditPan;
-        selecEditPan_chbx.setSelected(true);
+        this.indexMod_tbl = CheckBoxProducto(listaPanesEdit_tbl, selecEditPan_chbx);
         EditPan_btn.setEnabled(true);
-        nombrePanEdit_txt.setText(paco.getListaPan().get(posEditPan).getNombreTipo());
-
-        cantidadPanEdit_txt.setText(paco.getListaPan().get(posEditPan).getCantidad() + "");
-        precioPanEdit_txt.setText(paco.getListaPan().get(posEditPan).getPrecio() + "");
+        nombrePanEdit_txt.setText(paco.getListaPan().get(Integer.parseInt(indexMod_tbl.toString())).getNombreTipo());
+        cantidadPanEdit_txt.setText(paco.getListaPan().get(Integer.parseInt(indexMod_tbl.toString())).getCantidad() + "");
+        precioPanEdit_txt.setText(paco.getListaPan().get(Integer.parseInt(indexMod_tbl.toString())).getPrecio() + "");
 
     }//GEN-LAST:event_selecProdModif_tbl
 
     private void modificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarPan
         int posEditPan = Integer.parseInt("" + this.indexMod_tbl);
         if (Val_Panes(nombrePanEdit_txt.getText(), precioPanEdit_txt.getText(), cantidadPanEdit_txt.getText())) {
-            paco.Uptade(posEditPan, new Pan(
+            paco.Uptade(posEditPan, new Producto(
                     nombrePanEdit_txt.getText().toUpperCase(),
                     Integer.parseInt(precioPanEdit_txt.getText()),
                     Integer.parseInt(cantidadPanEdit_txt.getText()), "")
             );
             Listas();
-            ObjEditPan(false);
+            ObjEditPan(true);
             VaciarMod_txt();
         }
     }//GEN-LAST:event_modificarPan
@@ -1656,18 +1686,8 @@ public class View1 extends javax.swing.JFrame {
     }
 
     private void selecProdEliminar_tbl(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selecProdEliminar_tbl
-        //Posicion en tabla eliminar
-        int posEliminarProd = 0;
-        for (int i = 0; i < paco.getListaPan().size(); i++) {
-            if (listaPanesEliminar_tbl.getValueAt(listaPanesEliminar_tbl.getSelectedRow(), 0).equals(paco.getListaPan().get(i).getNombreTipo())) {
-                posEliminarProd = i;
-            }
-        }
         //igualar posicion global con posicion local
-        this.indexElim_tbl = posEliminarProd;
-        selecPanEliminar_chbx.setSelected(true);
-        selecPanEliminar_chbx.setText(paco.getListaPan().get(posEliminarProd).getNombreTipo());
-
+        this.indexElim_tbl = CheckBoxProducto(listaPanesEliminar_tbl, selecPanEliminar_chbx);
     }//GEN-LAST:event_selecProdEliminar_tbl
 
     private void eliminarPan_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarPan_btnActionPerformed
@@ -1689,33 +1709,18 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_eliminarPan_btnActionPerformed
 
     private void listaProveedoresEdit_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProveedoresEdit_tblMouseClicked
-        int posEditProv = 0;
-        for (int i = 0; i < Proveedor.getListaProveedores().size(); i++) {
-            if (listaProveedoresEdit_tbl.getValueAt(listaProveedoresEdit_tbl.getSelectedRow(), 0).equals(Proveedor.getListaProveedores().get(i).getsNombre())) {
-                posEditProv = i;
-            }
-        }
-        this.indexModProv_tbl = posEditProv;
-        selecEditProv_chbx.setSelected(true);
+        this.indexModProv_tbl = CheckBoxProv(listaProveedoresEdit_tbl, selecEditProv_chbx);
         EditProv_btn.setEnabled(true);
-        nombreProvEdit_txt.setText(Proveedor.getListaProveedores().get(posEditProv).getsNombre());
-        telefonoProvEdit_txt.setText(Proveedor.getListaProveedores().get(posEditProv).getsTelefono());
-        serviProvEdit_txt.setText(Proveedor.getListaProveedores().get(posEditProv).getsServicio());
-        direcProvEdit_txt.setText(Proveedor.getListaProveedores().get(posEditProv).getsDireccion());
-        nitProvEdit_txt.setText(Proveedor.getListaProveedores().get(posEditProv).getsId());
+        nombreProvEdit_txt.setText(Proveedor.getListaProveedores().get(Integer.parseInt(indexModProv_tbl.toString())).getsNombre());
+        telefonoProvEdit_txt.setText(Proveedor.getListaProveedores().get(Integer.parseInt(indexModProv_tbl.toString())).getsTelefono());
+        serviProvEdit_txt.setText(Proveedor.getListaProveedores().get(Integer.parseInt(indexModProv_tbl.toString())).getsServicio());
+        direcProvEdit_txt.setText(Proveedor.getListaProveedores().get(Integer.parseInt(indexModProv_tbl.toString())).getsDireccion());
+        nitProvEdit_txt.setText(Proveedor.getListaProveedores().get(Integer.parseInt(indexModProv_tbl.toString())).getsId());
     }//GEN-LAST:event_listaProveedoresEdit_tblMouseClicked
 
     private void listaProvEliminar_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProvEliminar_tblMouseClicked
-        int posEliminarProv = 0;
-        for (int i = 0; i < Proveedor.getListaProveedores().size(); i++) {
-            if (listaProvEliminar_tbl.getValueAt(listaProvEliminar_tbl.getSelectedRow(), 0).equals(Proveedor.getListaProveedores().get(i).getsNombre())) {
-                posEliminarProv = i;
-            }
-        }
         //igualar posicion global con posicion local
-        this.indexElim_tbl = posEliminarProv;
-        selecPanEliminar_chbx.setSelected(true);
-        selecEliminarProv_chbx.setText(Proveedor.getListaProveedores().get(posEliminarProv).getsNombre());
+        this.indexElim_tbl = CheckBoxProv(listaProvEliminar_tbl, selecEliminarProv_chbx);
     }//GEN-LAST:event_listaProvEliminar_tblMouseClicked
 
     private void consultPanVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanVenta_btnActionPerformed
@@ -1744,24 +1749,129 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_EliminarProv_btnActionPerformed
 
     private void listaPanesConsult_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaPanesConsult_tblMouseClicked
-        int posConsult = 0;
-        for (int i = 0; i < paco.getListaPan().size(); i++) {
-            if (listaPanesEliminar_tbl.getValueAt(listaPanesConsult_tbl.getSelectedRow(), 0).equals(paco.getListaPan().get(i).getNombreTipo())) {
-                posConsult = i;
-            }
-        }
-        selecConsultPan_chbx.setText(paco.getListaPan().get(posConsult).getNombreTipo());
+        CheckBoxProducto(listaPanesConsult_tbl, selecConsultPan_chbx);
     }//GEN-LAST:event_listaPanesConsult_tblMouseClicked
 
     private void listaProvConsult_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProvConsult_tblMouseClicked
-        int posConsultProv = 0;
-        for (int i = 0; i < Proveedor.getListaProveedores().size(); i++) {
-            if (listaProveedoresEdit_tbl.getValueAt(listaProvConsult_tbl.getSelectedRow(), 0).equals(Proveedor.getListaProveedores().get(i).getsNombre())) {
-                posConsultProv = i;
+        CheckBoxProv(listaProvConsult_tbl, selecConsultProv_chbx);
+    }//GEN-LAST:event_listaProvConsult_tblMouseClicked
+
+    private void listaProdConsultVentas_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProdConsultVentas_tblMouseClicked
+        this.indexProdConsult_tbl = CheckBoxProducto(listaProdConsultVentas_tbl, selecProdConsultVenta_chbx);
+        agregarProdVenta_btn.setEnabled(true);
+        //nombreProdVenta_txt.setEnabled(true);
+        cantidadProdVenta_txt.setEnabled(true);
+    }//GEN-LAST:event_listaProdConsultVentas_tblMouseClicked
+
+    private void agregarProdVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarProdVenta_btnActionPerformed
+        try {
+            if (cantidadProdVenta_txt.getText() == null || "".equals(cantidadProdVenta_txt.getText())) {
+                JOptionPane.showMessageDialog(null, "Ha dejado campos vacios", "ERROR!", 0);
+            } else if (Integer.parseInt(cantidadProdVenta_txt.getText()) <= 0
+                    || paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getCantidad()
+                    < Integer.parseInt(cantidadProdVenta_txt.getText())) {
+                JOptionPane.showMessageDialog(null, "Verifique la cantidad disponible", "ERROR!", 0);
+            } else {
+                cantidadProdVenta_txt.setEnabled(false);
+                selecProdConsultVenta_chbx.setSelected(false);
+                cancelarVenta_btn.setEnabled(true);
+                comprarVenta_btn.setEnabled(true);
+                agregarProdVenta_btn.setEnabled(false);
+                double Ganan = Integer.parseInt(cantidadProdVenta_txt.getText()) * paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getPrecio();
+                Compra.Create(new Producto(paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getNombreTipo(),
+                        paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getPrecio(), Integer.parseInt(cantidadProdVenta_txt.getText()),
+                        paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getId(),
+                        paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getsProveedor(), Ganan));
+                cantidadProdVenta_txt.setText(null);
+                Listas();
+            }
+        } catch (HeadlessException | NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Digite valores Númericos", "ERROR!", 0);
+        }
+    }//GEN-LAST:event_agregarProdVenta_btnActionPerformed
+
+    private void listaProdVenta_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProdVenta_tblMouseClicked
+        this.indexProdVenta_tbl = listaProdVenta_tbl.getSelectedRow();
+        selecProdVenta_chbx.setSelected(true);
+        retirarProdVenta_btn.setEnabled(true);
+    }//GEN-LAST:event_listaProdVenta_tblMouseClicked
+
+    private void retirarProdVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirarProdVenta_btnActionPerformed
+        int opcEditProv = JOptionPane.showConfirmDialog(null, "¿Desea retirar este producto?");
+        switch (opcEditProv) {
+            case 0:
+                retirarProdVenta_btn.setEnabled(false);
+                Compra.RemoveCompra(Integer.parseInt(indexProdVenta_tbl.toString()));
+                selecProdVenta_chbx.setSelected(false);
+                Listas();
+                break;
+        }
+    }//GEN-LAST:event_retirarProdVenta_btnActionPerformed
+
+    private void Cancelar() {
+
+        Compra.getCompraLista().clear();
+        cantidadProdVenta_txt.setEnabled(false);
+        selecProdConsultVenta_chbx.setSelected(false);
+        cancelarVenta_btn.setEnabled(false);
+        comprarVenta_btn.setEnabled(false);
+        agregarProdVenta_btn.setEnabled(false);
+        retirarProdVenta_btn.setEnabled(false);
+        selecProdVenta_chbx.setEnabled(false);
+        Listas();
+
+    }
+
+    private void cancelarVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarVenta_btnActionPerformed
+        int opcEditProv = JOptionPane.showConfirmDialog(null, "¿Desea cancelar la compra?");
+        switch (opcEditProv) {
+            case 0:
+                Cancelar();
+                break;
+        }
+    }//GEN-LAST:event_cancelarVenta_btnActionPerformed
+
+    private void comprarVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comprarVenta_btnActionPerformed
+
+        int opcEditProv = JOptionPane.showConfirmDialog(null, "¿Desea hacer la compra?");
+        switch (opcEditProv) {
+            case 0:
+                Compra.Create(Compra.getCompraLista());
+                for (int i = 0; i < Compra.getCompraLista().size(); i++) {
+                    for (int b = 0; b < paco.getListaPan().size(); b++) {
+                        if (paco.getListaPan().get(b).getNombreTipo().equals(Compra.getCompraLista().get(i).getNombreTipo())) {
+                            paco.getListaPan().get(b).setCantidad(paco.getListaPan().get(b).getCantidad() - Compra.getCompraLista().get(i).getCantidad());
+                            break;
+                        }
+                    }
+                }
+                Cancelar();
+                JOptionPane.showMessageDialog(null, "La compra se realizo con éxito");
+                break;
+        }
+    }//GEN-LAST:event_comprarVenta_btnActionPerformed
+
+    private int CheckBoxProducto(JTable Tabla, JCheckBox Check) {
+        int posConsult = 0;
+        for (int i = 0; i < paco.getListaPan().size(); i++) {
+            if (Tabla.getValueAt(Tabla.getSelectedRow(), 0).equals(paco.getListaPan().get(i).getNombreTipo())) {
+                posConsult = i;
             }
         }
-        selecConsultProv_chbx.setText(Proveedor.getListaProveedores().get(posConsultProv).getsNombre());
-    }//GEN-LAST:event_listaProvConsult_tblMouseClicked
+        Check.setSelected(true);
+        return posConsult;
+    }
+
+    private int CheckBoxProv(JTable Tabla, JCheckBox Check) {
+        int posConsult = 0;
+        for (int i = 0; i < Proveedor.getListaProveedores().size(); i++) {
+            if (Tabla.getValueAt(Tabla.getSelectedRow(), 0).equals(Proveedor.getListaProveedores().get(i).getsNombre())) {
+                posConsult = i;
+            }
+        }
+        Check.setSelected(true);
+        return posConsult;
+    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

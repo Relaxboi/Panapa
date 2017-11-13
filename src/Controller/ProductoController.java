@@ -1,15 +1,15 @@
 package Controller;
 
-import Model.Pan;
+import Model.Producto;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
-public class PanController {
+public class ProductoController {
 
-    ArrayList<Pan> ListaPan = new ArrayList();
+    ArrayList<Producto> ListaPan = new ArrayList();
     ArrayList<Object[]> Panes = new ArrayList();    
 
-    public void Create(Pan Pan1) {//Crea un tipo de pan - datos en cola
+    public void Create(Producto Pan1) {//Crea un tipo de pan - datos en cola
         ListaPan.add(Pan1);
 
     }
@@ -36,7 +36,7 @@ public class PanController {
         return A;
     }
 
-    public void Uptade(int index, Pan p1) {//Actualizar o modificar
+    public void Uptade(int index, Producto p1) {//Actualizar o modificar
         getListaPan().get(index).setNombreTipo(p1.getNombreTipo());
         getListaPan().get(index).setCantidad(p1.getCantidad());
         getListaPan().get(index).setPrecio(p1.getPrecio());
@@ -60,11 +60,11 @@ public class PanController {
     }
 
     //Set and get del ArrayList
-    public ArrayList<Pan> getListaPan() {
+    public ArrayList<Producto> getListaPan() {
         return ListaPan;
     }
 
-    public void setListaPan(ArrayList<Pan> ListaPan) {
+    public void setListaPan(ArrayList<Producto> ListaPan) {
         this.ListaPan = ListaPan;
     }
 
