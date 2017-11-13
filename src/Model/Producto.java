@@ -8,7 +8,7 @@ public class Producto {
     private int cantidad;
     private String id;
     private String sProveedor;
-    private double iGanancias;
+    private double iSubTotal;
 
     //Constructores - Sobrecarga
     public Producto(String nombreTipo, int precio, int cantidad, String id) {
@@ -27,7 +27,7 @@ public class Producto {
         this.cantidad = cantidad;
         this.id = id;
         this.sProveedor = sProveedor;
-        this.iGanancias = iGanancias;
+        this.iSubTotal = iGanancias;
     }
 
     public Producto(String nombreTipo, int precio, int cantidad, String id, String sProveedor) {
@@ -39,11 +39,11 @@ public class Producto {
     }
 
     public double getiGanancias() {
-        return iGanancias;
+        return iSubTotal;
     }
 
     public void setiGanancias(double iGanancias) {
-        this.iGanancias = iGanancias;
+        this.iSubTotal = iGanancias;
     }
 
     public String getsProveedor() {
