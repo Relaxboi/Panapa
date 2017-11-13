@@ -71,6 +71,7 @@ public class View1 extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
+        jToolBar1 = new javax.swing.JToolBar();
         Panel_General = new javax.swing.JTabbedPane();
         Productos = new javax.swing.JTabbedPane();
         Registrar_Producto = new javax.swing.JPanel();
@@ -195,6 +196,8 @@ public class View1 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
 
         jButton1.setText("jButton1");
+
+        jToolBar1.setRollover(true);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -2069,6 +2072,7 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTable listaPanesConsult_tbl;
     private javax.swing.JTable listaPanesEdit_tbl;
     private javax.swing.JTable listaPanesEliminar_tbl;
