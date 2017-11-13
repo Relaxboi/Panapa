@@ -1818,11 +1818,11 @@
                       <Component id="jScrollPane10" min="-2" pref="211" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="totalProdVenta" min="-2" max="-2" attributes="0"/>
-<<<<<<< HEAD
+
                       <EmptySpace pref="43" max="32767" attributes="0"/>
-=======
+
                       <EmptySpace max="-2" attributes="0"/>
->>>>>>> master
+
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
