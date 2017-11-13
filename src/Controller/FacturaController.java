@@ -1,9 +1,7 @@
 
 package Controller;
 
-import Model.Client;
-import Model.Factura;
-import Model.Producto;
+import Model.*;
 import java.util.ArrayList;
 
 public class FacturaController {
