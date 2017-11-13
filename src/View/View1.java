@@ -1844,6 +1844,10 @@ public class View1 extends javax.swing.JFrame {
 
     private void ProveedoresActualizar_panel(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProveedoresActualizar_panel
         Listas();
+        indexEstadistica = null;
+        for(int i=0; i < listaProdVenta_tbl2.getRowCount(); i++){
+            listaProdVenta_tbl2.remove(0);
+        }
     }//GEN-LAST:event_ProveedoresActualizar_panel
 
     private void consultProv_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultProv_btnActionPerformed
@@ -2004,6 +2008,7 @@ public class View1 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Verifique la cantidad disponible", "ERROR!", 0);
             } else {
                 cantidadProdVenta_txt.setEnabled(false);
+                nombreProdVenta_txt.setText(null);
                 selecProdConsultVenta_chbx.setSelected(false);
                 cancelarVenta_btn.setEnabled(true);
                 comprarVenta_btn.setEnabled(true);
@@ -2017,8 +2022,10 @@ public class View1 extends javax.swing.JFrame {
                         paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getPrecio(), Integer.parseInt(cantidadProdVenta_txt.getText()),
                         paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getId(),
                         paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getsProveedor(), Ganan));
-                cantidadProdVenta_txt.setText(null);
+                paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString()))
+                        .setCantidad((paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getCantidad() - Integer.parseInt(cantidadProdVenta_txt.getText())));
                 totalProdVenta.setText("Total de la venta: " + total);
+                cantidadProdVenta_txt.setText(null);
                 Listas();
             }
         } catch (HeadlessException | NumberFormatException e) {
@@ -2086,14 +2093,6 @@ public class View1 extends javax.swing.JFrame {
             switch (opcEditProv) {
                 case 0:
                     Compra.Create(new Factura(Compra.getCompraLista()));
-                    for (int i = 0; i < Compra.getCompraLista().size(); i++) {
-                        for (int b = 0; b < paco.getListaPan().size(); b++) {
-                            if (paco.getListaPan().get(b).getNombreTipo().equals(Compra.getCompraLista().get(i).getNombreTipo())) {
-                                paco.getListaPan().get(b).setCantidad(paco.getListaPan().get(b).getCantidad() - Compra.getCompraLista().get(i).getCantidad());
-                                break;
-                            }
-                        }
-                    }
                     Cancelar();
                     total = 0;
                     totalProdVenta.setText("Total de la venta: " + total);
