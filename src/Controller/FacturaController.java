@@ -1,15 +1,16 @@
 
 package Controller;
 
-import Model.Producto;
+import Model.*;
 import java.util.ArrayList;
 
-public class VentaController {
+public class FacturaController {
     
-    private ArrayList<ArrayList<Producto>> Compra = new ArrayList();
+    private ArrayList<Factura> Compra = new ArrayList();
     private ArrayList<Producto> CompraLista = new ArrayList();
+    private ArrayList<Client> Cliente = new ArrayList();
     
-    public void Create(ArrayList<Producto> Compra){
+    public void Create(Factura Compra){
         
         this.Compra.add(Compra);
         
@@ -18,6 +19,12 @@ public class VentaController {
     public void Create(Producto Compra){
         
         this.CompraLista.add(Compra);
+        
+    }
+    
+    public void Create(Client C1){
+        
+        this.Cliente.add(C1);
         
     }
     
@@ -58,6 +65,16 @@ public class VentaController {
     public void setCompraLista(ArrayList<Producto> CompraLista) {
         this.CompraLista = CompraLista;
     }
+
+    public ArrayList<Factura> getCompra() {
+        return Compra;
+    }
+
+    public void setCompra(ArrayList<Factura> Compra) {
+        this.Compra = Compra;
+    }
+    
+    
     
     
 }

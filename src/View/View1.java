@@ -13,16 +13,16 @@ public class View1 extends javax.swing.JFrame {
 
     private DefaultTableModel Consulta;
     //instancia de los modelos
-   private ProductoController paco = new ProductoController();
-   private ProveedorController Proveedor = new ProveedorController();
-   private VentaController Compra = new VentaController();
+    private ProductoController paco = new ProductoController();
+    private ProveedorController Proveedor = new ProveedorController();
+    private FacturaController Compra = new FacturaController();
     //Indice
-   private Object indexMod_tbl = null;
-   private Object indexElim_tbl = null;
-   private Object indexModProv_tbl = null;
-   private Object indexProdConsult_tbl = null;
-   private Object indexProdVenta_tbl = null;
-   private double total = 0;
+    private Object indexMod_tbl = null;
+    private Object indexElim_tbl = null;
+    private Object indexModProv_tbl = null;
+    private Object indexProdConsult_tbl = null;
+    private Object indexProdVenta_tbl = null;
+    private double total = 0;
     //PACO es instanciar al PanController 
 
     public View1() {
@@ -65,7 +65,7 @@ public class View1 extends javax.swing.JFrame {
 
     }
 
-    //obj
+//obj
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -1290,7 +1290,7 @@ public class View1 extends javax.swing.JFrame {
             }
         });
 
-        totalProdVenta.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        totalProdVenta.setFont(new java.awt.Font("Book Antiqua", 0, 18)); // NOI18N
         totalProdVenta.setText("Total de la venta: 0.0");
 
         nombreClientVenta_txt.setEnabled(false);
@@ -1420,7 +1420,7 @@ public class View1 extends javax.swing.JFrame {
                             .addComponent(nombreProdVenta_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cantidadProdVenta_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(agregarProdVenta_btn))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(retirarProdVenta_btn)
                     .addComponent(selecProdVenta_chbx))
@@ -1432,9 +1432,9 @@ public class View1 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(totalProdVenta)
-                    .addComponent(cancelarVenta_btn))
+                .addComponent(totalProdVenta)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cancelarVenta_btn)
                 .addContainerGap())
             .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VentasLayout.createSequentialGroup()
@@ -1851,6 +1851,9 @@ public class View1 extends javax.swing.JFrame {
                 cancelarVenta_btn.setEnabled(true);
                 comprarVenta_btn.setEnabled(true);
                 agregarProdVenta_btn.setEnabled(false);
+                nombreClientVenta_txt.setEnabled(true);
+                idClientVenta_txt.setEnabled(true);
+                pagoClientVenta_txt.setEnabled(true);
                 double Ganan = Integer.parseInt(cantidadProdVenta_txt.getText()) * paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getPrecio();
                 total += Ganan;
                 Compra.Create(new Producto(paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getNombreTipo(),
@@ -1858,7 +1861,7 @@ public class View1 extends javax.swing.JFrame {
                         paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getId(),
                         paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getsProveedor(), Ganan));
                 cantidadProdVenta_txt.setText(null);
-                totalProdVenta.setText("Total de la venta: "+total);
+                totalProdVenta.setText("Total de la venta: " + total);
                 Listas();
             }
         } catch (HeadlessException | NumberFormatException e) {
@@ -1878,7 +1881,7 @@ public class View1 extends javax.swing.JFrame {
             case 0:
                 retirarProdVenta_btn.setEnabled(false);
                 total -= Compra.getCompraLista().get(Integer.parseInt(indexProdVenta_tbl.toString())).getiGanancias();
-                totalProdVenta.setText("Total de la venta: "+total);
+                totalProdVenta.setText("Total de la venta: " + total);
                 Compra.RemoveCompra(Integer.parseInt(indexProdVenta_tbl.toString()));
                 selecProdVenta_chbx.setSelected(false);
                 nombreProdVenta_txt.setText(null);
@@ -1898,6 +1901,12 @@ public class View1 extends javax.swing.JFrame {
         retirarProdVenta_btn.setEnabled(false);
         selecProdVenta_chbx.setSelected(false);
         nombreEliminarProv_txt.setText(null);
+        nombreClientVenta_txt.setText(null);
+        nombreClientVenta_txt.setEnabled(false);
+        idClientVenta_txt.setText(null);
+        idClientVenta_txt.setEnabled(false);
+        pagoClientVenta_txt.setText(null);
+        pagoClientVenta_txt.setEnabled(false);
         Listas();
 
     }
@@ -1907,7 +1916,7 @@ public class View1 extends javax.swing.JFrame {
         switch (opcEditProv) {
             case 0:
                 total = 0;
-                totalProdVenta.setText("Total de la venta: "+total);
+                totalProdVenta.setText("Total de la venta: " + total);
                 Cancelar();
                 JOptionPane.showMessageDialog(null, "Se cancelo la compra con éxito");
                 break;
@@ -1915,25 +1924,27 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelarVenta_btnActionPerformed
 
     private void comprarVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comprarVenta_btnActionPerformed
-
-        int opcEditProv = JOptionPane.showConfirmDialog(null, "¿Desea hacer la compra?");
-        switch (opcEditProv) {
-            case 0:
-                Compra.Create(Compra.getCompraLista());
-                for (int i = 0; i < Compra.getCompraLista().size(); i++) {
-                    for (int b = 0; b < paco.getListaPan().size(); b++) {
-                        if (paco.getListaPan().get(b).getNombreTipo().equals(Compra.getCompraLista().get(i).getNombreTipo())) {
-                            paco.getListaPan().get(b).setCantidad(paco.getListaPan().get(b).getCantidad() - Compra.getCompraLista().get(i).getCantidad());
-                            break;
+        if (Cliente()) {
+            int opcEditProv = JOptionPane.showConfirmDialog(null, "¿Desea hacer la compra?");
+            switch (opcEditProv) {
+                case 0:
+                    Compra.Create(new Factura(Compra.getCompraLista()));
+                    for (int i = 0; i < Compra.getCompraLista().size(); i++) {
+                        for (int b = 0; b < paco.getListaPan().size(); b++) {
+                            if (paco.getListaPan().get(b).getNombreTipo().equals(Compra.getCompraLista().get(i).getNombreTipo())) {
+                                paco.getListaPan().get(b).setCantidad(paco.getListaPan().get(b).getCantidad() - Compra.getCompraLista().get(i).getCantidad());
+                                break;
+                            }
                         }
                     }
-                }
-                Cancelar();
-                total = 0;
-                totalProdVenta.setText("Total de la venta: "+total);
-                JOptionPane.showMessageDialog(null, "La compra se realizo con éxito");
-                break;
+                    Cancelar();
+                    total = 0;
+                    totalProdVenta.setText("Total de la venta: " + total);
+                    JOptionPane.showMessageDialog(null, "La compra se realizo con éxito");
+                    break;
+            }
         }
+
     }//GEN-LAST:event_comprarVenta_btnActionPerformed
 
     private int CheckBoxProducto(JTable Tabla, JCheckBox Check) {
@@ -1956,6 +1967,28 @@ public class View1 extends javax.swing.JFrame {
         }
         Check.setSelected(true);
         return posConsult;
+    }
+
+    private boolean Cliente() {
+        boolean V = true;
+        try {
+            if (nombreClientVenta_txt.getText() == null || nombreClientVenta_txt.getText().equals("")
+                    || idClientVenta_txt.getText() == null || idClientVenta_txt.getText().equals("")
+                    || pagoClientVenta_txt.getText() == null || pagoClientVenta_txt.getText().equals("")) {
+                V = false;
+                JOptionPane.showMessageDialog(null, "Ha dejado campos vacios", "ERROR!", 0);
+            } else if (Integer.parseInt(pagoClientVenta_txt.getText()) <= 0 || Integer.parseInt(pagoClientVenta_txt.getText()) < total) {
+                JOptionPane.showMessageDialog(null, "Verifique el pago", "ERROR!", 0);
+                V = false;
+            } else {
+                Compra.Create(new Client(nombreClientVenta_txt.getText().toUpperCase(), idClientVenta_txt.getText().toUpperCase(), Integer.parseInt(pagoClientVenta_txt.getText()),
+                        (Integer.parseInt(pagoClientVenta_txt.getText()) - total)));
+            }
+        } catch (HeadlessException | NumberFormatException e) {
+            V = false;
+            JOptionPane.showMessageDialog(null, "Digite valores Númericos", "ERROR!", 0);
+        }
+        return V;
     }
 
     public static void main(String args[]) {
