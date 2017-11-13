@@ -1,6 +1,5 @@
-
-
 package View;
+
 import Controller.*;
 import Model.*;
 import java.awt.HeadlessException;
@@ -1216,8 +1215,10 @@ public class View1 extends javax.swing.JFrame {
         jScrollPane10.setViewportView(listaProdVenta_tbl);
         if (listaProdVenta_tbl.getColumnModel().getColumnCount() > 0) {
             listaProdVenta_tbl.getColumnModel().getColumn(0).setResizable(false);
-            listaProdVenta_tbl.getColumnModel().getColumn(1).setResizable(false);
-            listaProdVenta_tbl.getColumnModel().getColumn(2).setResizable(false);
+            listaProdVenta_tbl.getColumnModel().getColumn(1).setMinWidth(50);
+            listaProdVenta_tbl.getColumnModel().getColumn(1).setMaxWidth(50);
+            listaProdVenta_tbl.getColumnModel().getColumn(2).setMinWidth(50);
+            listaProdVenta_tbl.getColumnModel().getColumn(2).setMaxWidth(50);
         }
 
         selecProdConsultVenta_chbx.setText("Seleccionado");
@@ -1256,8 +1257,10 @@ public class View1 extends javax.swing.JFrame {
         jScrollPane11.setViewportView(listaProdConsultVentas_tbl);
         if (listaProdConsultVentas_tbl.getColumnModel().getColumnCount() > 0) {
             listaProdConsultVentas_tbl.getColumnModel().getColumn(0).setResizable(false);
-            listaProdConsultVentas_tbl.getColumnModel().getColumn(1).setResizable(false);
-            listaProdConsultVentas_tbl.getColumnModel().getColumn(2).setResizable(false);
+            listaProdConsultVentas_tbl.getColumnModel().getColumn(1).setMinWidth(50);
+            listaProdConsultVentas_tbl.getColumnModel().getColumn(1).setMaxWidth(50);
+            listaProdConsultVentas_tbl.getColumnModel().getColumn(2).setMinWidth(50);
+            listaProdConsultVentas_tbl.getColumnModel().getColumn(2).setMaxWidth(50);
         }
 
         jLabel13.setText("Producto :");
@@ -1845,7 +1848,7 @@ public class View1 extends javax.swing.JFrame {
     private void ProveedoresActualizar_panel(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProveedoresActualizar_panel
         Listas();
         indexEstadistica = null;
-        for(int i=0; i < listaProdVenta_tbl2.getRowCount(); i++){
+        for (int i = 0; i < listaProdVenta_tbl2.getRowCount(); i++) {
             listaProdVenta_tbl2.remove(0);
         }
     }//GEN-LAST:event_ProveedoresActualizar_panel
@@ -2046,6 +2049,13 @@ public class View1 extends javax.swing.JFrame {
                 retirarProdVenta_btn.setEnabled(false);
                 total -= Compra.getCompraLista().get(Integer.parseInt(indexProdVenta_tbl.toString())).getiGanancias();
                 totalProdVenta.setText("Total de la venta: " + total);
+                for (int b = 0; b < paco.getListaPan().size(); b++) {
+                    if (paco.getListaPan().get(b).getNombreTipo().equals(Compra.getCompraLista().get(Integer.parseInt(indexProdVenta_tbl.toString())).getNombreTipo())) {
+                        paco.getListaPan().get(b).setCantidad(paco.getListaPan().get(b).getCantidad() + Compra.getCompraLista().get(Integer.parseInt(indexProdVenta_tbl.toString())).getCantidad());
+                        break;
+                    }
+                }
+
                 Compra.RemoveCompra(Integer.parseInt(indexProdVenta_tbl.toString()));
                 selecProdVenta_chbx.setSelected(false);
                 nombreProdVenta_txt.setText(null);
@@ -2081,6 +2091,14 @@ public class View1 extends javax.swing.JFrame {
             case 0:
                 total = 0;
                 totalProdVenta.setText("Total de la venta: " + total);
+                for (int i = 0; i < Compra.getCompraLista().size(); i++) {
+                    for (int b = 0; b < paco.getListaPan().size(); b++) {
+                        if (paco.getListaPan().get(b).getNombreTipo().equals(Compra.getCompraLista().get(i).getNombreTipo())) {
+                            paco.getListaPan().get(b).setCantidad(paco.getListaPan().get(b).getCantidad() + Compra.getCompraLista().get(i).getCantidad());
+                            break;
+                        }
+                    }
+                }
                 Cancelar();
                 JOptionPane.showMessageDialog(null, "Se cancelo la compra con éxito");
                 break;
@@ -2130,7 +2148,7 @@ public class View1 extends javax.swing.JFrame {
         Check.setSelected(true);
         return posConsult;
     }
-    
+
     private int CheckBoxProducto(JTable Tabla, JCheckBox Check) {
         int posConsult = 0;
         for (int i = 0; i < paco.getListaPan().size(); i++) {
