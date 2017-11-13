@@ -1,6 +1,7 @@
 
 package Controller;
 
+import Model.Client;
 import Model.Factura;
 import Model.Producto;
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ public class FacturaController {
     
     private ArrayList<Factura> Compra = new ArrayList();
     private ArrayList<Producto> CompraLista = new ArrayList();
-
+    private ArrayList<Client> Cliente = new ArrayList();
     
     public void Create(Factura Compra){
         
@@ -20,6 +21,12 @@ public class FacturaController {
     public void Create(Producto Compra){
         
         this.CompraLista.add(Compra);
+        
+    }
+    
+    public void Create(Client C1){
+        
+        this.Cliente.add(C1);
         
     }
     
