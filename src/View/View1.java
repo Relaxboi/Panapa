@@ -15,7 +15,7 @@ public class View1 extends javax.swing.JFrame {
     //instancia de los modelos
    private ProductoController paco = new ProductoController();
    private ProveedorController Proveedor = new ProveedorController();
-   private VentaController Compra = new VentaController();
+   private FacturaController Compra = new FacturaController();
     //Indice
    private Object indexMod_tbl = null;
    private Object indexElim_tbl = null;
@@ -1280,7 +1280,7 @@ public class View1 extends javax.swing.JFrame {
             }
         });
 
-        totalProdVenta.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        totalProdVenta.setFont(new java.awt.Font("Book Antiqua", 0, 18)); // NOI18N
         totalProdVenta.setText("Total de la venta: ");
 
         javax.swing.GroupLayout VentasLayout = new javax.swing.GroupLayout(Ventas);
@@ -1371,7 +1371,7 @@ public class View1 extends javax.swing.JFrame {
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(totalProdVenta)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
             .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VentasLayout.createSequentialGroup()
                     .addContainerGap(120, Short.MAX_VALUE)
@@ -1855,7 +1855,7 @@ public class View1 extends javax.swing.JFrame {
         int opcEditProv = JOptionPane.showConfirmDialog(null, "¿Desea hacer la compra?");
         switch (opcEditProv) {
             case 0:
-                Compra.Create(Compra.getCompraLista());
+                Compra.Create(new Factura(Compra.getCompraLista()));
                 for (int i = 0; i < Compra.getCompraLista().size(); i++) {
                     for (int b = 0; b < paco.getListaPan().size(); b++) {
                         if (paco.getListaPan().get(b).getNombreTipo().equals(Compra.getCompraLista().get(i).getNombreTipo())) {
