@@ -1807,9 +1807,6 @@
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="listaProdVenta_tblMouseClicked"/>
-                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1875,9 +1872,6 @@
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
-                  <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="listaProdConsultVentas_tblMouseClicked"/>
-                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1909,9 +1903,6 @@
                 <Property name="text" type="java.lang.String" value="Agregar"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agregarProdVenta_btnActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="retirarProdVenta_btn">
               <Properties>
@@ -1921,9 +1912,6 @@
                 <Property name="text" type="java.lang.String" value="Retirar"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="retirarProdVenta_btnActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JCheckBox" name="selecProdVenta_chbx">
               <Properties>
@@ -1939,9 +1927,6 @@
                 <Property name="text" type="java.lang.String" value="Comprar"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comprarVenta_btnActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="cancelarVenta_btn">
               <Properties>
@@ -1951,9 +1936,6 @@
                 <Property name="text" type="java.lang.String" value="Cancelar Compra"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelarVenta_btnActionPerformed"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>

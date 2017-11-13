@@ -1,49 +1,31 @@
 //Intanciando el pan
 package Model;
 
-public class Producto {
+public class Pan {
 
     private String nombreTipo;
     private int precio;
     private int cantidad;
     private String id;
     private String sProveedor;
-    private double iGanancias;
 
     //Constructores - Sobrecarga
-    public Producto(String nombreTipo, int precio, int cantidad, String id) {
+    public Pan(String nombreTipo, int precio, int cantidad, String id) {
         this.nombreTipo = nombreTipo;
         this.precio = precio;
         this.cantidad = cantidad;
         this.id = id;
     }
 
-    public Producto() {
+    public Pan() {
     }
 
-    public Producto(String nombreTipo, int precio, int cantidad, String id, String sProveedor, double iGanancias) {
-        this.nombreTipo = nombreTipo;
-        this.precio = precio;
-        this.cantidad = cantidad;
-        this.id = id;
-        this.sProveedor = sProveedor;
-        this.iGanancias = iGanancias;
-    }
-
-    public Producto(String nombreTipo, int precio, int cantidad, String id, String sProveedor) {
+    public Pan(String nombreTipo, int precio, int cantidad, String id, String sProveedor) {
         this.nombreTipo = nombreTipo;
         this.precio = precio;
         this.cantidad = cantidad;
         this.id = id;
         this.sProveedor = sProveedor;
-    }
-
-    public double getiGanancias() {
-        return iGanancias;
-    }
-
-    public void setiGanancias(double iGanancias) {
-        this.iGanancias = iGanancias;
     }
 
     public String getsProveedor() {
