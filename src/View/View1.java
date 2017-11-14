@@ -5,6 +5,7 @@ import Model.*;
 import static java.awt.Event.ENTER;
 import java.awt.HeadlessException;
 import java.util.ArrayList;
+import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -371,6 +372,11 @@ public class View1 extends javax.swing.JFrame {
                 selecProdModif_tbl(evt);
             }
         });
+        listaPanesEdit_tbl.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                listaPanesEdit_tblKeyPressed(evt);
+            }
+        });
         jScrollPane2.setViewportView(listaPanesEdit_tbl);
         if (listaPanesEdit_tbl.getColumnModel().getColumnCount() > 0) {
             listaPanesEdit_tbl.getColumnModel().getColumn(0).setResizable(false);
@@ -522,6 +528,11 @@ public class View1 extends javax.swing.JFrame {
                 nombrePanConsult_txtActionPerformed(evt);
             }
         });
+        nombrePanConsult_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nombrePanConsult_txtKeyPressed(evt);
+            }
+        });
 
         consultPan_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.png"))); // NOI18N
         consultPan_btn.setText("Consultar");
@@ -620,12 +631,23 @@ public class View1 extends javax.swing.JFrame {
                 selecProdEliminar_tbl(evt);
             }
         });
+        listaPanesEliminar_tbl.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                listaPanesEliminar_tblKeyPressed(evt);
+            }
+        });
         jScrollPane4.setViewportView(listaPanesEliminar_tbl);
         if (listaPanesEliminar_tbl.getColumnModel().getColumnCount() > 0) {
             listaPanesEliminar_tbl.getColumnModel().getColumn(0).setResizable(false);
             listaPanesEliminar_tbl.getColumnModel().getColumn(1).setResizable(false);
             listaPanesEliminar_tbl.getColumnModel().getColumn(2).setResizable(false);
         }
+
+        nombrePanEliminar_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nombrePanEliminar_txtKeyPressed(evt);
+            }
+        });
 
         jLabel9.setText("Buscar :");
 
@@ -838,6 +860,12 @@ public class View1 extends javax.swing.JFrame {
         selecEditProv_chbx.setText("Seleccionado");
         selecEditProv_chbx.setEnabled(false);
 
+        nombreProvConsultEdit_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nombreProvConsultEdit_txtKeyPressed(evt);
+            }
+        });
+
         jLabel16.setText("Buscar :");
 
         listaProveedoresEdit_tbl.setModel(new javax.swing.table.DefaultTableModel(
@@ -859,6 +887,11 @@ public class View1 extends javax.swing.JFrame {
         listaProveedoresEdit_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 listaProveedoresEdit_tblMouseClicked(evt);
+            }
+        });
+        listaProveedoresEdit_tbl.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                listaProveedoresEdit_tblKeyPressed(evt);
             }
         });
         jScrollPane6.setViewportView(listaProveedoresEdit_tbl);
@@ -1050,6 +1083,11 @@ public class View1 extends javax.swing.JFrame {
                 nombreProvConsult_txtActionPerformed(evt);
             }
         });
+        nombreProvConsult_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nombreProvConsult_txtKeyPressed(evt);
+            }
+        });
 
         consultProv_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.png"))); // NOI18N
         consultProv_btn.setText("Consultar");
@@ -1125,6 +1163,12 @@ public class View1 extends javax.swing.JFrame {
 
         Proveedores.addTab("Consultar Prooverdor", Consultar_Proveedores);
 
+        nombreEliminarProv_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nombreEliminarProv_txtKeyPressed(evt);
+            }
+        });
+
         jLabel18.setText("Buscar :");
 
         selecEliminarProv_chbx.setText("Seleccionado");
@@ -1157,6 +1201,11 @@ public class View1 extends javax.swing.JFrame {
         listaProvEliminar_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 listaProvEliminar_tblMouseClicked(evt);
+            }
+        });
+        listaProvEliminar_tbl.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                listaProvEliminar_tblKeyPressed(evt);
             }
         });
         jScrollPane8.setViewportView(listaProvEliminar_tbl);
@@ -1254,6 +1303,12 @@ public class View1 extends javax.swing.JFrame {
         selecProdConsultVenta_chbx.setEnabled(false);
 
         jLabel12.setText("Buscar :");
+
+        nombrePanConsultVenta_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nombrePanConsultVenta_txtKeyPressed(evt);
+            }
+        });
 
         consultPanVenta_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.png"))); // NOI18N
         consultPanVenta_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -2224,40 +2279,68 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_Panel_GeneralMouseClicked
 
     private void cantidadPanReg_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cantidadPanReg_txtKeyPressed
-        if(evt.getKeyChar() == ENTER){
-            registrarPan_btn.doClick();
-        }
+        EventoEnter(evt, registrarPan_btn);
     }//GEN-LAST:event_cantidadPanReg_txtKeyPressed
 
     private void cantidadPanEdit_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cantidadPanEdit_txtKeyPressed
-        if(evt.getKeyChar() == ENTER){
-            GuardarEditPan_btn.doClick();
-        }
+        EventoEnter(evt, GuardarEditPan_btn);
     }//GEN-LAST:event_cantidadPanEdit_txtKeyPressed
 
     private void direcProvReg_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_direcProvReg_txtKeyPressed
-        if(evt.getKeyChar() == ENTER){
-            registrarProv_btn.doClick();
-        }
+        EventoEnter(evt, registrarProv_btn);
     }//GEN-LAST:event_direcProvReg_txtKeyPressed
 
     private void cantidadProdVenta_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cantidadProdVenta_txtKeyPressed
-        if(evt.getKeyChar() == ENTER){
-            agregarProdVenta_btn.doClick();
-        }
+        EventoEnter(evt, agregarProdVenta_btn);
     }//GEN-LAST:event_cantidadProdVenta_txtKeyPressed
 
     private void pagoClientVenta_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pagoClientVenta_txtKeyPressed
-        if(evt.getKeyChar() == ENTER){
-            comprarVenta_btn.doClick();
-        }
+        EventoEnter(evt, comprarVenta_btn);
     }//GEN-LAST:event_pagoClientVenta_txtKeyPressed
 
     private void direcProvEdit_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_direcProvEdit_txtKeyPressed
-        if(evt.getKeyChar() == ENTER){
-            GuardarEditProv_btn.doClick();
-        }
+        EventoEnter(evt, GuardarEditProv_btn);
     }//GEN-LAST:event_direcProvEdit_txtKeyPressed
+
+    private void listaPanesEdit_tblKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_listaPanesEdit_tblKeyPressed
+        EventoEnter(evt, EditPan_btn);
+    }//GEN-LAST:event_listaPanesEdit_tblKeyPressed
+
+    private void nombrePanConsult_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombrePanConsult_txtKeyPressed
+        EventoEnter(evt, consultPan_btn);
+    }//GEN-LAST:event_nombrePanConsult_txtKeyPressed
+
+    private void nombrePanEliminar_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombrePanEliminar_txtKeyPressed
+        EventoEnter(evt, consultPanEliminar_btn);
+    }//GEN-LAST:event_nombrePanEliminar_txtKeyPressed
+
+    private void listaPanesEliminar_tblKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_listaPanesEliminar_tblKeyPressed
+        EventoEnter(evt, eliminarPan_btn);
+    }//GEN-LAST:event_listaPanesEliminar_tblKeyPressed
+
+    private void nombreProvConsultEdit_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreProvConsultEdit_txtKeyPressed
+        EventoEnter(evt, consultProvEdit_btn);
+    }//GEN-LAST:event_nombreProvConsultEdit_txtKeyPressed
+
+    private void listaProveedoresEdit_tblKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_listaProveedoresEdit_tblKeyPressed
+        EventoEnter(evt, EditProv_btn);
+    }//GEN-LAST:event_listaProveedoresEdit_tblKeyPressed
+
+    private void nombreProvConsult_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreProvConsult_txtKeyPressed
+        EventoEnter(evt, consultProv_btn);
+    }//GEN-LAST:event_nombreProvConsult_txtKeyPressed
+
+    private void nombreEliminarProv_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreEliminarProv_txtKeyPressed
+        EventoEnter(evt, consultProvEliminar_btn);
+    }//GEN-LAST:event_nombreEliminarProv_txtKeyPressed
+
+    private void listaProvEliminar_tblKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_listaProvEliminar_tblKeyPressed
+        EventoEnter(evt, EliminarProv_btn);
+    }//GEN-LAST:event_listaProvEliminar_tblKeyPressed
+
+    private void nombrePanConsultVenta_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombrePanConsultVenta_txtKeyPressed
+        EventoEnter(evt, consultPanVenta_btn);
+    }//GEN-LAST:event_nombrePanConsultVenta_txtKeyPressed
 
     private int CheckBoxVenta(JTable Tabla, JCheckBox Check) {
         int posConsult = 0;
@@ -2268,6 +2351,12 @@ public class View1 extends javax.swing.JFrame {
         }
         Check.setSelected(true);
         return posConsult;
+    }
+    
+    private void EventoEnter(java.awt.event.KeyEvent evt,JButton boton){
+        if(evt.getKeyChar() == ENTER){
+            boton.doClick();
+        }
     }
 
     private int CheckBoxProducto(JTable Tabla, JCheckBox Check) {

@@ -438,6 +438,7 @@
                       </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="selecProdModif_tbl"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="listaPanesEdit_tblKeyPressed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -595,6 +596,7 @@
                 <Component class="javax.swing.JTextField" name="nombrePanConsult_txt">
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombrePanConsult_txtActionPerformed"/>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nombrePanConsult_txtKeyPressed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="consultPan_btn">
@@ -762,11 +764,15 @@
                       </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="selecProdEliminar_tbl"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="listaPanesEliminar_tblKeyPressed"/>
                       </Events>
                     </Component>
                   </SubComponents>
                 </Container>
                 <Component class="javax.swing.JTextField" name="nombrePanEliminar_txt">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nombrePanEliminar_txtKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel9">
                   <Properties>
@@ -1206,6 +1212,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="nombreProvConsultEdit_txt">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nombreProvConsultEdit_txtKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel16">
                   <Properties>
@@ -1265,6 +1274,7 @@
                       </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="listaProveedoresEdit_tblMouseClicked"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="listaProveedoresEdit_tblKeyPressed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -1437,6 +1447,7 @@
                 <Component class="javax.swing.JTextField" name="nombreProvConsult_txt">
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreProvConsult_txtActionPerformed"/>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nombreProvConsult_txtKeyPressed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="consultProv_btn">
@@ -1572,6 +1583,9 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JTextField" name="nombreEliminarProv_txt">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nombreEliminarProv_txtKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel18">
                   <Properties>
@@ -1648,6 +1662,7 @@
                       </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="listaProvEliminar_tblMouseClicked"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="listaProvEliminar_tblKeyPressed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -1916,6 +1931,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="nombrePanConsultVenta_txt">
+              <Events>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nombrePanConsultVenta_txtKeyPressed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="consultPanVenta_btn">
               <Properties>
