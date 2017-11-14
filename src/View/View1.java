@@ -1215,10 +1215,10 @@ public class View1 extends javax.swing.JFrame {
         jScrollPane10.setViewportView(listaProdVenta_tbl);
         if (listaProdVenta_tbl.getColumnModel().getColumnCount() > 0) {
             listaProdVenta_tbl.getColumnModel().getColumn(0).setResizable(false);
-            listaProdVenta_tbl.getColumnModel().getColumn(1).setMinWidth(50);
-            listaProdVenta_tbl.getColumnModel().getColumn(1).setMaxWidth(50);
-            listaProdVenta_tbl.getColumnModel().getColumn(2).setMinWidth(50);
-            listaProdVenta_tbl.getColumnModel().getColumn(2).setMaxWidth(50);
+            listaProdVenta_tbl.getColumnModel().getColumn(1).setMinWidth(60);
+            listaProdVenta_tbl.getColumnModel().getColumn(1).setMaxWidth(60);
+            listaProdVenta_tbl.getColumnModel().getColumn(2).setMinWidth(60);
+            listaProdVenta_tbl.getColumnModel().getColumn(2).setMaxWidth(60);
         }
 
         selecProdConsultVenta_chbx.setText("Seleccionado");
@@ -1257,10 +1257,10 @@ public class View1 extends javax.swing.JFrame {
         jScrollPane11.setViewportView(listaProdConsultVentas_tbl);
         if (listaProdConsultVentas_tbl.getColumnModel().getColumnCount() > 0) {
             listaProdConsultVentas_tbl.getColumnModel().getColumn(0).setResizable(false);
-            listaProdConsultVentas_tbl.getColumnModel().getColumn(1).setMinWidth(50);
-            listaProdConsultVentas_tbl.getColumnModel().getColumn(1).setMaxWidth(50);
-            listaProdConsultVentas_tbl.getColumnModel().getColumn(2).setMinWidth(50);
-            listaProdConsultVentas_tbl.getColumnModel().getColumn(2).setMaxWidth(50);
+            listaProdConsultVentas_tbl.getColumnModel().getColumn(1).setMinWidth(55);
+            listaProdConsultVentas_tbl.getColumnModel().getColumn(1).setMaxWidth(55);
+            listaProdConsultVentas_tbl.getColumnModel().getColumn(2).setMinWidth(55);
+            listaProdConsultVentas_tbl.getColumnModel().getColumn(2).setMaxWidth(55);
         }
 
         jLabel13.setText("Producto :");
@@ -1349,10 +1349,10 @@ public class View1 extends javax.swing.JFrame {
                     .addGroup(VentasLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(selecProdConsultVenta_chbx)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VentasLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 1, Short.MAX_VALUE)
                         .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VentasLayout.createSequentialGroup()
                                 .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1411,8 +1411,8 @@ public class View1 extends javax.swing.JFrame {
             .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(VentasLayout.createSequentialGroup()
                     .addGap(22, 22, 22)
-                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(373, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(369, Short.MAX_VALUE)))
         );
         VentasLayout.setVerticalGroup(
             VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1465,7 +1465,7 @@ public class View1 extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VentasLayout.createSequentialGroup()
-                    .addContainerGap(104, Short.MAX_VALUE)
+                    .addContainerGap(105, Short.MAX_VALUE)
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(24, 24, 24)))
         );
@@ -1496,11 +1496,16 @@ public class View1 extends javax.swing.JFrame {
         jScrollPane12.setViewportView(listaProdVenta_tbl1);
         if (listaProdVenta_tbl1.getColumnModel().getColumnCount() > 0) {
             listaProdVenta_tbl1.getColumnModel().getColumn(0).setResizable(false);
-            listaProdVenta_tbl1.getColumnModel().getColumn(1).setResizable(false);
-            listaProdVenta_tbl1.getColumnModel().getColumn(2).setResizable(false);
-            listaProdVenta_tbl1.getColumnModel().getColumn(3).setResizable(false);
-            listaProdVenta_tbl1.getColumnModel().getColumn(4).setResizable(false);
-            listaProdVenta_tbl1.getColumnModel().getColumn(5).setResizable(false);
+            listaProdVenta_tbl1.getColumnModel().getColumn(1).setMinWidth(90);
+            listaProdVenta_tbl1.getColumnModel().getColumn(1).setMaxWidth(90);
+            listaProdVenta_tbl1.getColumnModel().getColumn(2).setMinWidth(90);
+            listaProdVenta_tbl1.getColumnModel().getColumn(2).setMaxWidth(90);
+            listaProdVenta_tbl1.getColumnModel().getColumn(3).setMinWidth(90);
+            listaProdVenta_tbl1.getColumnModel().getColumn(3).setMaxWidth(90);
+            listaProdVenta_tbl1.getColumnModel().getColumn(4).setMinWidth(90);
+            listaProdVenta_tbl1.getColumnModel().getColumn(4).setMaxWidth(90);
+            listaProdVenta_tbl1.getColumnModel().getColumn(5).setMinWidth(90);
+            listaProdVenta_tbl1.getColumnModel().getColumn(5).setMaxWidth(90);
         }
 
         listaProdVenta_tbl2.setModel(new javax.swing.table.DefaultTableModel(
@@ -1522,8 +1527,10 @@ public class View1 extends javax.swing.JFrame {
         jScrollPane13.setViewportView(listaProdVenta_tbl2);
         if (listaProdVenta_tbl2.getColumnModel().getColumnCount() > 0) {
             listaProdVenta_tbl2.getColumnModel().getColumn(0).setResizable(false);
-            listaProdVenta_tbl2.getColumnModel().getColumn(1).setResizable(false);
-            listaProdVenta_tbl2.getColumnModel().getColumn(2).setResizable(false);
+            listaProdVenta_tbl2.getColumnModel().getColumn(1).setMinWidth(70);
+            listaProdVenta_tbl2.getColumnModel().getColumn(1).setMaxWidth(70);
+            listaProdVenta_tbl2.getColumnModel().getColumn(2).setMinWidth(70);
+            listaProdVenta_tbl2.getColumnModel().getColumn(2).setMaxWidth(70);
         }
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/eliminar.png"))); // NOI18N

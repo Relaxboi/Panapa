@@ -34,17 +34,43 @@ public class FacturaController {
     public ArrayList ListarTablaProducto(int Index) {
         
         ArrayList<Object[]> Compra = new ArrayList();
-
+        double ganan = 0;
+        int cantidad = 0;
+        int pos = -1;
+        boolean V = true;
+        ArrayList<Integer> posicion = new ArrayList();
         for (int i = 0; i < this.Compra.get(Index).getFactura().size(); i++) {
-
-            Compra.add(new Object[]{this.Compra.get(Index).getFactura().get(i).getNombreTipo(), 
-                this.Compra.get(Index).getFactura().get(i).getCantidad(), this.Compra.get(Index).getFactura().get(i).getiGanancias()});
-
+            for(int h = 0; h < posicion.size(); h++){
+                 if(i == posicion.get(h)){
+                     pos = i;
+                     break;
+                 }
+             }
+             if(pos == i){
+                 continue;
+             
+             } 
+            for (int b = 0; b < this.Compra.get(Index).getFactura().size(); b++) {
+                 if(this.Compra.get(Index).getFactura().get(i).getNombreTipo().equals(this.Compra.get(Index).getFactura().get(b).getNombreTipo())){
+                     ganan += this.Compra.get(Index).getFactura().get(b).getiGanancias();
+                     cantidad += this.Compra.get(Index).getFactura().get(b).getCantidad();
+                     V = false;
+                     posicion.add(b);
+                 }
+             }             
+             if(V){
+                Compra.add(new Object[]{this.Compra.get(Index).getFactura().get(i).getNombreTipo(), 
+                this.Compra.get(Index).getFactura().get(i).getCantidad(), this.Compra.get(Index).getFactura().get(i).getiGanancias()}); 
+             }else{
+                 Compra.add(new Object[]{this.Compra.get(Index).getFactura().get(i).getNombreTipo(), 
+                cantidad, ganan}); 
+             }        
+             V = true;
+             ganan = 0;
+             cantidad = 0;
         }
 
         return Compra;
-        
-
     }
 
     public ArrayList ListarVenta() {
