@@ -1400,20 +1400,10 @@ public class View1 extends javax.swing.JFrame {
         });
 
         nombreClientVenta_txt.setEnabled(false);
-        nombreClientVenta_txt.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                nombreClientVenta_txtKeyPressed(evt);
-            }
-        });
 
         jLabel15.setText("Cliente :");
 
         idClientVenta_txt.setEnabled(false);
-        idClientVenta_txt.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                idClientVenta_txtKeyPressed(evt);
-            }
-        });
 
         jLabel28.setText("Identificacion :");
 
@@ -1597,11 +1587,6 @@ public class View1 extends javax.swing.JFrame {
                 listaProdVenta_tbl1MouseClicked(evt);
             }
         });
-        listaProdVenta_tbl1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                listaProdVenta_tbl1KeyPressed(evt);
-            }
-        });
         jScrollPane12.setViewportView(listaProdVenta_tbl1);
         if (listaProdVenta_tbl1.getColumnModel().getColumnCount() > 0) {
             listaProdVenta_tbl1.getColumnModel().getColumn(0).setResizable(false);
@@ -1647,12 +1632,6 @@ public class View1 extends javax.swing.JFrame {
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
-            }
-        });
-
-        nombrePanConsultEdit_txt1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                nombrePanConsultEdit_txt1KeyPressed(evt);
             }
         });
 
@@ -2362,22 +2341,6 @@ public class View1 extends javax.swing.JFrame {
     private void nombrePanConsultVenta_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombrePanConsultVenta_txtKeyPressed
         EventoEnter(evt, consultPanVenta_btn);
     }//GEN-LAST:event_nombrePanConsultVenta_txtKeyPressed
-
-    private void nombreClientVenta_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreClientVenta_txtKeyPressed
-        EventoEnter(evt, comprarVenta_btn);
-    }//GEN-LAST:event_nombreClientVenta_txtKeyPressed
-
-    private void idClientVenta_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_idClientVenta_txtKeyPressed
-         EventoEnter(evt, comprarVenta_btn);
-    }//GEN-LAST:event_idClientVenta_txtKeyPressed
-
-    private void nombrePanConsultEdit_txt1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombrePanConsultEdit_txt1KeyPressed
-         EventoEnter(evt, consultPanEdit_btn1);
-    }//GEN-LAST:event_nombrePanConsultEdit_txt1KeyPressed
-
-    private void listaProdVenta_tbl1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_listaProdVenta_tbl1KeyPressed
-         EventoEnter(evt, jButton2);
-    }//GEN-LAST:event_listaProdVenta_tbl1KeyPressed
 
     private int CheckBoxVenta(JTable Tabla, JCheckBox Check) {
         int posConsult = 0;
