@@ -214,6 +214,12 @@ public class View1 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        Panel_General.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Panel_GeneralMouseClicked(evt);
+            }
+        });
+
         Productos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Actualizar_panel(evt);
@@ -1535,6 +1541,11 @@ public class View1 extends javax.swing.JFrame {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/eliminar.png"))); // NOI18N
         jButton2.setText("Eliminar Compra");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel31.setText("Buscar :");
 
@@ -1671,6 +1682,7 @@ public class View1 extends javax.swing.JFrame {
 // Evento del Panel de pestañas Para mantener actulaizadas las tablas cuando se cliquén las pestañas
     private void Actualizar_panel(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Actualizar_panel
         Listas();
+        TablaVenta();
     }//GEN-LAST:event_Actualizar_panel
 //Metodo para litar todas las tablas
 
@@ -1783,6 +1795,14 @@ public class View1 extends javax.swing.JFrame {
         }
         Consulta = null;
     }
+    
+    private void Consult_GeneralEstadistica(String s, JTable Tabla) {
+        Consulta = (DefaultTableModel) Tabla.getModel();
+        if (ValConsult(s, Compra.Read(s.toUpperCase()))) {
+            paco.Tablas(Consulta, Compra.Read(s.toUpperCase()));
+        }
+        Consulta = null;
+    }
 
     private void Consult_GeneralProv(String s, JTable Tabla) {
         Consulta = (DefaultTableModel) Tabla.getModel();
@@ -1841,6 +1861,16 @@ public class View1 extends javax.swing.JFrame {
         nitProvEdit_txt.setText(null);
         direcProvEdit_txt.setText(null);
     }
+    
+    private void TablaVenta(){
+        indexEstadistica = null;
+        Consulta = (DefaultTableModel)  listaProdVenta_tbl2.getModel();
+        while(Consulta.getRowCount() != 0){
+            Consulta.removeRow(0);
+        }
+        Consulta = null;
+        selecEditPan_chbx1.setSelected(false);     
+    }
 
     private void EditPan_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditPan_btnActionPerformed
         int opcEditPan = JOptionPane.showConfirmDialog(null, "¿Desea Modificar el Producto?");
@@ -1854,10 +1884,7 @@ public class View1 extends javax.swing.JFrame {
 
     private void ProveedoresActualizar_panel(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProveedoresActualizar_panel
         Listas();
-        indexEstadistica = null;
-        for (int i = 0; i < listaProdVenta_tbl2.getRowCount(); i++) {
-            listaProdVenta_tbl2.remove(0);
-        }
+        TablaVenta();
     }//GEN-LAST:event_ProveedoresActualizar_panel
 
     private void consultProv_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultProv_btnActionPerformed
@@ -2130,7 +2157,7 @@ public class View1 extends javax.swing.JFrame {
 
 
     private void consultPanEdit_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanEdit_btn1ActionPerformed
-        // TODO add your handling code here:
+        Consult_GeneralEstadistica(nombrePanConsultEdit_txt1.getText(), listaProdVenta_tbl1);
     }//GEN-LAST:event_consultPanEdit_btn1ActionPerformed
 
     private void totalProdVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalProdVentaActionPerformed
@@ -2144,6 +2171,24 @@ public class View1 extends javax.swing.JFrame {
         paco.Tablas(Consulta, Compra.ListarTablaProducto(Integer.parseInt(indexEstadistica.toString())));
         Consulta = null;
     }//GEN-LAST:event_listaProdVenta_tbl1MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int opcEditProv = JOptionPane.showConfirmDialog(null, "¿Desea eliminar esta venta?");
+        switch (opcEditProv) {
+            case 0:              
+                Compra.RemoveVenta(Integer.parseInt(indexEstadistica.toString()));
+                Listas();
+                TablaVenta();
+                JOptionPane.showMessageDialog(null, "La venta ha sido eliminada");
+        }
+        indexEstadistica = null;
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void Panel_GeneralMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_GeneralMouseClicked
+        Listas();
+        TablaVenta();
+    }//GEN-LAST:event_Panel_GeneralMouseClicked
 
     private int CheckBoxVenta(JTable Tabla, JCheckBox Check) {
         int posConsult = 0;
