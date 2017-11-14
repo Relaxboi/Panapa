@@ -2,6 +2,7 @@ package View;
 
 import Controller.*;
 import Model.*;
+import static java.awt.Event.ENTER;
 import java.awt.HeadlessException;
 import java.util.ArrayList;
 import javax.swing.JCheckBox;
@@ -228,6 +229,12 @@ public class View1 extends javax.swing.JFrame {
 
         jLabel1.setText("Nombre del Tipo de Producto : ");
 
+        cantidadPanReg_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                cantidadPanReg_txtKeyPressed(evt);
+            }
+        });
+
         jLabel2.setText("Cantidad : ");
 
         jLabel3.setText("Precio : ");
@@ -372,6 +379,11 @@ public class View1 extends javax.swing.JFrame {
         }
 
         cantidadPanEdit_txt.setEnabled(false);
+        cantidadPanEdit_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                cantidadPanEdit_txtKeyPressed(evt);
+            }
+        });
 
         precioPanEdit_txt.setEnabled(false);
 
@@ -730,6 +742,12 @@ public class View1 extends javax.swing.JFrame {
 
         jLabel21.setText("Direccion :");
 
+        direcProvReg_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                direcProvReg_txtKeyPressed(evt);
+            }
+        });
+
         jLabel22.setText("NIT :");
 
         javax.swing.GroupLayout Registrar_ProveedoresLayout = new javax.swing.GroupLayout(Registrar_Proveedores);
@@ -861,6 +879,11 @@ public class View1 extends javax.swing.JFrame {
         jLabel24.setText("Producto/Servicio :");
 
         direcProvEdit_txt.setEnabled(false);
+        direcProvEdit_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                direcProvEdit_txtKeyPressed(evt);
+            }
+        });
 
         jLabel25.setText("Direccion :");
 
@@ -1274,6 +1297,11 @@ public class View1 extends javax.swing.JFrame {
         nombreProdVenta_txt.setEnabled(false);
 
         cantidadProdVenta_txt.setEnabled(false);
+        cantidadProdVenta_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                cantidadProdVenta_txtKeyPressed(evt);
+            }
+        });
 
         jLabel14.setText("Cantidad :");
 
@@ -1327,6 +1355,11 @@ public class View1 extends javax.swing.JFrame {
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/network_1.png"))); // NOI18N
 
         pagoClientVenta_txt.setEnabled(false);
+        pagoClientVenta_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                pagoClientVenta_txtKeyPressed(evt);
+            }
+        });
 
         jLabel30.setText("Dinero Recibido :");
 
@@ -2189,6 +2222,42 @@ public class View1 extends javax.swing.JFrame {
         Listas();
         TablaVenta();
     }//GEN-LAST:event_Panel_GeneralMouseClicked
+
+    private void cantidadPanReg_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cantidadPanReg_txtKeyPressed
+        if(evt.getKeyChar() == ENTER){
+            registrarPan_btn.doClick();
+        }
+    }//GEN-LAST:event_cantidadPanReg_txtKeyPressed
+
+    private void cantidadPanEdit_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cantidadPanEdit_txtKeyPressed
+        if(evt.getKeyChar() == ENTER){
+            GuardarEditPan_btn.doClick();
+        }
+    }//GEN-LAST:event_cantidadPanEdit_txtKeyPressed
+
+    private void direcProvReg_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_direcProvReg_txtKeyPressed
+        if(evt.getKeyChar() == ENTER){
+            registrarProv_btn.doClick();
+        }
+    }//GEN-LAST:event_direcProvReg_txtKeyPressed
+
+    private void cantidadProdVenta_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cantidadProdVenta_txtKeyPressed
+        if(evt.getKeyChar() == ENTER){
+            agregarProdVenta_btn.doClick();
+        }
+    }//GEN-LAST:event_cantidadProdVenta_txtKeyPressed
+
+    private void pagoClientVenta_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pagoClientVenta_txtKeyPressed
+        if(evt.getKeyChar() == ENTER){
+            comprarVenta_btn.doClick();
+        }
+    }//GEN-LAST:event_pagoClientVenta_txtKeyPressed
+
+    private void direcProvEdit_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_direcProvEdit_txtKeyPressed
+        if(evt.getKeyChar() == ENTER){
+            GuardarEditProv_btn.doClick();
+        }
+    }//GEN-LAST:event_direcProvEdit_txtKeyPressed
 
     private int CheckBoxVenta(JTable Tabla, JCheckBox Check) {
         int posConsult = 0;

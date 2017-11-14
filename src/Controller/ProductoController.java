@@ -64,10 +64,6 @@ public class ProductoController {
         return ListaPan;
     }
 
-    public void setListaPan(ArrayList<Producto> ListaPan) {
-        this.ListaPan = ListaPan;
-    }
-
     public void Tablas(DefaultTableModel Table, ArrayList<Object[]> Array) {
         while(Table.getRowCount() != 0){
             Table.removeRow(0);
