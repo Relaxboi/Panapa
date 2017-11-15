@@ -2112,6 +2112,7 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_listaPanesConsult_tblMouseClicked
 
     private void listaProvConsult_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProvConsult_tblMouseClicked
+        //saber la posicion real del array en consulta proveedor
         CheckBoxProv(listaProvConsult_tbl, selecConsultProv_chbx);
     }//GEN-LAST:event_listaProvConsult_tblMouseClicked
 
