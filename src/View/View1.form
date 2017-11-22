@@ -48,6 +48,9 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JTabbedPane" name="Panel_General">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Panel_GeneralMouseClicked"/>
+      </Events>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
@@ -170,6 +173,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="cantidadPanReg_txt">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="cantidadPanReg_txtKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel2">
                   <Properties>
@@ -432,6 +438,7 @@
                       </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="selecProdModif_tbl"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="listaPanesEdit_tblKeyPressed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -440,6 +447,9 @@
                   <Properties>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="cantidadPanEdit_txtKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="precioPanEdit_txt">
                   <Properties>
@@ -586,6 +596,7 @@
                 <Component class="javax.swing.JTextField" name="nombrePanConsult_txt">
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombrePanConsult_txtActionPerformed"/>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nombrePanConsult_txtKeyPressed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="consultPan_btn">
@@ -753,11 +764,15 @@
                       </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="selecProdEliminar_tbl"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="listaPanesEliminar_tblKeyPressed"/>
                       </Events>
                     </Component>
                   </SubComponents>
                 </Container>
                 <Component class="javax.swing.JTextField" name="nombrePanEliminar_txt">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nombrePanEliminar_txtKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel9">
                   <Properties>
@@ -1023,6 +1038,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="direcProvReg_txt">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="direcProvReg_txtKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel22">
                   <Properties>
@@ -1194,6 +1212,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="nombreProvConsultEdit_txt">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nombreProvConsultEdit_txtKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel16">
                   <Properties>
@@ -1253,6 +1274,7 @@
                       </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="listaProveedoresEdit_tblMouseClicked"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="listaProveedoresEdit_tblKeyPressed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -1281,6 +1303,9 @@
                   <Properties>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="direcProvEdit_txtKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel25">
                   <Properties>
@@ -1422,6 +1447,7 @@
                 <Component class="javax.swing.JTextField" name="nombreProvConsult_txt">
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreProvConsult_txtActionPerformed"/>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nombreProvConsult_txtKeyPressed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="consultProv_btn">
@@ -1557,6 +1583,9 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JTextField" name="nombreEliminarProv_txt">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nombreEliminarProv_txtKeyPressed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel18">
                   <Properties>
@@ -1633,6 +1662,7 @@
                       </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="listaProvEliminar_tblMouseClicked"/>
+                        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="listaProvEliminar_tblKeyPressed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -1678,10 +1708,10 @@
                               <Component id="selecProdConsultVenta_chbx" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="58" max="32767" attributes="0"/>
+                      <EmptySpace pref="60" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="1" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -1764,8 +1794,8 @@
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                          <Component id="jScrollPane11" min="-2" pref="291" max="-2" attributes="0"/>
-                          <EmptySpace pref="373" max="32767" attributes="0"/>
+                          <Component id="jScrollPane11" min="-2" pref="295" max="-2" attributes="0"/>
+                          <EmptySpace pref="369" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -1835,7 +1865,7 @@
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="104" max="32767" attributes="0"/>
+                          <EmptySpace pref="105" max="32767" attributes="0"/>
                           <Component id="jScrollPane11" min="-2" pref="369" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       </Group>
@@ -1867,12 +1897,12 @@
                           <Editor/>
                           <Renderer/>
                         </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                        <Column maxWidth="60" minWidth="60" prefWidth="-1" resizable="true">
                           <Title/>
                           <Editor/>
                           <Renderer/>
                         </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                        <Column maxWidth="60" minWidth="60" prefWidth="-1" resizable="true">
                           <Title/>
                           <Editor/>
                           <Renderer/>
@@ -1901,6 +1931,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="nombrePanConsultVenta_txt">
+              <Events>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nombrePanConsultVenta_txtKeyPressed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="consultPanVenta_btn">
               <Properties>
@@ -1935,12 +1968,12 @@
                           <Editor/>
                           <Renderer/>
                         </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                        <Column maxWidth="55" minWidth="55" prefWidth="-1" resizable="true">
                           <Title/>
                           <Editor/>
                           <Renderer/>
                         </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                        <Column maxWidth="55" minWidth="55" prefWidth="-1" resizable="true">
                           <Title/>
                           <Editor/>
                           <Renderer/>
@@ -1971,6 +2004,9 @@
               <Properties>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="cantidadProdVenta_txtKeyPressed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel14">
               <Properties>
@@ -2062,6 +2098,9 @@
               <Properties>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="pagoClientVenta_txtKeyPressed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel30">
               <Properties>
@@ -2202,27 +2241,27 @@
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                                <Column maxWidth="90" minWidth="90" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                                <Column maxWidth="90" minWidth="90" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                                <Column maxWidth="90" minWidth="90" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                                <Column maxWidth="90" minWidth="90" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                                <Column maxWidth="90" minWidth="90" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
@@ -2262,12 +2301,12 @@
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                                <Column maxWidth="70" minWidth="70" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                                <Column maxWidth="70" minWidth="70" prefWidth="-1" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
@@ -2288,6 +2327,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Eliminar Compra"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JTextField" name="nombrePanConsultEdit_txt1">
                     </Component>

@@ -1,10 +1,11 @@
-
-
 package View;
+
 import Controller.*;
 import Model.*;
+import static java.awt.Event.ENTER;
 import java.awt.HeadlessException;
 import java.util.ArrayList;
+import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -215,6 +216,12 @@ public class View1 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        Panel_General.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Panel_GeneralMouseClicked(evt);
+            }
+        });
+
         Productos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Actualizar_panel(evt);
@@ -222,6 +229,12 @@ public class View1 extends javax.swing.JFrame {
         });
 
         jLabel1.setText("Nombre del Tipo de Producto : ");
+
+        cantidadPanReg_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                cantidadPanReg_txtKeyPressed(evt);
+            }
+        });
 
         jLabel2.setText("Cantidad : ");
 
@@ -359,6 +372,11 @@ public class View1 extends javax.swing.JFrame {
                 selecProdModif_tbl(evt);
             }
         });
+        listaPanesEdit_tbl.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                listaPanesEdit_tblKeyPressed(evt);
+            }
+        });
         jScrollPane2.setViewportView(listaPanesEdit_tbl);
         if (listaPanesEdit_tbl.getColumnModel().getColumnCount() > 0) {
             listaPanesEdit_tbl.getColumnModel().getColumn(0).setResizable(false);
@@ -367,6 +385,11 @@ public class View1 extends javax.swing.JFrame {
         }
 
         cantidadPanEdit_txt.setEnabled(false);
+        cantidadPanEdit_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                cantidadPanEdit_txtKeyPressed(evt);
+            }
+        });
 
         precioPanEdit_txt.setEnabled(false);
 
@@ -505,6 +528,11 @@ public class View1 extends javax.swing.JFrame {
                 nombrePanConsult_txtActionPerformed(evt);
             }
         });
+        nombrePanConsult_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nombrePanConsult_txtKeyPressed(evt);
+            }
+        });
 
         consultPan_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.png"))); // NOI18N
         consultPan_btn.setText("Consultar");
@@ -603,12 +631,23 @@ public class View1 extends javax.swing.JFrame {
                 selecProdEliminar_tbl(evt);
             }
         });
+        listaPanesEliminar_tbl.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                listaPanesEliminar_tblKeyPressed(evt);
+            }
+        });
         jScrollPane4.setViewportView(listaPanesEliminar_tbl);
         if (listaPanesEliminar_tbl.getColumnModel().getColumnCount() > 0) {
             listaPanesEliminar_tbl.getColumnModel().getColumn(0).setResizable(false);
             listaPanesEliminar_tbl.getColumnModel().getColumn(1).setResizable(false);
             listaPanesEliminar_tbl.getColumnModel().getColumn(2).setResizable(false);
         }
+
+        nombrePanEliminar_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nombrePanEliminar_txtKeyPressed(evt);
+            }
+        });
 
         jLabel9.setText("Buscar :");
 
@@ -725,6 +764,12 @@ public class View1 extends javax.swing.JFrame {
 
         jLabel21.setText("Direccion :");
 
+        direcProvReg_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                direcProvReg_txtKeyPressed(evt);
+            }
+        });
+
         jLabel22.setText("NIT :");
 
         javax.swing.GroupLayout Registrar_ProveedoresLayout = new javax.swing.GroupLayout(Registrar_Proveedores);
@@ -815,6 +860,12 @@ public class View1 extends javax.swing.JFrame {
         selecEditProv_chbx.setText("Seleccionado");
         selecEditProv_chbx.setEnabled(false);
 
+        nombreProvConsultEdit_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nombreProvConsultEdit_txtKeyPressed(evt);
+            }
+        });
+
         jLabel16.setText("Buscar :");
 
         listaProveedoresEdit_tbl.setModel(new javax.swing.table.DefaultTableModel(
@@ -838,6 +889,11 @@ public class View1 extends javax.swing.JFrame {
                 listaProveedoresEdit_tblMouseClicked(evt);
             }
         });
+        listaProveedoresEdit_tbl.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                listaProveedoresEdit_tblKeyPressed(evt);
+            }
+        });
         jScrollPane6.setViewportView(listaProveedoresEdit_tbl);
         if (listaProveedoresEdit_tbl.getColumnModel().getColumnCount() > 0) {
             listaProveedoresEdit_tbl.getColumnModel().getColumn(0).setResizable(false);
@@ -856,6 +912,11 @@ public class View1 extends javax.swing.JFrame {
         jLabel24.setText("Producto/Servicio :");
 
         direcProvEdit_txt.setEnabled(false);
+        direcProvEdit_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                direcProvEdit_txtKeyPressed(evt);
+            }
+        });
 
         jLabel25.setText("Direccion :");
 
@@ -1022,6 +1083,11 @@ public class View1 extends javax.swing.JFrame {
                 nombreProvConsult_txtActionPerformed(evt);
             }
         });
+        nombreProvConsult_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nombreProvConsult_txtKeyPressed(evt);
+            }
+        });
 
         consultProv_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.png"))); // NOI18N
         consultProv_btn.setText("Consultar");
@@ -1097,6 +1163,12 @@ public class View1 extends javax.swing.JFrame {
 
         Proveedores.addTab("Consultar Prooverdor", Consultar_Proveedores);
 
+        nombreEliminarProv_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nombreEliminarProv_txtKeyPressed(evt);
+            }
+        });
+
         jLabel18.setText("Buscar :");
 
         selecEliminarProv_chbx.setText("Seleccionado");
@@ -1129,6 +1201,11 @@ public class View1 extends javax.swing.JFrame {
         listaProvEliminar_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 listaProvEliminar_tblMouseClicked(evt);
+            }
+        });
+        listaProvEliminar_tbl.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                listaProvEliminar_tblKeyPressed(evt);
             }
         });
         jScrollPane8.setViewportView(listaProvEliminar_tbl);
@@ -1216,14 +1293,22 @@ public class View1 extends javax.swing.JFrame {
         jScrollPane10.setViewportView(listaProdVenta_tbl);
         if (listaProdVenta_tbl.getColumnModel().getColumnCount() > 0) {
             listaProdVenta_tbl.getColumnModel().getColumn(0).setResizable(false);
-            listaProdVenta_tbl.getColumnModel().getColumn(1).setResizable(false);
-            listaProdVenta_tbl.getColumnModel().getColumn(2).setResizable(false);
+            listaProdVenta_tbl.getColumnModel().getColumn(1).setMinWidth(60);
+            listaProdVenta_tbl.getColumnModel().getColumn(1).setMaxWidth(60);
+            listaProdVenta_tbl.getColumnModel().getColumn(2).setMinWidth(60);
+            listaProdVenta_tbl.getColumnModel().getColumn(2).setMaxWidth(60);
         }
 
         selecProdConsultVenta_chbx.setText("Seleccionado");
         selecProdConsultVenta_chbx.setEnabled(false);
 
         jLabel12.setText("Buscar :");
+
+        nombrePanConsultVenta_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nombrePanConsultVenta_txtKeyPressed(evt);
+            }
+        });
 
         consultPanVenta_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.png"))); // NOI18N
         consultPanVenta_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -1256,8 +1341,10 @@ public class View1 extends javax.swing.JFrame {
         jScrollPane11.setViewportView(listaProdConsultVentas_tbl);
         if (listaProdConsultVentas_tbl.getColumnModel().getColumnCount() > 0) {
             listaProdConsultVentas_tbl.getColumnModel().getColumn(0).setResizable(false);
-            listaProdConsultVentas_tbl.getColumnModel().getColumn(1).setResizable(false);
-            listaProdConsultVentas_tbl.getColumnModel().getColumn(2).setResizable(false);
+            listaProdConsultVentas_tbl.getColumnModel().getColumn(1).setMinWidth(55);
+            listaProdConsultVentas_tbl.getColumnModel().getColumn(1).setMaxWidth(55);
+            listaProdConsultVentas_tbl.getColumnModel().getColumn(2).setMinWidth(55);
+            listaProdConsultVentas_tbl.getColumnModel().getColumn(2).setMaxWidth(55);
         }
 
         jLabel13.setText("Producto :");
@@ -1265,6 +1352,11 @@ public class View1 extends javax.swing.JFrame {
         nombreProdVenta_txt.setEnabled(false);
 
         cantidadProdVenta_txt.setEnabled(false);
+        cantidadProdVenta_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                cantidadProdVenta_txtKeyPressed(evt);
+            }
+        });
 
         jLabel14.setText("Cantidad :");
 
@@ -1318,6 +1410,11 @@ public class View1 extends javax.swing.JFrame {
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/network_1.png"))); // NOI18N
 
         pagoClientVenta_txt.setEnabled(false);
+        pagoClientVenta_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                pagoClientVenta_txtKeyPressed(evt);
+            }
+        });
 
         jLabel30.setText("Dinero Recibido :");
 
@@ -1346,10 +1443,10 @@ public class View1 extends javax.swing.JFrame {
                     .addGroup(VentasLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(selecProdConsultVenta_chbx)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VentasLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 1, Short.MAX_VALUE)
                         .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VentasLayout.createSequentialGroup()
                                 .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1408,8 +1505,8 @@ public class View1 extends javax.swing.JFrame {
             .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(VentasLayout.createSequentialGroup()
                     .addGap(22, 22, 22)
-                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(373, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(369, Short.MAX_VALUE)))
         );
         VentasLayout.setVerticalGroup(
             VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1462,7 +1559,7 @@ public class View1 extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VentasLayout.createSequentialGroup()
-                    .addContainerGap(104, Short.MAX_VALUE)
+                    .addContainerGap(105, Short.MAX_VALUE)
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(24, 24, 24)))
         );
@@ -1493,11 +1590,16 @@ public class View1 extends javax.swing.JFrame {
         jScrollPane12.setViewportView(listaProdVenta_tbl1);
         if (listaProdVenta_tbl1.getColumnModel().getColumnCount() > 0) {
             listaProdVenta_tbl1.getColumnModel().getColumn(0).setResizable(false);
-            listaProdVenta_tbl1.getColumnModel().getColumn(1).setResizable(false);
-            listaProdVenta_tbl1.getColumnModel().getColumn(2).setResizable(false);
-            listaProdVenta_tbl1.getColumnModel().getColumn(3).setResizable(false);
-            listaProdVenta_tbl1.getColumnModel().getColumn(4).setResizable(false);
-            listaProdVenta_tbl1.getColumnModel().getColumn(5).setResizable(false);
+            listaProdVenta_tbl1.getColumnModel().getColumn(1).setMinWidth(90);
+            listaProdVenta_tbl1.getColumnModel().getColumn(1).setMaxWidth(90);
+            listaProdVenta_tbl1.getColumnModel().getColumn(2).setMinWidth(90);
+            listaProdVenta_tbl1.getColumnModel().getColumn(2).setMaxWidth(90);
+            listaProdVenta_tbl1.getColumnModel().getColumn(3).setMinWidth(90);
+            listaProdVenta_tbl1.getColumnModel().getColumn(3).setMaxWidth(90);
+            listaProdVenta_tbl1.getColumnModel().getColumn(4).setMinWidth(90);
+            listaProdVenta_tbl1.getColumnModel().getColumn(4).setMaxWidth(90);
+            listaProdVenta_tbl1.getColumnModel().getColumn(5).setMinWidth(90);
+            listaProdVenta_tbl1.getColumnModel().getColumn(5).setMaxWidth(90);
         }
 
         listaProdVenta_tbl2.setModel(new javax.swing.table.DefaultTableModel(
@@ -1519,12 +1621,19 @@ public class View1 extends javax.swing.JFrame {
         jScrollPane13.setViewportView(listaProdVenta_tbl2);
         if (listaProdVenta_tbl2.getColumnModel().getColumnCount() > 0) {
             listaProdVenta_tbl2.getColumnModel().getColumn(0).setResizable(false);
-            listaProdVenta_tbl2.getColumnModel().getColumn(1).setResizable(false);
-            listaProdVenta_tbl2.getColumnModel().getColumn(2).setResizable(false);
+            listaProdVenta_tbl2.getColumnModel().getColumn(1).setMinWidth(70);
+            listaProdVenta_tbl2.getColumnModel().getColumn(1).setMaxWidth(70);
+            listaProdVenta_tbl2.getColumnModel().getColumn(2).setMinWidth(70);
+            listaProdVenta_tbl2.getColumnModel().getColumn(2).setMaxWidth(70);
         }
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/eliminar.png"))); // NOI18N
         jButton2.setText("Eliminar Compra");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel31.setText("Buscar :");
 
@@ -1626,21 +1735,26 @@ public class View1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 // Evento del boton para registrar y tabular el producto
     private void registrarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarPan
+        //valido la entrada de los productos con el metodo de val_panes
         if (Val_Panes(nombrePanReg_txt.getText(), precioPanReg_txt.getText(), cantidadPanReg_txt.getText())) {
+            //metodo para saber si el producto tiene proveedores
             if (provePanReg_cmbx.getSelectedItem().toString().equals("Seleccione")) {
+                //crear un nuevo prpducto
                 paco.Create(new Producto(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), "f2"));
             } else {
+                //crear un nuevo producto
                 paco.Create(new Producto(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), "f2", provePanReg_cmbx.getSelectedItem().toString()));
             }
+            //tabular y vaciar vista
             Listas();
             VaciarReg_txt();
         }
 
     }//GEN-LAST:event_registrarPan
-// Metodo para validar la entrada de los panes
-
+// Metodo para validar la entrada de los productos
     private Boolean Val_Panes(String nombre, String precio, String cantidad) {
         boolean V = true;
+        //condicion para saber si la entrada no esta vacia
         if (nombre == null || nombre.equals("") || precio == null || precio.equals("")
                 || cantidad == null || cantidad.equals("")) {
 
@@ -1648,6 +1762,7 @@ public class View1 extends javax.swing.JFrame {
             V = false;
         } else {
             try {
+                //comprobar si el valor ingresado es numerico 
                 Integer.parseInt(precio);
                 Integer.parseInt(cantidad);
             } catch (NumberFormatException e) {
@@ -1660,10 +1775,11 @@ public class View1 extends javax.swing.JFrame {
 
 // Evento del Panel de pestañas Para mantener actulaizadas las tablas cuando se cliquén las pestañas
     private void Actualizar_panel(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Actualizar_panel
+        //tabulo las vistas
         Listas();
+        TablaVenta();
     }//GEN-LAST:event_Actualizar_panel
 //Metodo para litar todas las tablas
-
     public void Listas() {
         //tabla de registro
         Consulta = (DefaultTableModel) listaPanesReg_tbl.getModel();
@@ -1710,10 +1826,14 @@ public class View1 extends javax.swing.JFrame {
         //Llenar Combobox
         ComboBox();
     }
-
+    
+//metodo para llenar el combobox de los proveedores
     private void ComboBox() {
+        //remuevo los items
         provePanReg_cmbx.removeAllItems();
         provePanReg_cmbx.addItem("Seleccione");
+        //agrego los items
+        
         for (int i = 0; i < Proveedor.getListaProveedores().size(); i++) {
             provePanReg_cmbx.addItem(Proveedor.getListaProveedores().get(i).getsNombre());
         }
@@ -1723,73 +1843,103 @@ public class View1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nombrePanConsult_txtActionPerformed
 
-
+//seleccionar un valor de la tabla modificar producto
     private void selecProdModif_tbl(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selecProdModif_tbl
         // rowAtPoint -> ( EVENTO 'evt' . getPoint() 'posicion' );
+        //sleccionar al posicion real con el array list
         this.indexMod_tbl = CheckBoxProducto(listaPanesEdit_tbl, selecEditPan_chbx);
+        ///añado la vista
         EditPan_btn.setEnabled(true);
         nombrePanEdit_txt.setText(paco.getListaPan().get(Integer.parseInt(indexMod_tbl.toString())).getNombreTipo());
         cantidadPanEdit_txt.setText(paco.getListaPan().get(Integer.parseInt(indexMod_tbl.toString())).getCantidad() + "");
         precioPanEdit_txt.setText(paco.getListaPan().get(Integer.parseInt(indexMod_tbl.toString())).getPrecio() + "");
 
     }//GEN-LAST:event_selecProdModif_tbl
-
+//metodo para modificar pan
     private void modificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarPan
+        //posicion real del arraylist
         int posEditPan = Integer.parseInt("" + this.indexMod_tbl);
+        //metodo para validar la entrada de los productos
         if (Val_Panes(nombrePanEdit_txt.getText(), precioPanEdit_txt.getText(), cantidadPanEdit_txt.getText())) {
+            //modifico el producto
             paco.Uptade(posEditPan, new Producto(
                     nombrePanEdit_txt.getText().toUpperCase(),
                     Integer.parseInt(precioPanEdit_txt.getText()),
                     Integer.parseInt(cantidadPanEdit_txt.getText()), "")
             );
+            //tabulacion y vacio de la vista
             Listas();
             ObjEditPan(true);
             VaciarMod_txt();
         }
     }//GEN-LAST:event_modificarPan
-
+//metodo para validar la consulta
     private boolean ValConsult(String nombre, ArrayList Array) {
         boolean V = true;
+        //valido si no esta vaica el nombre
         if (nombre.equals("") || nombre == null) {
             JOptionPane.showMessageDialog(null, "No ha ingresado los datos", "ERROR!", 0);
             V = false;
         } else {
+            //valido si el array de la consulta no este vacio
             if (Array.isEmpty()) {
                 JOptionPane.showMessageDialog(null, "No se han encontrado coincidencias", "No Se Encontro", 1);
                 V = false;
             }
         }
+        //retorna verdadero si ha encontrado coincidencia
         return V;
     }
-
+//metodo para consultar productos
     private void consultPanEdit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanEdit_btnActionPerformed
+        //metodo para consultar producto
         Consult_GeneralPan(nombrePanConsultEdit_txt.getText(), listaPanesEdit_tbl);
     }//GEN-LAST:event_consultPanEdit_btnActionPerformed
-
+//metodo para consultar producto general
     private void Consult_GeneralPan(String s, JTable Tabla) {
+       //instancio la tabla
         Consulta = (DefaultTableModel) Tabla.getModel();
+        //llamo el metodo para validar entrada
         if (ValConsult(s, paco.Read(s.toUpperCase()))) {
+            //tabulo si encontro coincidencia
             paco.Tablas(Consulta, paco.Read(s.toUpperCase()));
         }
         Consulta = null;
     }
-
-    private void Consult_GeneralProv(String s, JTable Tabla) {
+    //consultar clientes en las estadisticas
+    private void Consult_GeneralEstadistica(String s, JTable Tabla) {
+        //instancio la tabla
         Consulta = (DefaultTableModel) Tabla.getModel();
+        //valido la entrada de los clientes
+        if (ValConsult(s, Compra.Read(s.toUpperCase()))) {
+            //tabulo si encontro coincidencia
+            paco.Tablas(Consulta, Compra.Read(s.toUpperCase()));
+        }
+        Consulta = null;
+    }
+//metodo para consultar proveedores
+    private void Consult_GeneralProv(String s, JTable Tabla) {
+        //instancio la tabla
+        Consulta = (DefaultTableModel) Tabla.getModel();
+        //valido la entrada de los proveedores
         if (ValConsult(s, Proveedor.Read(s.toUpperCase()))) {
+            //tabulo si encontro coincidencia
             paco.Tablas(Consulta, Proveedor.Read(s.toUpperCase()));
         }
         Consulta = null;
     }
-
+//metodo para consultar producto
     private void consultPan_btn(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPan_btn
+        //metodo para validar el producto
         Consult_GeneralPan(nombrePanConsult_txt.getText(), listaPanesConsult_tbl);
     }//GEN-LAST:event_consultPan_btn
 
     private void cancelarEditPan_btnmodificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarEditPan_btnmodificarPan
+        //cancelar la edicion del producto
         ObjEditPan(false);
 
     }//GEN-LAST:event_cancelarEditPan_btnmodificarPan
+    //metodo para activar o desactivar vista de la edicion de los productos
     public void ObjEditPan(boolean V) {
         GuardarEditPan_btn.setEnabled(V);
         cancelarEditPan_btn.setEnabled(V);
@@ -1798,7 +1948,7 @@ public class View1 extends javax.swing.JFrame {
         cantidadPanEdit_txt.setEnabled(V);
         selecEditPan_chbx.setSelected(V);
     }
-
+    //metodo para activar o desactivar vista de la edicion de los proveedores
     private void ObjEditProv(boolean V) {
         GuardarEditProv_btn.setEnabled(V);
         cancelarEditProv_btn.setEnabled(V);
@@ -1809,21 +1959,21 @@ public class View1 extends javax.swing.JFrame {
         direcProvEdit_txt.setEnabled(V);
         selecEditProv_chbx.setSelected(V);
     }
-
+    //metodo para vaciar la vita del modificar de los productos
     public void VaciarMod_txt() {
         nombrePanEdit_txt.setText(null);
         cantidadPanEdit_txt.setText(null);
         precioPanEdit_txt.setText(null);
 
     }
-
+//metodo para vaciar la vita del registrar de los prooductos
     public void VaciarReg_txt() {
         nombrePanReg_txt.setText(null);
         cantidadPanReg_txt.setText(null);
         precioPanReg_txt.setText(null);
 
     }
-
+//metodo para vaciar la vita del modificar proveedores
     private void LimpiarModProv() {
         nombreProvEdit_txt.setText(null);
         telefonoProvEdit_txt.setText(null);
@@ -1831,44 +1981,62 @@ public class View1 extends javax.swing.JFrame {
         nitProvEdit_txt.setText(null);
         direcProvEdit_txt.setText(null);
     }
-
+    //metodo para eliminar la tabla de los productos en las estadistica
+    private void TablaVenta(){
+        indexEstadistica = null;
+        Consulta = (DefaultTableModel)  listaProdVenta_tbl2.getModel();
+        while(Consulta.getRowCount() != 0){
+            Consulta.removeRow(0);
+        }
+        Consulta = null;
+        selecEditPan_chbx1.setSelected(false);     
+    }
+//metodo para editar productos 
     private void EditPan_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditPan_btnActionPerformed
         int opcEditPan = JOptionPane.showConfirmDialog(null, "¿Desea Modificar el Producto?");
         switch (opcEditPan) {
             case 0:
+                //activo las vistas
                 ObjEditPan(true);
                 EditPan_btn.setEnabled(false);
                 break;
+                
         }
     }//GEN-LAST:event_EditPan_btnActionPerformed
-
+//metodo para actualizar panel
     private void ProveedoresActualizar_panel(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProveedoresActualizar_panel
         Listas();
+        TablaVenta();
     }//GEN-LAST:event_ProveedoresActualizar_panel
-
+//metodo para consultar prodveedores
     private void consultProv_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultProv_btnActionPerformed
+        //consultar proveedores
         Consult_GeneralProv(nombreProvConsult_txt.getText(), listaProvConsult_tbl);
     }//GEN-LAST:event_consultProv_btnActionPerformed
 
     private void nombreProvConsult_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreProvConsult_txtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreProvConsult_txtActionPerformed
-
+//consultar proveedores en el modificar
     private void consultProvEdit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultProvEdit_btnActionPerformed
         Consult_GeneralProv(nombreProvConsultEdit_txt.getText(), listaProveedoresEdit_tbl);
     }//GEN-LAST:event_consultProvEdit_btnActionPerformed
-
+//metodo para registrar proveedores
     private void registrarProv_btnregistrarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarProv_btnregistrarPan
+        //valido la entrada de los proveedores
         if (Val_Prov(nitProvReg_txt.getText(), nombreProvReg_txt.getText(), serviProvReg_txt.getText(), telefonoProvReg_txt.getText(), direcProvReg_txt.getText())) {
+            //agrego proveedor
             Proveedor.Create(new Proveedor(nitProvReg_txt.getText().toUpperCase(), nombreProvReg_txt.getText().toUpperCase(), serviProvReg_txt.getText().toUpperCase(),
                     telefonoProvReg_txt.getText(), direcProvReg_txt.getText().toUpperCase()));
+            //listo y vacio
             Listas();
             LimpiarReg_Prov();
         }
     }//GEN-LAST:event_registrarProv_btnregistrarPan
-
+//metodo para validar entrada de los proveedores
     private boolean Val_Prov(String nit, String nombre, String servi, String telefono, String direc) {
         boolean V = true;
+        //si la entrada esta vacio muestra el mensaje
         if (nit == null || nit.equals("") || nombre == null || nombre.equals("")
                 || servi == null || servi.equals("") || telefono == null || telefono.equals("")
                 || direc == null || direc.equals("")) {
@@ -1878,35 +2046,42 @@ public class View1 extends javax.swing.JFrame {
         }
         return V;
     }
+    //metodo para editar proveedoeres
     private void EditProv_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditProv_btnActionPerformed
         int opcEditProv = JOptionPane.showConfirmDialog(null, "¿Desea modificar el proveedor?");
         switch (opcEditProv) {
             case 0:
+                //activo la vista
                 ObjEditProv(true);
                 EditProv_btn.setEnabled(false);
                 break;
         }
     }//GEN-LAST:event_EditProv_btnActionPerformed
-
+//guardar la edicion del proveedor
     private void GuardarEditProv_btnmodificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarEditProv_btnmodificarPan
         int posEditProv = Integer.parseInt("" + this.indexModProv_tbl);
+        //valido la entrada de los proveedores
         if (Val_Prov(nitProvEdit_txt.getText(), nombreProvEdit_txt.getText(), serviProvEdit_txt.getText(), telefonoProvEdit_txt.getText(), direcProvEdit_txt.getText())) {
+            //modifico el proveedor
             Proveedor.Uptade(posEditProv, new Proveedor(nitProvEdit_txt.getText().toUpperCase(), nombreProvEdit_txt.getText().toUpperCase(), serviProvEdit_txt.getText().toUpperCase(),
                     telefonoProvEdit_txt.getText(), direcProvEdit_txt.getText().toUpperCase()));
+            //vista
             Listas();
             ObjEditProv(false);
             LimpiarModProv();
         }
     }//GEN-LAST:event_GuardarEditProv_btnmodificarPan
-
+//cancelo la edicion del proveedor
     private void cancelarEditProv_btnmodificarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarEditProv_btnmodificarPan
         ObjEditProv(false);
+        this.indexModProv_tbl = null;
     }//GEN-LAST:event_cancelarEditProv_btnmodificarPan
-
+//metodo para consultar producto en eliminar
     private void consultPanEliminar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanEliminar_btnActionPerformed
+        //consultar producto
         Consult_GeneralPan(nombrePanEliminar_txt.getText(), listaPanesEliminar_tbl);
      }//GEN-LAST:event_consultPanEliminar_btnActionPerformed
-
+//limpiar registro del los proveedores
     private void LimpiarReg_Prov() {
         nombreProvReg_txt.setText(null);
         telefonoProvReg_txt.setText(null);
@@ -1914,31 +2089,33 @@ public class View1 extends javax.swing.JFrame {
         nitProvReg_txt.setText(null);
         direcProvReg_txt.setText(null);
     }
-
+//seleccion producto en el eliminar
     private void selecProdEliminar_tbl(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selecProdEliminar_tbl
         //igualar posicion global con posicion local
         this.indexElim_tbl = CheckBoxProducto(listaPanesEliminar_tbl, selecPanEliminar_chbx);
     }//GEN-LAST:event_selecProdEliminar_tbl
-
+//metodo para eliminar producto
     private void eliminarPan_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarPan_btnActionPerformed
         try {
             int opcEliminarPan = JOptionPane.showConfirmDialog(null, "¿ Desea Eliminar " + paco.getListaPan().get(Integer.parseInt(this.indexElim_tbl.toString())).getNombreTipo() + "?");
             switch (opcEliminarPan) {
                 case (0):
+                    //metodo para elimiar productos 
                     paco.Delete(Integer.parseInt(this.indexElim_tbl.toString()));
                     selecPanEliminar_chbx.setText("Seleccionado");
                     Listas();
                     break;
             }
-        } catch (Exception e) {
+        } catch (HeadlessException | NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "No hay nada seleccionado", "ERROR!", 0);
         }
 
         selecPanEliminar_chbx.setSelected(true);
 
     }//GEN-LAST:event_eliminarPan_btnActionPerformed
-
+//metodo par seleccionar un proveedor en el modificar
     private void listaProveedoresEdit_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProveedoresEdit_tblMouseClicked
+        //igualo la posicion real de array
         this.indexModProv_tbl = CheckBoxProv(listaProveedoresEdit_tbl, selecEditProv_chbx);
         EditProv_btn.setEnabled(true);
         nombreProvEdit_txt.setText(Proveedor.getListaProveedores().get(Integer.parseInt(indexModProv_tbl.toString())).getsNombre());
@@ -1947,55 +2124,62 @@ public class View1 extends javax.swing.JFrame {
         direcProvEdit_txt.setText(Proveedor.getListaProveedores().get(Integer.parseInt(indexModProv_tbl.toString())).getsDireccion());
         nitProvEdit_txt.setText(Proveedor.getListaProveedores().get(Integer.parseInt(indexModProv_tbl.toString())).getsId());
     }//GEN-LAST:event_listaProveedoresEdit_tblMouseClicked
-
+//metodo para seleccionar un proveedor
     private void listaProvEliminar_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProvEliminar_tblMouseClicked
         //igualar posicion global con posicion local
         this.indexElim_tbl = CheckBoxProv(listaProvEliminar_tbl, selecEliminarProv_chbx);
     }//GEN-LAST:event_listaProvEliminar_tblMouseClicked
-
+//consultar un producto en la venta
     private void consultPanVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanVenta_btnActionPerformed
+        //metodo para consultar producto
         Consult_GeneralPan(nombrePanConsultVenta_txt.getText(), listaProdConsultVentas_tbl);
     }//GEN-LAST:event_consultPanVenta_btnActionPerformed
-
+//metodo para consultar proveedores en eliminar
     private void consultProvEliminar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultProvEliminar_btnActionPerformed
+        //metodo consular proveedores
         Consult_GeneralProv(nombreEliminarProv_txt.getText(), listaProvEliminar_tbl);
     }//GEN-LAST:event_consultProvEliminar_btnActionPerformed
-
+//metodo para eliminar un proveedor
     private void EliminarProv_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarProv_btnActionPerformed
         try {
             int opcEliminarProv = JOptionPane.showConfirmDialog(null, "¿ Desea Eliminar " + Proveedor.getListaProveedores().get(Integer.parseInt(this.indexElim_tbl.toString())).getsNombre() + "?");
             switch (opcEliminarProv) {
                 case (0):
+                    //metodo para eliminar el proveedor
                     Proveedor.Delete(Integer.parseInt(this.indexElim_tbl.toString()));
                     selecEliminarProv_chbx.setText("Seleccionado");
                     Listas();
                     break;
             }
             selecPanEliminar_chbx.setSelected(true);
-        } catch (Exception e) {
+        } catch (HeadlessException | NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "No hay producto seleccionado", "ERROR!", 0);
         }
 
     }//GEN-LAST:event_EliminarProv_btnActionPerformed
-
+//metodo para seleccionar un producto en la tabla de consultar
     private void listaPanesConsult_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaPanesConsult_tblMouseClicked
+        //metodo para saber la posicion del arraylist
         CheckBoxProducto(listaPanesConsult_tbl, selecConsultPan_chbx);
     }//GEN-LAST:event_listaPanesConsult_tblMouseClicked
-
+//metodo para seleccionar un proveedores en la tabla de consultar
     private void listaProvConsult_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProvConsult_tblMouseClicked
+        //saber la posicion real del array en consulta proveedor
         CheckBoxProv(listaProvConsult_tbl, selecConsultProv_chbx);
     }//GEN-LAST:event_listaProvConsult_tblMouseClicked
-
+//metodo para seleccionar un producto en la tabla de la venta
     private void listaProdConsultVentas_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProdConsultVentas_tblMouseClicked
+        //posicion real del producto con el arraylist
         this.indexProdConsult_tbl = CheckBoxProducto(listaProdConsultVentas_tbl, selecProdConsultVenta_chbx);
         agregarProdVenta_btn.setEnabled(true);
         //nombreProdVenta_txt.setEnabled(true);
         cantidadProdVenta_txt.setEnabled(true);
         nombreProdVenta_txt.setText(paco.getListaPan().get(Integer.parseInt(this.indexProdConsult_tbl.toString())).getNombreTipo());
     }//GEN-LAST:event_listaProdConsultVentas_tblMouseClicked
-
+//agregar producto a la venta
     private void agregarProdVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarProdVenta_btnActionPerformed
         try {
+            //valido la cantidad indicada
             if (cantidadProdVenta_txt.getText() == null || "".equals(cantidadProdVenta_txt.getText())) {
                 JOptionPane.showMessageDialog(null, "Ha dejado campos vacios", "ERROR!", 0);
             } else if (Integer.parseInt(cantidadProdVenta_txt.getText()) <= 0
@@ -2003,7 +2187,9 @@ public class View1 extends javax.swing.JFrame {
                     < Integer.parseInt(cantidadProdVenta_txt.getText())) {
                 JOptionPane.showMessageDialog(null, "Verifique la cantidad disponible", "ERROR!", 0);
             } else {
+                //activo la vista
                 cantidadProdVenta_txt.setEnabled(false);
+                nombreProdVenta_txt.setText(null);
                 selecProdConsultVenta_chbx.setSelected(false);
                 cancelarVenta_btn.setEnabled(true);
                 comprarVenta_btn.setEnabled(true);
@@ -2013,32 +2199,44 @@ public class View1 extends javax.swing.JFrame {
                 pagoClientVenta_txt.setEnabled(true);
                 double Ganan = Integer.parseInt(cantidadProdVenta_txt.getText()) * paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getPrecio();
                 total += Ganan;
+                //agrego la compra al arraylist
                 Compra.Create(new Producto(paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getNombreTipo(),
                         paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getPrecio(), Integer.parseInt(cantidadProdVenta_txt.getText()),
                         paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getId(),
                         paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getsProveedor(), Ganan));
-                cantidadProdVenta_txt.setText(null);
+                paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString()))
+                        .setCantidad((paco.getListaPan().get(Integer.parseInt(indexProdConsult_tbl.toString())).getCantidad() - Integer.parseInt(cantidadProdVenta_txt.getText())));
                 totalProdVenta.setText("Total de la venta: " + total);
+                cantidadProdVenta_txt.setText(null);
                 Listas();
             }
         } catch (HeadlessException | NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Digite valores Númericos", "ERROR!", 0);
         }
     }//GEN-LAST:event_agregarProdVenta_btnActionPerformed
-
+//metodo para comprobar la seleccion de la tabla compra
     private void listaProdVenta_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProdVenta_tblMouseClicked
         this.indexProdVenta_tbl = listaProdVenta_tbl.getSelectedRow();
         selecProdVenta_chbx.setSelected(true);
         retirarProdVenta_btn.setEnabled(true);
     }//GEN-LAST:event_listaProdVenta_tblMouseClicked
-
+//metodo para retirar producto en la compra
     private void retirarProdVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirarProdVenta_btnActionPerformed
         int opcEditProv = JOptionPane.showConfirmDialog(null, "¿Desea retirar este producto?");
         switch (opcEditProv) {
             case 0:
                 retirarProdVenta_btn.setEnabled(false);
+                //quito del total de la compra
                 total -= Compra.getCompraLista().get(Integer.parseInt(indexProdVenta_tbl.toString())).getiGanancias();
                 totalProdVenta.setText("Total de la venta: " + total);
+                //agrego la cantidad retirada al producto
+                for (int b = 0; b < paco.getListaPan().size(); b++) {
+                    if (paco.getListaPan().get(b).getNombreTipo().equals(Compra.getCompraLista().get(Integer.parseInt(indexProdVenta_tbl.toString())).getNombreTipo())) {
+                        paco.getListaPan().get(b).setCantidad(paco.getListaPan().get(b).getCantidad() + Compra.getCompraLista().get(Integer.parseInt(indexProdVenta_tbl.toString())).getCantidad());
+                        break;
+                    }
+                }
+                //remuevo la compra del arraylist
                 Compra.RemoveCompra(Integer.parseInt(indexProdVenta_tbl.toString()));
                 selecProdVenta_chbx.setSelected(false);
                 nombreProdVenta_txt.setText(null);
@@ -2046,7 +2244,7 @@ public class View1 extends javax.swing.JFrame {
                 break;
         }
     }//GEN-LAST:event_retirarProdVenta_btnActionPerformed
-
+//para cancelar la compra
     private void Cancelar() {
 
         Compra.getCompraLista().clear();
@@ -2067,33 +2265,36 @@ public class View1 extends javax.swing.JFrame {
         Listas();
 
     }
-
+//metodo para cancelar la compra
     private void cancelarVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarVenta_btnActionPerformed
         int opcEditProv = JOptionPane.showConfirmDialog(null, "¿Desea cancelar la compra?");
         switch (opcEditProv) {
             case 0:
                 total = 0;
                 totalProdVenta.setText("Total de la venta: " + total);
+                //bucles para agregar toda las cantidades alos productos
+                for (int i = 0; i < Compra.getCompraLista().size(); i++) {
+                    for (int b = 0; b < paco.getListaPan().size(); b++) {
+                        if (paco.getListaPan().get(b).getNombreTipo().equals(Compra.getCompraLista().get(i).getNombreTipo())) {
+                            paco.getListaPan().get(b).setCantidad(paco.getListaPan().get(b).getCantidad() + Compra.getCompraLista().get(i).getCantidad());
+                            break;
+                        }
+                    }
+                }
+                //metodo para cancelar
                 Cancelar();
                 JOptionPane.showMessageDialog(null, "Se cancelo la compra con éxito");
                 break;
         }
     }//GEN-LAST:event_cancelarVenta_btnActionPerformed
-
+//metodo para comprar
     private void comprarVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comprarVenta_btnActionPerformed
         if (Cliente()) {
             int opcEditProv = JOptionPane.showConfirmDialog(null, "¿Desea hacer la compra?");
             switch (opcEditProv) {
                 case 0:
+                    //metodo para crear la factura
                     Compra.Create(new Factura(Compra.getCompraLista()));
-                    for (int i = 0; i < Compra.getCompraLista().size(); i++) {
-                        for (int b = 0; b < paco.getListaPan().size(); b++) {
-                            if (paco.getListaPan().get(b).getNombreTipo().equals(Compra.getCompraLista().get(i).getNombreTipo())) {
-                                paco.getListaPan().get(b).setCantidad(paco.getListaPan().get(b).getCantidad() - Compra.getCompraLista().get(i).getCantidad());
-                                break;
-                            }
-                        }
-                    }
                     Cancelar();
                     total = 0;
                     totalProdVenta.setText("Total de la venta: " + total);
@@ -2104,15 +2305,16 @@ public class View1 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_comprarVenta_btnActionPerformed
 
-
+//consultar productos en el modificar
     private void consultPanEdit_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanEdit_btn1ActionPerformed
-        // TODO add your handling code here:
+        //metodo para consultar
+        Consult_GeneralEstadistica(nombrePanConsultEdit_txt1.getText(), listaProdVenta_tbl1);
     }//GEN-LAST:event_consultPanEdit_btn1ActionPerformed
 
     private void totalProdVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalProdVentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_totalProdVentaActionPerformed
-
+//seleccion un producto en la tabla de la venta
     private void listaProdVenta_tbl1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProdVenta_tbl1MouseClicked
         indexEstadistica = CheckBoxVenta(listaProdVenta_tbl1, selecEditPan_chbx1);
         //tabñla eliminar
@@ -2120,9 +2322,94 @@ public class View1 extends javax.swing.JFrame {
         paco.Tablas(Consulta, Compra.ListarTablaProducto(Integer.parseInt(indexEstadistica.toString())));
         Consulta = null;
     }//GEN-LAST:event_listaProdVenta_tbl1MouseClicked
+//metodo para eliminar venta
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int opcEditProv = JOptionPane.showConfirmDialog(null, "¿Desea eliminar esta venta?");
+        switch (opcEditProv) {
+            case 0:         
+                //remuevo la venta del array
+                Compra.RemoveVenta(Integer.parseInt(indexEstadistica.toString()));
+                Listas();
+                TablaVenta();
+                JOptionPane.showMessageDialog(null, "La venta ha sido eliminada");
+        }
+        indexEstadistica = null;
 
+    }//GEN-LAST:event_jButton2ActionPerformed
+//actualizar panel
+    private void Panel_GeneralMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_GeneralMouseClicked
+        Listas();
+        TablaVenta();
+    }//GEN-LAST:event_Panel_GeneralMouseClicked
+/////////////////////////////////////////////////metodo para el enter///////////////////////////////////////////////////
+    private void cantidadPanReg_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cantidadPanReg_txtKeyPressed
+        EventoEnter(evt, registrarPan_btn);
+    }//GEN-LAST:event_cantidadPanReg_txtKeyPressed
+
+    private void cantidadPanEdit_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cantidadPanEdit_txtKeyPressed
+        EventoEnter(evt, GuardarEditPan_btn);
+    }//GEN-LAST:event_cantidadPanEdit_txtKeyPressed
+
+    private void direcProvReg_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_direcProvReg_txtKeyPressed
+        EventoEnter(evt, registrarProv_btn);
+    }//GEN-LAST:event_direcProvReg_txtKeyPressed
+
+    private void cantidadProdVenta_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cantidadProdVenta_txtKeyPressed
+        EventoEnter(evt, agregarProdVenta_btn);
+    }//GEN-LAST:event_cantidadProdVenta_txtKeyPressed
+
+    private void pagoClientVenta_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pagoClientVenta_txtKeyPressed
+        EventoEnter(evt, comprarVenta_btn);
+    }//GEN-LAST:event_pagoClientVenta_txtKeyPressed
+
+    private void direcProvEdit_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_direcProvEdit_txtKeyPressed
+        EventoEnter(evt, GuardarEditProv_btn);
+    }//GEN-LAST:event_direcProvEdit_txtKeyPressed
+
+    private void listaPanesEdit_tblKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_listaPanesEdit_tblKeyPressed
+        EventoEnter(evt, EditPan_btn);
+    }//GEN-LAST:event_listaPanesEdit_tblKeyPressed
+
+    private void nombrePanConsult_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombrePanConsult_txtKeyPressed
+        EventoEnter(evt, consultPan_btn);
+    }//GEN-LAST:event_nombrePanConsult_txtKeyPressed
+
+    private void nombrePanEliminar_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombrePanEliminar_txtKeyPressed
+        EventoEnter(evt, consultPanEliminar_btn);
+    }//GEN-LAST:event_nombrePanEliminar_txtKeyPressed
+
+    private void listaPanesEliminar_tblKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_listaPanesEliminar_tblKeyPressed
+        EventoEnter(evt, eliminarPan_btn);
+    }//GEN-LAST:event_listaPanesEliminar_tblKeyPressed
+
+    private void nombreProvConsultEdit_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreProvConsultEdit_txtKeyPressed
+        EventoEnter(evt, consultProvEdit_btn);
+    }//GEN-LAST:event_nombreProvConsultEdit_txtKeyPressed
+
+    private void listaProveedoresEdit_tblKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_listaProveedoresEdit_tblKeyPressed
+        EventoEnter(evt, EditProv_btn);
+    }//GEN-LAST:event_listaProveedoresEdit_tblKeyPressed
+
+    private void nombreProvConsult_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreProvConsult_txtKeyPressed
+        EventoEnter(evt, consultProv_btn);
+    }//GEN-LAST:event_nombreProvConsult_txtKeyPressed
+
+    private void nombreEliminarProv_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreEliminarProv_txtKeyPressed
+        EventoEnter(evt, consultProvEliminar_btn);
+    }//GEN-LAST:event_nombreEliminarProv_txtKeyPressed
+
+    private void listaProvEliminar_tblKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_listaProvEliminar_tblKeyPressed
+        EventoEnter(evt, EliminarProv_btn);
+    }//GEN-LAST:event_listaProvEliminar_tblKeyPressed
+
+    private void nombrePanConsultVenta_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombrePanConsultVenta_txtKeyPressed
+        EventoEnter(evt, consultPanVenta_btn);
+    }//GEN-LAST:event_nombrePanConsultVenta_txtKeyPressed
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //metodo para la posicion del cliente en la venta
     private int CheckBoxVenta(JTable Tabla, JCheckBox Check) {
         int posConsult = 0;
+        //comparo la posicion real
         for (int i = 0; i < Compra.getCliente().size(); i++) {
             if (Tabla.getValueAt(Tabla.getSelectedRow(), 0).equals(Compra.getCliente().get(i).getsNombre())) {
                 posConsult = i;
@@ -2131,9 +2418,16 @@ public class View1 extends javax.swing.JFrame {
         Check.setSelected(true);
         return posConsult;
     }
-    
+    //envento del enter
+    private void EventoEnter(java.awt.event.KeyEvent evt,JButton boton){
+        if(evt.getKeyChar() == ENTER){
+            boton.doClick();
+        }
+    }
+//metodo para saber la posicion real de los productos
     private int CheckBoxProducto(JTable Tabla, JCheckBox Check) {
         int posConsult = 0;
+        //bucle para comprar la lisa de los productos
         for (int i = 0; i < paco.getListaPan().size(); i++) {
             if (Tabla.getValueAt(Tabla.getSelectedRow(), 0).equals(paco.getListaPan().get(i).getNombreTipo())) {
                 posConsult = i;
@@ -2142,9 +2436,10 @@ public class View1 extends javax.swing.JFrame {
         Check.setSelected(true);
         return posConsult;
     }
-
+//metodo para saber la posicion real de lso proveedores
     private int CheckBoxProv(JTable Tabla, JCheckBox Check) {
         int posConsult = 0;
+        //bucle para comprar la lisa de los proveedores
         for (int i = 0; i < Proveedor.getListaProveedores().size(); i++) {
             if (Tabla.getValueAt(Tabla.getSelectedRow(), 0).equals(Proveedor.getListaProveedores().get(i).getsNombre())) {
                 posConsult = i;
@@ -2153,10 +2448,11 @@ public class View1 extends javax.swing.JFrame {
         Check.setSelected(true);
         return posConsult;
     }
-
+//metodo para validar la entrada del cliente
     private boolean Cliente() {
         boolean V = true;
         try {
+            //valido la entrada de los clientes
             if (nombreClientVenta_txt.getText() == null || nombreClientVenta_txt.getText().equals("")
                     || idClientVenta_txt.getText() == null || idClientVenta_txt.getText().equals("")
                     || pagoClientVenta_txt.getText() == null || pagoClientVenta_txt.getText().equals("")) {
@@ -2166,6 +2462,7 @@ public class View1 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Verifique el pago", "ERROR!", 0);
                 V = false;
             } else {
+                //agrego los clientes
                 Compra.Create(new Client(nombreClientVenta_txt.getText().toUpperCase(), idClientVenta_txt.getText().toUpperCase(), Integer.parseInt(pagoClientVenta_txt.getText()),
                         (Integer.parseInt(pagoClientVenta_txt.getText()) - total), total));
             }
