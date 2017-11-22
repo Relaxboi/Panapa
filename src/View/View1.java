@@ -203,11 +203,11 @@ public class View1 extends javax.swing.JFrame {
         listaProdVenta_tbl1 = new javax.swing.JTable();
         jScrollPane13 = new javax.swing.JScrollPane();
         listaProdVenta_tbl2 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        nombrePanConsultEdit_txt1 = new javax.swing.JTextField();
+        EliminarVentas_btn = new javax.swing.JButton();
+        ConsultVentas_txt = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
-        selecEditPan_chbx1 = new javax.swing.JCheckBox();
-        consultPanEdit_btn1 = new javax.swing.JButton();
+        selecEliminarVentas_chbx = new javax.swing.JCheckBox();
+        consultVentas_btn = new javax.swing.JButton();
         Datos_ventas = new javax.swing.JPanel();
         jScrollPane14 = new javax.swing.JScrollPane();
         listaProdDatos_tbl = new javax.swing.JTable();
@@ -216,23 +216,23 @@ public class View1 extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
+        ProdMaxVentas_txt = new javax.swing.JTextField();
+        ProcVentas_txt = new javax.swing.JTextField();
+        CantProdMaxVentas_txt = new javax.swing.JTextField();
+        ProdMinVentas_txt = new javax.swing.JTextField();
+        CantProdMinVentas_txt = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
+        GananciasMaxVentas_txt = new javax.swing.JTextField();
+        CantGanadaMaxVentas_txt = new javax.swing.JTextField();
         jLabel38 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
+        GananciasMinVentas_txt = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
+        CantGanadaMinVentas_txt = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
-        consultProvEdit_btn1 = new javax.swing.JButton();
-        nombreProvConsultEdit_txt1 = new javax.swing.JTextField();
+        consultProdVentas_btn = new javax.swing.JButton();
+        ConsultProdDatos_txt = new javax.swing.JTextField();
         jLabel41 = new javax.swing.JLabel();
-        selecEditProv_chbx1 = new javax.swing.JCheckBox();
+        selecProdVentas_chbx = new javax.swing.JCheckBox();
 
         jButton1.setText("jButton1");
 
@@ -1655,23 +1655,23 @@ public class View1 extends javax.swing.JFrame {
             listaProdVenta_tbl2.getColumnModel().getColumn(2).setMinWidth(20);
         }
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/eliminar.png"))); // NOI18N
-        jButton2.setText("Eliminar Compra");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        EliminarVentas_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/eliminar.png"))); // NOI18N
+        EliminarVentas_btn.setText("Eliminar Compra");
+        EliminarVentas_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                EliminarVentas_btnActionPerformed(evt);
             }
         });
 
         jLabel31.setText("Buscar :");
 
-        selecEditPan_chbx1.setText("Seleccionado");
-        selecEditPan_chbx1.setEnabled(false);
+        selecEliminarVentas_chbx.setText("Seleccionado");
+        selecEliminarVentas_chbx.setEnabled(false);
 
-        consultPanEdit_btn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.png"))); // NOI18N
-        consultPanEdit_btn1.addActionListener(new java.awt.event.ActionListener() {
+        consultVentas_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.png"))); // NOI18N
+        consultVentas_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consultPanEdit_btn1ActionPerformed(evt);
+                consultVentas_btnActionPerformed(evt);
             }
         });
 
@@ -1690,13 +1690,13 @@ public class View1 extends javax.swing.JFrame {
                             .addGroup(Historial_ventasLayout.createSequentialGroup()
                                 .addComponent(jLabel31)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nombrePanConsultEdit_txt1)
+                                .addComponent(ConsultVentas_txt)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(consultPanEdit_btn1))
+                                .addComponent(consultVentas_btn))
                             .addGroup(Historial_ventasLayout.createSequentialGroup()
-                                .addComponent(selecEditPan_chbx1)
+                                .addComponent(selecEliminarVentas_chbx)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                                .addComponent(jButton2)))))
+                                .addComponent(EliminarVentas_btn)))))
                 .addContainerGap())
         );
         Historial_ventasLayout.setVerticalGroup(
@@ -1709,14 +1709,14 @@ public class View1 extends javax.swing.JFrame {
                     .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(Historial_ventasLayout.createSequentialGroup()
                         .addGroup(Historial_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(consultPanEdit_btn1)
+                            .addComponent(consultVentas_btn)
                             .addGroup(Historial_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(nombrePanConsultEdit_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ConsultVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel31)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(Historial_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(selecEditPan_chbx1))))
+                            .addComponent(EliminarVentas_btn)
+                            .addComponent(selecEliminarVentas_chbx))))
                 .addContainerGap())
         );
 
@@ -1759,27 +1759,27 @@ public class View1 extends javax.swing.JFrame {
 
         jLabel38.setText("#");
 
-        jLabel39.setText("Producto menos vendido :");
+        jLabel39.setText("Prod. con menos ganancia :");
 
         jLabel40.setText("#");
 
-        consultProvEdit_btn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.png"))); // NOI18N
-        consultProvEdit_btn1.addActionListener(new java.awt.event.ActionListener() {
+        consultProdVentas_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.png"))); // NOI18N
+        consultProdVentas_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consultProvEdit_btn1ActionPerformed(evt);
+                consultProdVentas_btnActionPerformed(evt);
             }
         });
 
-        nombreProvConsultEdit_txt1.addKeyListener(new java.awt.event.KeyAdapter() {
+        ConsultProdDatos_txt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                nombreProvConsultEdit_txt1KeyPressed(evt);
+                ConsultProdDatos_txtKeyPressed(evt);
             }
         });
 
         jLabel41.setText("Buscar :");
 
-        selecEditProv_chbx1.setText("Seleccionado");
-        selecEditProv_chbx1.setEnabled(false);
+        selecProdVentas_chbx.setText("Seleccionado");
+        selecProdVentas_chbx.setEnabled(false);
 
         javax.swing.GroupLayout Datos_ventasLayout = new javax.swing.GroupLayout(Datos_ventas);
         Datos_ventas.setLayout(Datos_ventasLayout);
@@ -1793,36 +1793,15 @@ public class View1 extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Datos_ventasLayout.createSequentialGroup()
                         .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(Datos_ventasLayout.createSequentialGroup()
-                                .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(Datos_ventasLayout.createSequentialGroup()
-                                        .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel39)
-                                            .addComponent(jLabel33))
-                                        .addGap(41, 41, 41))
-                                    .addGroup(Datos_ventasLayout.createSequentialGroup()
-                                        .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jTextField12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(18, 18, 18)))
-                                .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(Datos_ventasLayout.createSequentialGroup()
-                                        .addGap(39, 39, 39)
-                                        .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(Datos_ventasLayout.createSequentialGroup()
-                                        .addGap(36, 36, 36)
-                                        .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(Datos_ventasLayout.createSequentialGroup()
                                 .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel32)
                                     .addComponent(jLabel37)
-                                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(GananciasMaxVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ProdMaxVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CantProdMaxVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CantGanadaMaxVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(Datos_ventasLayout.createSequentialGroup()
                                         .addGap(38, 38, 38)
                                         .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1834,16 +1813,40 @@ public class View1 extends javax.swing.JFrame {
                                     .addGroup(Datos_ventasLayout.createSequentialGroup()
                                         .addComponent(jLabel41)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(nombreProvConsultEdit_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(selecEditProv_chbx1))
+                                        .addComponent(ConsultProdDatos_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(selecProdVentas_chbx))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(consultProvEdit_btn1)))
+                                .addComponent(consultProdVentas_btn))
+                            .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                    .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(GananciasMinVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel39))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(CantGanadaMinVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                            .addGap(36, 36, 36)
+                                            .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                    .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                            .addComponent(jLabel33)
+                                            .addGap(41, 41, 41))
+                                        .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                            .addComponent(ProdMinVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)))
+                                    .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(CantProdMinVentas_txt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                            .addGap(39, 39, 39)
+                                            .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                         .addGap(26, 26, 26))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Datos_ventasLayout.createSequentialGroup()
                         .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ProcVentas_txt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(79, 79, 79))))
+                        .addGap(82, 82, 82))))
         );
         Datos_ventasLayout.setVerticalGroup(
             Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1855,52 +1858,52 @@ public class View1 extends javax.swing.JFrame {
                         .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Datos_ventasLayout.createSequentialGroup()
                                 .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(nombreProvConsultEdit_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ConsultProdDatos_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel41))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(selecEditProv_chbx1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(consultProvEdit_btn1))
+                                .addComponent(selecProdVentas_chbx, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(consultProdVentas_btn))
                         .addGap(18, 18, 18)
                         .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(Datos_ventasLayout.createSequentialGroup()
                                 .addComponent(jLabel32)
                                 .addGap(2, 2, 2)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ProdMaxVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(2, 2, 2)
                                 .addComponent(jLabel37)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(GananciasMaxVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(Datos_ventasLayout.createSequentialGroup()
                                 .addComponent(jLabel34)
                                 .addGap(83, 83, 83))
                             .addGroup(Datos_ventasLayout.createSequentialGroup()
-                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CantProdMaxVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(2, 2, 2)
                                 .addComponent(jLabel38)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(CantGanadaMaxVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Datos_ventasLayout.createSequentialGroup()
                                 .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel33)
                                     .addComponent(jLabel35))
-                                .addGap(2, 2, 2)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ProdMinVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(Datos_ventasLayout.createSequentialGroup()
                                 .addGap(17, 17, 17)
-                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel39)
-                            .addComponent(jLabel40))
+                                .addComponent(CantProdMinVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jLabel40)
+                            .addComponent(jLabel39))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(GananciasMinVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CantGanadaMinVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel36)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ProcVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
@@ -2189,7 +2192,7 @@ public class View1 extends javax.swing.JFrame {
             Consulta.removeRow(0);
         }
         Consulta = null;
-        selecEditPan_chbx1.setSelected(false);     
+        selecEliminarVentas_chbx.setSelected(false);     
     }
 //metodo para editar productos 
     private void EditPan_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditPan_btnActionPerformed
@@ -2506,24 +2509,24 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_comprarVenta_btnActionPerformed
 
 //consultar productos en el modificar
-    private void consultPanEdit_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanEdit_btn1ActionPerformed
+    private void consultVentas_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultVentas_btnActionPerformed
         //metodo para consultar
-        Consult_GeneralEstadistica(nombrePanConsultEdit_txt1.getText(), listaProdVenta_tbl1);
-    }//GEN-LAST:event_consultPanEdit_btn1ActionPerformed
+        Consult_GeneralEstadistica(ConsultVentas_txt.getText(), listaProdVenta_tbl1);
+    }//GEN-LAST:event_consultVentas_btnActionPerformed
 
     private void totalProdVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalProdVentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_totalProdVentaActionPerformed
 //seleccion un producto en la tabla de la venta
     private void listaProdVenta_tbl1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProdVenta_tbl1MouseClicked
-        indexEstadistica = CheckBoxVenta(listaProdVenta_tbl1, selecEditPan_chbx1);
+        indexEstadistica = CheckBoxVenta(listaProdVenta_tbl1, selecEliminarVentas_chbx);
         //tabñla eliminar
         Consulta = (DefaultTableModel) listaProdVenta_tbl2.getModel();
         paco.Tablas(Consulta, Compra.ListarTablaProducto(Integer.parseInt(indexEstadistica.toString())));
         Consulta = null;
     }//GEN-LAST:event_listaProdVenta_tbl1MouseClicked
 //metodo para eliminar venta
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void EliminarVentas_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarVentas_btnActionPerformed
         int opcEditProv = JOptionPane.showConfirmDialog(null, "¿Desea eliminar esta venta?");
         switch (opcEditProv) {
             case 0:         
@@ -2535,7 +2538,7 @@ public class View1 extends javax.swing.JFrame {
         }
         indexEstadistica = null;
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_EliminarVentas_btnActionPerformed
 //actualizar panel
     private void Panel_GeneralMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_GeneralMouseClicked
         Listas();
@@ -2606,13 +2609,13 @@ public class View1 extends javax.swing.JFrame {
         EventoEnter(evt, consultPanVenta_btn);
     }//GEN-LAST:event_nombrePanConsultVenta_txtKeyPressed
 
-    private void consultProvEdit_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultProvEdit_btn1ActionPerformed
+    private void consultProdVentas_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultProdVentas_btnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_consultProvEdit_btn1ActionPerformed
+    }//GEN-LAST:event_consultProdVentas_btnActionPerformed
 
-    private void nombreProvConsultEdit_txt1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreProvConsultEdit_txt1KeyPressed
+    private void ConsultProdDatos_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ConsultProdDatos_txtKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nombreProvConsultEdit_txt1KeyPressed
+    }//GEN-LAST:event_ConsultProdDatos_txtKeyPressed
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
     //metodo para la posicion del cliente en la venta
     private int CheckBoxVenta(JTable Tabla, JCheckBox Check) {
@@ -2714,6 +2717,12 @@ public class View1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField CantGanadaMaxVentas_txt;
+    private javax.swing.JTextField CantGanadaMinVentas_txt;
+    private javax.swing.JTextField CantProdMaxVentas_txt;
+    private javax.swing.JTextField CantProdMinVentas_txt;
+    private javax.swing.JTextField ConsultProdDatos_txt;
+    private javax.swing.JTextField ConsultVentas_txt;
     private javax.swing.JPanel Consultar_Producto;
     private javax.swing.JPanel Consultar_Proveedores;
     private javax.swing.JTabbedPane Contenedor_Stast;
@@ -2721,15 +2730,21 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JButton EditPan_btn;
     private javax.swing.JButton EditProv_btn;
     private javax.swing.JButton EliminarProv_btn;
+    private javax.swing.JButton EliminarVentas_btn;
     private javax.swing.JPanel Eliminar_Producto;
     private javax.swing.JPanel Eliminar_Proveedores;
     private javax.swing.JPanel Estadisticas;
+    private javax.swing.JTextField GananciasMaxVentas_txt;
+    private javax.swing.JTextField GananciasMinVentas_txt;
     private javax.swing.JButton GuardarEditPan_btn;
     private javax.swing.JButton GuardarEditProv_btn;
     private javax.swing.JPanel Historial_ventas;
     private javax.swing.JPanel Modificar_Producto;
     private javax.swing.JPanel Modificar_Proveedores;
     private javax.swing.JTabbedPane Panel_General;
+    private javax.swing.JTextField ProcVentas_txt;
+    private javax.swing.JTextField ProdMaxVentas_txt;
+    private javax.swing.JTextField ProdMinVentas_txt;
     private javax.swing.JTabbedPane Productos;
     private javax.swing.JTabbedPane Proveedores;
     private javax.swing.JPanel Registrar_Producto;
@@ -2744,20 +2759,19 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JTextField cantidadProdVenta_txt;
     private javax.swing.JButton comprarVenta_btn;
     private javax.swing.JButton consultPanEdit_btn;
-    private javax.swing.JButton consultPanEdit_btn1;
     private javax.swing.JButton consultPanEliminar_btn;
     private javax.swing.JButton consultPanVenta_btn;
     private javax.swing.JButton consultPan_btn;
+    private javax.swing.JButton consultProdVentas_btn;
     private javax.swing.JButton consultProvEdit_btn;
-    private javax.swing.JButton consultProvEdit_btn1;
     private javax.swing.JButton consultProvEliminar_btn;
     private javax.swing.JButton consultProv_btn;
+    private javax.swing.JButton consultVentas_btn;
     private javax.swing.JTextField direcProvEdit_txt;
     private javax.swing.JTextField direcProvReg_txt;
     private javax.swing.JButton eliminarPan_btn;
     private javax.swing.JTextField idClientVenta_txt;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2812,15 +2826,6 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTable listaPanesConsult_tbl;
     private javax.swing.JTable listaPanesEdit_tbl;
@@ -2840,7 +2845,6 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JTextField nombreClientVenta_txt;
     private javax.swing.JTextField nombreEliminarProv_txt;
     private javax.swing.JTextField nombrePanConsultEdit_txt;
-    private javax.swing.JTextField nombrePanConsultEdit_txt1;
     private javax.swing.JTextField nombrePanConsultVenta_txt;
     private javax.swing.JTextField nombrePanConsult_txt;
     private javax.swing.JTextField nombrePanEdit_txt;
@@ -2848,7 +2852,6 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JTextField nombrePanReg_txt;
     private javax.swing.JTextField nombreProdVenta_txt;
     private javax.swing.JTextField nombreProvConsultEdit_txt;
-    private javax.swing.JTextField nombreProvConsultEdit_txt1;
     private javax.swing.JTextField nombreProvConsult_txt;
     private javax.swing.JTextField nombreProvEdit_txt;
     private javax.swing.JTextField nombreProvReg_txt;
@@ -2862,13 +2865,13 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JCheckBox selecConsultPan_chbx;
     private javax.swing.JCheckBox selecConsultProv_chbx;
     private javax.swing.JCheckBox selecEditPan_chbx;
-    private javax.swing.JCheckBox selecEditPan_chbx1;
     private javax.swing.JCheckBox selecEditProv_chbx;
-    private javax.swing.JCheckBox selecEditProv_chbx1;
     private javax.swing.JCheckBox selecEliminarProv_chbx;
+    private javax.swing.JCheckBox selecEliminarVentas_chbx;
     private javax.swing.JCheckBox selecPanEliminar_chbx;
     private javax.swing.JCheckBox selecProdConsultVenta_chbx;
     private javax.swing.JCheckBox selecProdVenta_chbx;
+    private javax.swing.JCheckBox selecProdVentas_chbx;
     private javax.swing.JTextField serviProvEdit_txt;
     private javax.swing.JTextField serviProvReg_txt;
     private javax.swing.JTextField telefonoProvEdit_txt;
