@@ -209,6 +209,30 @@ public class View1 extends javax.swing.JFrame {
         selecEditPan_chbx1 = new javax.swing.JCheckBox();
         consultPanEdit_btn1 = new javax.swing.JButton();
         Datos_ventas = new javax.swing.JPanel();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        listaProdDatos_tbl = new javax.swing.JTable();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        jTextField10 = new javax.swing.JTextField();
+        jTextField11 = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
+        jTextField13 = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
+        consultProvEdit_btn1 = new javax.swing.JButton();
+        nombreProvConsultEdit_txt1 = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        selecEditProv_chbx1 = new javax.swing.JCheckBox();
 
         jButton1.setText("jButton1");
 
@@ -1304,6 +1328,7 @@ public class View1 extends javax.swing.JFrame {
 
         jLabel12.setText("Buscar :");
 
+        nombrePanConsultVenta_txt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         nombrePanConsultVenta_txt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 nombrePanConsultVenta_txtKeyPressed(evt);
@@ -1349,8 +1374,10 @@ public class View1 extends javax.swing.JFrame {
 
         jLabel13.setText("Producto :");
 
+        nombreProdVenta_txt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         nombreProdVenta_txt.setEnabled(false);
 
+        cantidadProdVenta_txt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         cantidadProdVenta_txt.setEnabled(false);
         cantidadProdVenta_txt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -1399,10 +1426,12 @@ public class View1 extends javax.swing.JFrame {
             }
         });
 
+        nombreClientVenta_txt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         nombreClientVenta_txt.setEnabled(false);
 
         jLabel15.setText("Cliente :");
 
+        idClientVenta_txt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         idClientVenta_txt.setEnabled(false);
 
         jLabel28.setText("Identificacion :");
@@ -1418,7 +1447,8 @@ public class View1 extends javax.swing.JFrame {
 
         jLabel30.setText("Dinero Recibido :");
 
-        totalProdVenta.setFont(new java.awt.Font("Footlight MT Light", 0, 18)); // NOI18N
+        totalProdVenta.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        totalProdVenta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         totalProdVenta.setText("Total de la venta: 0.0");
         totalProdVenta.setEnabled(false);
         totalProdVenta.addActionListener(new java.awt.event.ActionListener() {
@@ -1443,10 +1473,10 @@ public class View1 extends javax.swing.JFrame {
                     .addGroup(VentasLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(selecProdConsultVenta_chbx)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VentasLayout.createSequentialGroup()
-                        .addGap(0, 1, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VentasLayout.createSequentialGroup()
                                 .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1499,7 +1529,7 @@ public class View1 extends javax.swing.JFrame {
                                 .addComponent(selecProdVenta_chbx))
                             .addGroup(VentasLayout.createSequentialGroup()
                                 .addComponent(cancelarVenta_btn)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(41, 41, 41)
                                 .addComponent(totalProdVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())))
             .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1621,10 +1651,8 @@ public class View1 extends javax.swing.JFrame {
         jScrollPane13.setViewportView(listaProdVenta_tbl2);
         if (listaProdVenta_tbl2.getColumnModel().getColumnCount() > 0) {
             listaProdVenta_tbl2.getColumnModel().getColumn(0).setResizable(false);
-            listaProdVenta_tbl2.getColumnModel().getColumn(1).setMinWidth(70);
-            listaProdVenta_tbl2.getColumnModel().getColumn(1).setMaxWidth(70);
-            listaProdVenta_tbl2.getColumnModel().getColumn(2).setMinWidth(70);
-            listaProdVenta_tbl2.getColumnModel().getColumn(2).setMaxWidth(70);
+            listaProdVenta_tbl2.getColumnModel().getColumn(1).setMinWidth(20);
+            listaProdVenta_tbl2.getColumnModel().getColumn(2).setMinWidth(20);
         }
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/eliminar.png"))); // NOI18N
@@ -1694,15 +1722,187 @@ public class View1 extends javax.swing.JFrame {
 
         Contenedor_Stast.addTab("Historial de Ventas", Historial_ventas);
 
+        listaProdDatos_tbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Producto", "Cant. Vendida", "$ Acumulado"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane14.setViewportView(listaProdDatos_tbl);
+        if (listaProdDatos_tbl.getColumnModel().getColumnCount() > 0) {
+            listaProdDatos_tbl.getColumnModel().getColumn(0).setResizable(false);
+            listaProdDatos_tbl.getColumnModel().getColumn(1).setMinWidth(20);
+            listaProdDatos_tbl.getColumnModel().getColumn(2).setMinWidth(20);
+        }
+
+        jLabel32.setText("Producto mas vendido :");
+
+        jLabel33.setText("Producto menos vendido :");
+
+        jLabel34.setText("#");
+
+        jLabel35.setText("#");
+
+        jLabel36.setText(" Ventas Completadas :");
+
+        jLabel37.setText("Producto con mas ganancia:");
+
+        jLabel38.setText("#");
+
+        jLabel39.setText("Producto menos vendido :");
+
+        jLabel40.setText("#");
+
+        consultProvEdit_btn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.png"))); // NOI18N
+        consultProvEdit_btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultProvEdit_btn1ActionPerformed(evt);
+            }
+        });
+
+        nombreProvConsultEdit_txt1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nombreProvConsultEdit_txt1KeyPressed(evt);
+            }
+        });
+
+        jLabel41.setText("Buscar :");
+
+        selecEditProv_chbx1.setText("Seleccionado");
+        selecEditProv_chbx1.setEnabled(false);
+
         javax.swing.GroupLayout Datos_ventasLayout = new javax.swing.GroupLayout(Datos_ventas);
         Datos_ventas.setLayout(Datos_ventasLayout);
         Datos_ventasLayout.setHorizontalGroup(
             Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 676, Short.MAX_VALUE)
+            .addGroup(Datos_ventasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Datos_ventasLayout.createSequentialGroup()
+                        .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                        .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel39)
+                                            .addComponent(jLabel33))
+                                        .addGap(41, 41, 41))
+                                    .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                        .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jTextField12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)))
+                                .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                        .addGap(39, 39, 39)
+                                        .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                        .addGap(36, 36, 36)
+                                        .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel32)
+                                    .addComponent(jLabel37)
+                                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                        .addGap(38, 38, 38)
+                                        .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                        .addGap(41, 41, 41)
+                                        .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                        .addComponent(jLabel41)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(nombreProvConsultEdit_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(selecEditProv_chbx1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(consultProvEdit_btn1)))
+                        .addGap(26, 26, 26))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Datos_ventasLayout.createSequentialGroup()
+                        .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(79, 79, 79))))
         );
         Datos_ventasLayout.setVerticalGroup(
             Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 468, Short.MAX_VALUE)
+            .addGroup(Datos_ventasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Datos_ventasLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(nombreProvConsultEdit_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel41))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(selecEditProv_chbx1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(consultProvEdit_btn1))
+                        .addGap(18, 18, 18)
+                        .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                .addComponent(jLabel32)
+                                .addGap(2, 2, 2)
+                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(2, 2, 2)
+                                .addComponent(jLabel37)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                .addComponent(jLabel34)
+                                .addGap(83, 83, 83))
+                            .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(2, 2, 2)
+                                .addComponent(jLabel38)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel33)
+                                    .addComponent(jLabel35))
+                                .addGap(2, 2, 2)
+                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Datos_ventasLayout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel39)
+                            .addComponent(jLabel40))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel36)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         Contenedor_Stast.addTab("Datos de Productos", Datos_ventas);
@@ -2405,6 +2605,14 @@ public class View1 extends javax.swing.JFrame {
     private void nombrePanConsultVenta_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombrePanConsultVenta_txtKeyPressed
         EventoEnter(evt, consultPanVenta_btn);
     }//GEN-LAST:event_nombrePanConsultVenta_txtKeyPressed
+
+    private void consultProvEdit_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultProvEdit_btn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_consultProvEdit_btn1ActionPerformed
+
+    private void nombreProvConsultEdit_txt1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreProvConsultEdit_txt1KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nombreProvConsultEdit_txt1KeyPressed
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
     //metodo para la posicion del cliente en la venta
     private int CheckBoxVenta(JTable Tabla, JCheckBox Check) {
@@ -2541,6 +2749,7 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JButton consultPanVenta_btn;
     private javax.swing.JButton consultPan_btn;
     private javax.swing.JButton consultProvEdit_btn;
+    private javax.swing.JButton consultProvEdit_btn1;
     private javax.swing.JButton consultProvEliminar_btn;
     private javax.swing.JButton consultProv_btn;
     private javax.swing.JTextField direcProvEdit_txt;
@@ -2574,7 +2783,17 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -2585,6 +2804,7 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -2592,12 +2812,22 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTable listaPanesConsult_tbl;
     private javax.swing.JTable listaPanesEdit_tbl;
     private javax.swing.JTable listaPanesEliminar_tbl;
     private javax.swing.JTable listaPanesReg_tbl;
     private javax.swing.JTable listaProdConsultVentas_tbl;
+    private javax.swing.JTable listaProdDatos_tbl;
     private javax.swing.JTable listaProdVenta_tbl;
     private javax.swing.JTable listaProdVenta_tbl1;
     private javax.swing.JTable listaProdVenta_tbl2;
@@ -2618,6 +2848,7 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JTextField nombrePanReg_txt;
     private javax.swing.JTextField nombreProdVenta_txt;
     private javax.swing.JTextField nombreProvConsultEdit_txt;
+    private javax.swing.JTextField nombreProvConsultEdit_txt1;
     private javax.swing.JTextField nombreProvConsult_txt;
     private javax.swing.JTextField nombreProvEdit_txt;
     private javax.swing.JTextField nombreProvReg_txt;
@@ -2633,6 +2864,7 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JCheckBox selecEditPan_chbx;
     private javax.swing.JCheckBox selecEditPan_chbx1;
     private javax.swing.JCheckBox selecEditProv_chbx;
+    private javax.swing.JCheckBox selecEditProv_chbx1;
     private javax.swing.JCheckBox selecEliminarProv_chbx;
     private javax.swing.JCheckBox selecPanEliminar_chbx;
     private javax.swing.JCheckBox selecProdConsultVenta_chbx;
