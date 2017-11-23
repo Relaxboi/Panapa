@@ -36,9 +36,9 @@ public class FacturaController {
             Palabra = "";
             cantidad = 0;
             for (int h = 0; h < this.Compra.get(i).getFactura().size(); h++) {
-                    cantidad += this.Compra.get(i).getFactura().get(h).getCantidad();
-                }
-            for (int b = 0; b < Cliente.get(i).getsNombre().length(); b++) {              
+                cantidad += this.Compra.get(i).getFactura().get(h).getCantidad();
+            }
+            for (int b = 0; b < Cliente.get(i).getsNombre().length(); b++) {
                 if (Cliente.get(i).getsNombre().charAt(b) != ' ') {
                     Palabra += Cliente.get(i).getsNombre().charAt(b);
                     if (Palabra.equals(s)) {
@@ -48,6 +48,28 @@ public class FacturaController {
                     }
 
                 } else {
+                    Palabra = "";
+                }
+            }
+        }
+        return A;
+    }
+    
+    public ArrayList ReadDatos(String s){
+        String Palabra = "";
+        ArrayList<Object[]> A = new ArrayList<>();
+        ArrayList<String[]> Lista = (ArrayList<String[]>) ListarEstadistica().clone();
+         A.clear();
+        for(int i = 0; i < Lista.size(); i++){
+            Palabra = "";
+            for(int j = 0; j < Lista.get(i)[0].length(); j++){
+                if(Lista.get(i)[0].charAt(j) != ' '){
+                    Palabra += Lista.get(i)[0].charAt(j);
+                    if(Palabra.equals(s)){
+                        A.add(new Object[]{Lista.get(i)[0], Lista.get(i)[1], Lista.get(i)[2]});
+                        break;
+                    }
+                }else{
                     Palabra = "";
                 }
             }
@@ -72,7 +94,6 @@ public class FacturaController {
             }
             if (pos == i) {
                 continue;
-
             }
             for (int b = 0; b < this.Compra.get(Index).getFactura().size(); b++) {
                 if (this.Compra.get(Index).getFactura().get(i).getNombreTipo().equals(this.Compra.get(Index).getFactura().get(b).getNombreTipo())) {
@@ -95,6 +116,54 @@ public class FacturaController {
         }
 
         return Compra;
+    }
+
+    public ArrayList ListarEstadistica() {
+        ArrayList<String[]> Compra = new ArrayList();
+        double ganan = 0;
+        int cantidad = 0;
+        ArrayList<String> nombre = (ArrayList<String>) RellenarArray().clone();
+        for (String nombre1 : nombre) {
+            for (int i = 0; i < Cliente.size(); i++) {
+               for(Producto factura : this.Compra.get(i).getFactura()) {
+                    if(factura.getNombreTipo().equals(nombre1)){
+                        ganan += factura.getiGanancias();
+                        cantidad += factura.getCantidad();
+                    }
+                }
+            }
+           Compra.add(new String[]{nombre1,
+                    ""+cantidad, ""+ganan});
+           cantidad = 0;
+           ganan = 0;
+        }
+        return Compra;
+
+    }
+
+    private ArrayList RellenarArray() {
+        boolean V;
+        ArrayList<String> nombre = new ArrayList();
+        for (int l = 0; l < Cliente.size(); l++) {
+            for (int i = 0; i < this.Compra.get(l).getFactura().size(); i++) {
+                V = true;
+                if (nombre.isEmpty()) {
+                    nombre.add(this.Compra.get(l).getFactura().get(i).getNombreTipo());
+                } else {
+                    for (String nombre1 : nombre) {
+                        if (this.Compra.get(l).getFactura().get(i).getNombreTipo().equals(nombre1)) {
+                            V = false;
+                            break;
+                        }
+                    }
+                    if (V) {
+                        nombre.add(this.Compra.get(l).getFactura().get(i).getNombreTipo());
+                    }
+                }
+            }
+        }
+
+        return nombre;
     }
 
     public ArrayList ListarVenta() {
