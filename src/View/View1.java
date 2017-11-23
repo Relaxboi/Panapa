@@ -76,6 +76,7 @@ public class View1 extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jToolBar1 = new javax.swing.JToolBar();
+        jTextField1 = new javax.swing.JTextField();
         Panel_General = new javax.swing.JTabbedPane();
         Productos = new javax.swing.JTabbedPane();
         Registrar_Producto = new javax.swing.JPanel();
@@ -238,6 +239,8 @@ public class View1 extends javax.swing.JFrame {
 
         jToolBar1.setRollover(true);
 
+        jTextField1.setText("jTextField1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Panel_General.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -269,11 +272,11 @@ public class View1 extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nombre", "Cantidad", "Precio"
+                "Nombre", "Cantidad", "Precio", "Proveerdor"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -285,6 +288,7 @@ public class View1 extends javax.swing.JFrame {
             listaPanesReg_tbl.getColumnModel().getColumn(0).setResizable(false);
             listaPanesReg_tbl.getColumnModel().getColumn(1).setResizable(false);
             listaPanesReg_tbl.getColumnModel().getColumn(2).setResizable(false);
+            listaPanesReg_tbl.getColumnModel().getColumn(3).setResizable(false);
         }
 
         registrarPan_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/guardar.png"))); // NOI18N
@@ -380,11 +384,11 @@ public class View1 extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nombre", "Cantidad", "Precio"
+                "Nombre", "Cantidad", "Precio", "Proveedor"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -406,6 +410,7 @@ public class View1 extends javax.swing.JFrame {
             listaPanesEdit_tbl.getColumnModel().getColumn(0).setResizable(false);
             listaPanesEdit_tbl.getColumnModel().getColumn(1).setResizable(false);
             listaPanesEdit_tbl.getColumnModel().getColumn(2).setResizable(false);
+            listaPanesEdit_tbl.getColumnModel().getColumn(3).setResizable(false);
         }
 
         cantidadPanEdit_txt.setEnabled(false);
@@ -571,11 +576,11 @@ public class View1 extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nombre", "Cantidad", "Precio"
+                "Nombre", "Cantidad", "Precio", "Proveerdor"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -592,6 +597,7 @@ public class View1 extends javax.swing.JFrame {
             listaPanesConsult_tbl.getColumnModel().getColumn(0).setResizable(false);
             listaPanesConsult_tbl.getColumnModel().getColumn(1).setResizable(false);
             listaPanesConsult_tbl.getColumnModel().getColumn(2).setResizable(false);
+            listaPanesConsult_tbl.getColumnModel().getColumn(3).setResizable(false);
         }
 
         javax.swing.GroupLayout Consultar_ProductoLayout = new javax.swing.GroupLayout(Consultar_Producto);
@@ -599,13 +605,13 @@ public class View1 extends javax.swing.JFrame {
         Consultar_ProductoLayout.setHorizontalGroup(
             Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Consultar_ProductoLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(25, 25, 25)
                 .addComponent(selecConsultPan_chbx)
-                .addGap(29, 29, 29)
+                .addGap(35, 35, 35)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nombrePanConsult_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(consultPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -618,13 +624,13 @@ public class View1 extends javax.swing.JFrame {
             Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Consultar_ProductoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(consultPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(nombrePanConsult_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel8)
-                        .addComponent(selecConsultPan_chbx))
-                    .addComponent(consultPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(412, Short.MAX_VALUE))
+                        .addComponent(selecConsultPan_chbx)))
+                .addContainerGap(413, Short.MAX_VALUE))
             .addGroup(Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Consultar_ProductoLayout.createSequentialGroup()
                     .addContainerGap(76, Short.MAX_VALUE)
@@ -639,11 +645,11 @@ public class View1 extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nombre", "Cantidad", "Precio"
+                "Nombre", "Cantidad", "Precio", "Proveerdor"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -723,7 +729,7 @@ public class View1 extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(eliminarPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Eliminar_ProductoLayout.createSequentialGroup()
+                    .addGroup(Eliminar_ProductoLayout.createSequentialGroup()
                         .addContainerGap(17, Short.MAX_VALUE)
                         .addGroup(Eliminar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Eliminar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -733,8 +739,8 @@ public class View1 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(selecPanEliminar_chbx)
                         .addGap(18, 18, 18)))
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         Productos.addTab("Eliminar Producto", Eliminar_Producto);
@@ -1524,8 +1530,9 @@ public class View1 extends javax.swing.JFrame {
                     .addGroup(VentasLayout.createSequentialGroup()
                         .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(VentasLayout.createSequentialGroup()
-                                .addComponent(retirarProdVenta_btn)
-                                .addGap(12, 12, 12)
+                                .addGap(3, 3, 3)
+                                .addComponent(retirarProdVenta_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(selecProdVenta_chbx))
                             .addGroup(VentasLayout.createSequentialGroup()
                                 .addComponent(cancelarVenta_btn)
@@ -1812,7 +1819,7 @@ public class View1 extends javax.swing.JFrame {
             .addGroup(Datos_ventasLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Datos_ventasLayout.createSequentialGroup()
                         .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -2049,15 +2056,19 @@ public class View1 extends javax.swing.JFrame {
         String[] MaxGanan = new String[2];
         String[] Min = new String[2];
         String[] MinGanan = new String[2];
+        
         System.arraycopy(Compra.MasVendidosDatos(), 0, Max, 0, 2);
         ProdMaxVentas_txt.setText(Max[0]);
         CantProdMaxVentas_txt.setText(Max[1]);
+        
         System.arraycopy(Compra.MenosVendidosDatos(), 0, Min, 0, 2);
         ProdMinVentas_txt.setText(Min[0]);
         CantProdMinVentas_txt.setText(Min[1]);
+        
         System.arraycopy(Compra.MasGananciaDatos(), 0, MaxGanan, 0, 2);
         GananciasMaxVentas_txt.setText(MaxGanan[0]);
         CantGanadaMaxVentas_txt.setText(MaxGanan[1]);
+        
         System.arraycopy(Compra.MenosGananciaDatos(), 0, MinGanan, 0, 2);
         GananciasMinVentas_txt.setText(MinGanan[0]);
         CantGanadaMinVentas_txt.setText(MinGanan[1]);
@@ -2477,9 +2488,11 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_agregarProdVenta_btnActionPerformed
 //metodo para comprobar la seleccion de la tabla compra
     private void listaProdVenta_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProdVenta_tblMouseClicked
+       
         this.indexProdVenta_tbl = listaProdVenta_tbl.getSelectedRow();
         selecProdVenta_chbx.setSelected(true);
         retirarProdVenta_btn.setEnabled(true);
+        
     }//GEN-LAST:event_listaProdVenta_tblMouseClicked
 //metodo para retirar producto en la compra
     private void retirarProdVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirarProdVenta_btnActionPerformed
@@ -2517,6 +2530,7 @@ public class View1 extends javax.swing.JFrame {
         agregarProdVenta_btn.setEnabled(false);
         retirarProdVenta_btn.setEnabled(false);
         selecProdVenta_chbx.setSelected(false);
+        
         nombreEliminarProv_txt.setText(null);
         nombreClientVenta_txt.setText(null);
         nombreClientVenta_txt.setEnabled(false);
@@ -2891,6 +2905,7 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTable listaPanesConsult_tbl;
     private javax.swing.JTable listaPanesEdit_tbl;

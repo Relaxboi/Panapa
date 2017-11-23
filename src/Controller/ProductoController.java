@@ -54,7 +54,9 @@ public class ProductoController {
             Panes.add(new Object[]{
                 getListaPan().get(i).getNombreTipo(), 
                 getListaPan().get(i).getCantidad(), 
-                getListaPan().get(i).getPrecio()});
+                getListaPan().get(i).getPrecio(),
+                getListaPan().get(i).getsProveedor()});
+        
         }
         return Panes;
     }
