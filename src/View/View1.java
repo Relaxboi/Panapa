@@ -233,7 +233,6 @@ public class View1 extends javax.swing.JFrame {
         consultProdVentas_btn = new javax.swing.JButton();
         ConsultProdDatos_txt = new javax.swing.JTextField();
         jLabel41 = new javax.swing.JLabel();
-        selecProdVentas_chbx = new javax.swing.JCheckBox();
 
         jButton1.setText("jButton1");
 
@@ -307,7 +306,7 @@ public class View1 extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Registrar_ProductoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(Registrar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 665, Short.MAX_VALUE)
                     .addGroup(Registrar_ProductoLayout.createSequentialGroup()
                         .addGroup(Registrar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -606,13 +605,13 @@ public class View1 extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nombrePanConsult_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addComponent(consultPan_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(Consultar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(Consultar_ProductoLayout.createSequentialGroup()
                     .addGap(13, 13, 13)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 659, Short.MAX_VALUE)
                     .addGap(14, 14, 14)))
         );
         Consultar_ProductoLayout.setVerticalGroup(
@@ -701,9 +700,9 @@ public class View1 extends javax.swing.JFrame {
             .addGroup(Eliminar_ProductoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(Eliminar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE)
                     .addGroup(Eliminar_ProductoLayout.createSequentialGroup()
-                        .addGap(0, 28, Short.MAX_VALUE)
+                        .addGap(0, 52, Short.MAX_VALUE)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(Eliminar_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1756,13 +1755,40 @@ public class View1 extends javax.swing.JFrame {
 
         jLabel36.setText(" Ventas Completadas :");
 
+        ProdMaxVentas_txt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ProdMaxVentas_txt.setEnabled(false);
+
+        ProcVentas_txt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ProcVentas_txt.setEnabled(false);
+
+        CantProdMaxVentas_txt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CantProdMaxVentas_txt.setEnabled(false);
+
+        ProdMinVentas_txt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ProdMinVentas_txt.setEnabled(false);
+
+        CantProdMinVentas_txt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CantProdMinVentas_txt.setEnabled(false);
+
         jLabel37.setText("Producto con mas ganancia:");
 
-        jLabel38.setText("#");
+        GananciasMaxVentas_txt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        GananciasMaxVentas_txt.setEnabled(false);
+
+        CantGanadaMaxVentas_txt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CantGanadaMaxVentas_txt.setEnabled(false);
+
+        jLabel38.setText("$");
+
+        GananciasMinVentas_txt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        GananciasMinVentas_txt.setEnabled(false);
 
         jLabel39.setText("Prod. con menos ganancia :");
 
-        jLabel40.setText("#");
+        CantGanadaMinVentas_txt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        CantGanadaMinVentas_txt.setEnabled(false);
+
+        jLabel40.setText("$");
 
         consultProdVentas_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/buscar.png"))); // NOI18N
         consultProdVentas_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -1778,9 +1804,6 @@ public class View1 extends javax.swing.JFrame {
         });
 
         jLabel41.setText("Buscar :");
-
-        selecProdVentas_chbx.setText("Seleccionado");
-        selecProdVentas_chbx.setEnabled(false);
 
         javax.swing.GroupLayout Datos_ventasLayout = new javax.swing.GroupLayout(Datos_ventas);
         Datos_ventas.setLayout(Datos_ventasLayout);
@@ -1816,12 +1839,9 @@ public class View1 extends javax.swing.JFrame {
                                         .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(CantProdMinVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(Datos_ventasLayout.createSequentialGroup()
-                                .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(Datos_ventasLayout.createSequentialGroup()
-                                        .addComponent(jLabel41)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ConsultProdDatos_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(selecProdVentas_chbx))
+                                .addComponent(jLabel41)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ConsultProdDatos_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(consultProdVentas_btn))
                             .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1848,14 +1868,11 @@ public class View1 extends javax.swing.JFrame {
                     .addGroup(Datos_ventasLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Datos_ventasLayout.createSequentialGroup()
-                                .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(ConsultProdDatos_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel41))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(selecProdVentas_chbx, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(ConsultProdDatos_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel41))
                             .addComponent(consultProdVentas_btn))
-                        .addGap(18, 18, 18)
+                        .addGap(43, 43, 43)
                         .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(Datos_ventasLayout.createSequentialGroup()
                                 .addComponent(jLabel32)
@@ -2022,8 +2039,29 @@ public class View1 extends javax.swing.JFrame {
         Consulta = (DefaultTableModel) listaProdDatos_tbl.getModel();
         paco.Tablas(Consulta, Compra.ListarEstadistica());
         Consulta = null;
+        LlenarCajas();
         //Llenar Combobox
         ComboBox();
+    }
+    
+    private void LlenarCajas(){
+        String[] Max = new String[2];
+        String[] MaxGanan = new String[2];
+        String[] Min = new String[2];
+        String[] MinGanan = new String[2];
+        System.arraycopy(Compra.MasVendidosDatos(), 0, Max, 0, 2);
+        ProdMaxVentas_txt.setText(Max[0]);
+        CantProdMaxVentas_txt.setText(Max[1]);
+        System.arraycopy(Compra.MenosVendidosDatos(), 0, Min, 0, 2);
+        ProdMinVentas_txt.setText(Min[0]);
+        CantProdMinVentas_txt.setText(Min[1]);
+        System.arraycopy(Compra.MasGananciaDatos(), 0, MaxGanan, 0, 2);
+        GananciasMaxVentas_txt.setText(MaxGanan[0]);
+        CantGanadaMaxVentas_txt.setText(MaxGanan[1]);
+        System.arraycopy(Compra.MenosGananciaDatos(), 0, MinGanan, 0, 2);
+        GananciasMinVentas_txt.setText(MinGanan[0]);
+        CantGanadaMinVentas_txt.setText(MinGanan[1]);
+        ProcVentas_txt.setText(""+Compra.getCliente().size());
     }
 
 //metodo para llenar el combobox de los proveedores
@@ -2898,7 +2936,6 @@ public class View1 extends javax.swing.JFrame {
     private javax.swing.JCheckBox selecPanEliminar_chbx;
     private javax.swing.JCheckBox selecProdConsultVenta_chbx;
     private javax.swing.JCheckBox selecProdVenta_chbx;
-    private javax.swing.JCheckBox selecProdVentas_chbx;
     private javax.swing.JTextField serviProvEdit_txt;
     private javax.swing.JTextField serviProvReg_txt;
     private javax.swing.JTextField telefonoProvEdit_txt;

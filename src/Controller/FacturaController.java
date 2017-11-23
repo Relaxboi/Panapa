@@ -141,6 +141,90 @@ public class FacturaController {
 
     }
 
+     public String[] MasGananciaDatos(){
+        
+        String nombre = "", ganan = "";
+        ArrayList<String[]> Lista = (ArrayList<String[]>) ListarEstadistica().clone();
+        String num = "0";
+        for (String[] Lista1 : Lista) {
+            if(Double.parseDouble(Lista1[2]) > Double.parseDouble(num)){
+                num = Lista1[2];
+                nombre = Lista1[0]; ganan = Lista1[2];
+            }
+            for(String[] Lista2 : Lista){
+                if(Double.parseDouble(num) < Double.parseDouble(Lista2[2])){
+                    break;
+                }
+            }
+            
+        }
+        
+        return new String[]{nombre, ganan};
+    }
+    
+    public String[] MasVendidosDatos(){
+        
+        String nombre = "", cant = "";
+        ArrayList<String[]> Lista = (ArrayList<String[]>) ListarEstadistica().clone();
+        String num = "0";
+        for (String[] Lista1 : Lista) {
+            if(Integer.parseInt(Lista1[1]) > Integer.parseInt(num)){
+                num = Lista1[1];
+                nombre = Lista1[0]; cant = Lista1[1];
+            }
+            for(String[] Lista2 : Lista){
+                if(Integer.parseInt(num) < Integer.parseInt(Lista2[1])){
+                    break;
+                }
+            }
+            
+        }
+        
+        return new String[]{nombre, cant};
+    }
+    
+    public String[] MenosGananciaDatos(){
+        
+        String nombre = "", ganan = "";
+        ArrayList<String[]> Lista = (ArrayList<String[]>) ListarEstadistica().clone();
+        String num = "99999999";
+        for (String[] Lista1 : Lista) {
+            if(Double.parseDouble(Lista1[2]) < Double.parseDouble(num)){
+                num = Lista1[2];
+                nombre = Lista1[0]; ganan = Lista1[2];
+            }
+            for(String[] Lista2 : Lista){
+                if(Double.parseDouble(num) > Double.parseDouble(Lista2[2])){
+                    break;
+                }
+            }
+            
+        }
+        
+        return new String[]{nombre, ganan};
+    }
+    
+    public String[] MenosVendidosDatos(){
+        
+        String nombre = "", cant = "";
+        ArrayList<String[]> Lista = (ArrayList<String[]>) ListarEstadistica().clone();
+        String num = "9999999";
+        for (String[] Lista1 : Lista) {
+            if(Integer.parseInt(Lista1[1]) < Integer.parseInt(num)){
+                num = Lista1[1];
+                nombre = Lista1[0]; cant = Lista1[1];
+            }
+            for(String[] Lista2 : Lista){
+                if(Integer.parseInt(num) > Integer.parseInt(Lista2[1])){
+                    break;
+                }
+            }
+            
+        }
+        
+        return new String[]{nombre, cant};
+    }
+    
     private ArrayList RellenarArray() {
         boolean V;
         ArrayList<String> nombre = new ArrayList();
