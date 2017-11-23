@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 public class View1 extends javax.swing.JFrame {
@@ -1881,13 +1882,13 @@ public class View1 extends javax.swing.JFrame {
                             .addComponent(ProdMinVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(CantProdMinVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel39)
                             .addComponent(jLabel40))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(GananciasMinVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CantGanadaMinVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(Datos_ventasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CantGanadaMinVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(GananciasMinVentas_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel36)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1943,23 +1944,25 @@ public class View1 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_registrarPan
 // Metodo para validar la entrada de los productos
+
     private Boolean Val_Panes(String nombre, String precio, String cantidad) {
         boolean V = true;
         //condicion para saber si la entrada no esta vacia
-        if (nombre == null || nombre.equals("") || precio == null || precio.equals("")
-                || cantidad == null || cantidad.equals("")) {
+        try {
 
-            JOptionPane.showMessageDialog(null, "Ha dejado campos vacios", "ERROR", 0);
-            V = false;
-        } else {
-            try {
-                //comprobar si el valor ingresado es numerico 
-                Integer.parseInt(precio);
-                Integer.parseInt(cantidad);
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Digite solo valores númericos", "ERROR", 0);
+            if (nombre == null || nombre.equals("") || precio == null || precio.equals("")
+                    || cantidad == null || cantidad.equals("")) {
+
+                JOptionPane.showMessageDialog(null, "Ha dejado campos vacios", "ERROR", 0);
                 V = false;
+            } else if (Integer.parseInt(precio) <= 0 || Integer.parseInt(cantidad) <= 0) {
+                JOptionPane.showMessageDialog(null, "Hubo un valor extraño");
+                V = false;
+
             }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Digite solo valores númericos", "ERROR", 0);
+            V = false;
         }
         return V;
     }
@@ -1971,6 +1974,7 @@ public class View1 extends javax.swing.JFrame {
         TablaVenta();
     }//GEN-LAST:event_Actualizar_panel
 //Metodo para litar todas las tablas
+
     public void Listas() {
         //tabla de registro
         Consulta = (DefaultTableModel) listaPanesReg_tbl.getModel();
@@ -2021,14 +2025,14 @@ public class View1 extends javax.swing.JFrame {
         //Llenar Combobox
         ComboBox();
     }
-    
+
 //metodo para llenar el combobox de los proveedores
     private void ComboBox() {
         //remuevo los items
         provePanReg_cmbx.removeAllItems();
         provePanReg_cmbx.addItem("Seleccione");
         //agrego los items
-        
+
         for (int i = 0; i < Proveedor.getListaProveedores().size(); i++) {
             provePanReg_cmbx.addItem(Proveedor.getListaProveedores().get(i).getsNombre());
         }
@@ -2064,11 +2068,12 @@ public class View1 extends javax.swing.JFrame {
             );
             //tabulacion y vacio de la vista
             Listas();
-            ObjEditPan(true);
+            ObjEditPan(false);
             VaciarMod_txt();
         }
     }//GEN-LAST:event_modificarPan
 //metodo para validar la consulta
+
     private boolean ValConsult(String nombre, ArrayList Array) {
         boolean V = true;
         //valido si no esta vaica el nombre
@@ -2091,8 +2096,9 @@ public class View1 extends javax.swing.JFrame {
         Consult_GeneralPan(nombrePanConsultEdit_txt.getText(), listaPanesEdit_tbl);
     }//GEN-LAST:event_consultPanEdit_btnActionPerformed
 //metodo para consultar producto general
+
     private void Consult_GeneralPan(String s, JTable Tabla) {
-       //instancio la tabla
+        //instancio la tabla
         Consulta = (DefaultTableModel) Tabla.getModel();
         //llamo el metodo para validar entrada
         if (ValConsult(s, paco.Read(s.toUpperCase()))) {
@@ -2101,6 +2107,7 @@ public class View1 extends javax.swing.JFrame {
         }
         Consulta = null;
     }
+
     //consultar clientes en las estadisticas
     private void Consult_GeneralEstadistica(String s, JTable Tabla) {
         //instancio la tabla
@@ -2113,6 +2120,7 @@ public class View1 extends javax.swing.JFrame {
         Consulta = null;
     }
 //metodo para consultar proveedores
+
     private void Consult_GeneralProv(String s, JTable Tabla) {
         //instancio la tabla
         Consulta = (DefaultTableModel) Tabla.getModel();
@@ -2123,6 +2131,7 @@ public class View1 extends javax.swing.JFrame {
         }
         Consulta = null;
     }
+
     //metodo para consultar edn la tabla de los datos
     private void Consult_GeneralDatos(String s, JTable Tabla) {
         //instancio la tabla
@@ -2154,6 +2163,7 @@ public class View1 extends javax.swing.JFrame {
         cantidadPanEdit_txt.setEnabled(V);
         selecEditPan_chbx.setSelected(V);
     }
+
     //metodo para activar o desactivar vista de la edicion de los proveedores
     private void ObjEditProv(boolean V) {
         GuardarEditProv_btn.setEnabled(V);
@@ -2165,6 +2175,7 @@ public class View1 extends javax.swing.JFrame {
         direcProvEdit_txt.setEnabled(V);
         selecEditProv_chbx.setSelected(V);
     }
+
     //metodo para vaciar la vita del modificar de los productos
     public void VaciarMod_txt() {
         nombrePanEdit_txt.setText(null);
@@ -2173,6 +2184,7 @@ public class View1 extends javax.swing.JFrame {
 
     }
 //metodo para vaciar la vita del registrar de los prooductos
+
     public void VaciarReg_txt() {
         nombrePanReg_txt.setText(null);
         cantidadPanReg_txt.setText(null);
@@ -2180,6 +2192,7 @@ public class View1 extends javax.swing.JFrame {
 
     }
 //metodo para vaciar la vita del modificar proveedores
+
     private void LimpiarModProv() {
         nombreProvEdit_txt.setText(null);
         telefonoProvEdit_txt.setText(null);
@@ -2187,15 +2200,16 @@ public class View1 extends javax.swing.JFrame {
         nitProvEdit_txt.setText(null);
         direcProvEdit_txt.setText(null);
     }
+
     //metodo para eliminar la tabla de los productos en las estadistica
-    private void TablaVenta(){
+    private void TablaVenta() {
         indexEstadistica = null;
-        Consulta = (DefaultTableModel)  listaProdVenta_tbl2.getModel();
-        while(Consulta.getRowCount() != 0){
+        Consulta = (DefaultTableModel) listaProdVenta_tbl2.getModel();
+        while (Consulta.getRowCount() != 0) {
             Consulta.removeRow(0);
         }
         Consulta = null;
-        selecEliminarVentas_chbx.setSelected(false);     
+        selecEliminarVentas_chbx.setSelected(false);
     }
 //metodo para editar productos 
     private void EditPan_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditPan_btnActionPerformed
@@ -2206,7 +2220,7 @@ public class View1 extends javax.swing.JFrame {
                 ObjEditPan(true);
                 EditPan_btn.setEnabled(false);
                 break;
-                
+
         }
     }//GEN-LAST:event_EditPan_btnActionPerformed
 //metodo para actualizar panel
@@ -2240,6 +2254,7 @@ public class View1 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_registrarProv_btnregistrarPan
 //metodo para validar entrada de los proveedores
+
     private boolean Val_Prov(String nit, String nombre, String servi, String telefono, String direc) {
         boolean V = true;
         //si la entrada esta vacio muestra el mensaje
@@ -2252,6 +2267,7 @@ public class View1 extends javax.swing.JFrame {
         }
         return V;
     }
+
     //metodo para editar proveedoeres
     private void EditProv_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditProv_btnActionPerformed
         int opcEditProv = JOptionPane.showConfirmDialog(null, "¿Desea modificar el proveedor?");
@@ -2288,6 +2304,7 @@ public class View1 extends javax.swing.JFrame {
         Consult_GeneralPan(nombrePanEliminar_txt.getText(), listaPanesEliminar_tbl);
      }//GEN-LAST:event_consultPanEliminar_btnActionPerformed
 //limpiar registro del los proveedores
+
     private void LimpiarReg_Prov() {
         nombreProvReg_txt.setText(null);
         telefonoProvReg_txt.setText(null);
@@ -2451,6 +2468,7 @@ public class View1 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_retirarProdVenta_btnActionPerformed
 //para cancelar la compra
+
     private void Cancelar() {
 
         Compra.getCompraLista().clear();
@@ -2532,7 +2550,7 @@ public class View1 extends javax.swing.JFrame {
     private void EliminarVentas_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarVentas_btnActionPerformed
         int opcEditProv = JOptionPane.showConfirmDialog(null, "¿Desea eliminar esta venta?");
         switch (opcEditProv) {
-            case 0:         
+            case 0:
                 //remuevo la venta del array
                 Compra.RemoveVenta(Integer.parseInt(indexEstadistica.toString()));
                 Listas();
@@ -2549,67 +2567,67 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_Panel_GeneralMouseClicked
 /////////////////////////////////////////////////metodo para el enter///////////////////////////////////////////////////
     private void cantidadPanReg_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cantidadPanReg_txtKeyPressed
-        EventoEnter(evt, registrarPan_btn);
+        EventoEnter(evt, registrarPan_btn, nombrePanReg_txt);
     }//GEN-LAST:event_cantidadPanReg_txtKeyPressed
 
     private void cantidadPanEdit_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cantidadPanEdit_txtKeyPressed
-        EventoEnter(evt, GuardarEditPan_btn);
+        EventoEnter(evt, GuardarEditPan_btn, nombrePanReg_txt);
     }//GEN-LAST:event_cantidadPanEdit_txtKeyPressed
 
     private void direcProvReg_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_direcProvReg_txtKeyPressed
-        EventoEnter(evt, registrarProv_btn);
+        EventoEnter(evt, registrarProv_btn, nombreProvReg_txt);
     }//GEN-LAST:event_direcProvReg_txtKeyPressed
 
     private void cantidadProdVenta_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cantidadProdVenta_txtKeyPressed
-        EventoEnter(evt, agregarProdVenta_btn);
+        EventoEnter(evt, agregarProdVenta_btn, cantidadProdVenta_txt);
     }//GEN-LAST:event_cantidadProdVenta_txtKeyPressed
 
     private void pagoClientVenta_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pagoClientVenta_txtKeyPressed
-        EventoEnter(evt, comprarVenta_btn);
+        EventoEnter(evt, comprarVenta_btn, cantidadProdVenta_txt);
     }//GEN-LAST:event_pagoClientVenta_txtKeyPressed
 
     private void direcProvEdit_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_direcProvEdit_txtKeyPressed
-        EventoEnter(evt, GuardarEditProv_btn);
+        EventoEnter(evt, GuardarEditProv_btn, nombreProvEdit_txt);
     }//GEN-LAST:event_direcProvEdit_txtKeyPressed
 
     private void listaPanesEdit_tblKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_listaPanesEdit_tblKeyPressed
-        EventoEnter(evt, EditPan_btn);
+        EventoEnter(evt, EditPan_btn, nombrePanConsult_txt);
     }//GEN-LAST:event_listaPanesEdit_tblKeyPressed
 
     private void nombrePanConsult_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombrePanConsult_txtKeyPressed
-        EventoEnter(evt, consultPan_btn);
+        EventoEnter(evt, consultPan_btn, nombrePanConsult_txt);
     }//GEN-LAST:event_nombrePanConsult_txtKeyPressed
 
     private void nombrePanEliminar_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombrePanEliminar_txtKeyPressed
-        EventoEnter(evt, consultPanEliminar_btn);
+        EventoEnter(evt, consultPanEliminar_btn, nombrePanEliminar_txt);
     }//GEN-LAST:event_nombrePanEliminar_txtKeyPressed
 
     private void listaPanesEliminar_tblKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_listaPanesEliminar_tblKeyPressed
-        EventoEnter(evt, eliminarPan_btn);
+        EventoEnter(evt, eliminarPan_btn, nombrePanEliminar_txt);
     }//GEN-LAST:event_listaPanesEliminar_tblKeyPressed
 
     private void nombreProvConsultEdit_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreProvConsultEdit_txtKeyPressed
-        EventoEnter(evt, consultProvEdit_btn);
+        EventoEnter(evt, consultProvEdit_btn, nombreProvConsultEdit_txt);
     }//GEN-LAST:event_nombreProvConsultEdit_txtKeyPressed
 
     private void listaProveedoresEdit_tblKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_listaProveedoresEdit_tblKeyPressed
-        EventoEnter(evt, EditProv_btn);
+        EventoEnter(evt, EditProv_btn, nombreProvConsultEdit_txt);
     }//GEN-LAST:event_listaProveedoresEdit_tblKeyPressed
 
     private void nombreProvConsult_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreProvConsult_txtKeyPressed
-        EventoEnter(evt, consultProv_btn);
+        EventoEnter(evt, consultProv_btn, nombreProvConsult_txt);
     }//GEN-LAST:event_nombreProvConsult_txtKeyPressed
 
     private void nombreEliminarProv_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreEliminarProv_txtKeyPressed
-        EventoEnter(evt, consultProvEliminar_btn);
+        EventoEnter(evt, consultProvEliminar_btn, nombreEliminarProv_txt);
     }//GEN-LAST:event_nombreEliminarProv_txtKeyPressed
 
     private void listaProvEliminar_tblKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_listaProvEliminar_tblKeyPressed
-        EventoEnter(evt, EliminarProv_btn);
+        EventoEnter(evt, EliminarProv_btn, nombreEliminarProv_txt);
     }//GEN-LAST:event_listaProvEliminar_tblKeyPressed
 
     private void nombrePanConsultVenta_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombrePanConsultVenta_txtKeyPressed
-        EventoEnter(evt, consultPanVenta_btn);
+        EventoEnter(evt, consultPanVenta_btn, ConsultProdDatos_txt);
     }//GEN-LAST:event_nombrePanConsultVenta_txtKeyPressed
 
     private void consultProdVentas_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultProdVentas_btnActionPerformed
@@ -2617,10 +2635,11 @@ public class View1 extends javax.swing.JFrame {
     }//GEN-LAST:event_consultProdVentas_btnActionPerformed
 
     private void ConsultProdDatos_txtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ConsultProdDatos_txtKeyPressed
-        // TODO add your handling code here:
+         EventoEnter(evt, consultProdVentas_btn, ConsultProdDatos_txt);
     }//GEN-LAST:event_ConsultProdDatos_txtKeyPressed
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
     //metodo para la posicion del cliente en la venta
+
     private int CheckBoxVenta(JTable Tabla, JCheckBox Check) {
         int posConsult = 0;
         //comparo la posicion real
@@ -2632,13 +2651,16 @@ public class View1 extends javax.swing.JFrame {
         Check.setSelected(true);
         return posConsult;
     }
+
     //envento del enter
-    private void EventoEnter(java.awt.event.KeyEvent evt,JButton boton){
-        if(evt.getKeyChar() == ENTER){
+    private void EventoEnter(java.awt.event.KeyEvent evt, JButton boton, JTextField Caja) {
+        if (evt.getKeyChar() == ENTER) {
+            Caja.requestFocus();
             boton.doClick();
         }
     }
 //metodo para saber la posicion real de los productos
+
     private int CheckBoxProducto(JTable Tabla, JCheckBox Check) {
         int posConsult = 0;
         //bucle para comprar la lisa de los productos
@@ -2651,6 +2673,7 @@ public class View1 extends javax.swing.JFrame {
         return posConsult;
     }
 //metodo para saber la posicion real de lso proveedores
+
     private int CheckBoxProv(JTable Tabla, JCheckBox Check) {
         int posConsult = 0;
         //bucle para comprar la lisa de los proveedores
@@ -2663,6 +2686,7 @@ public class View1 extends javax.swing.JFrame {
         return posConsult;
     }
 //metodo para validar la entrada del cliente
+
     private boolean Cliente() {
         boolean V = true;
         try {
