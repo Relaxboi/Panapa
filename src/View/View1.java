@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+import java.util.UUID;
 
 public class View1 extends javax.swing.JFrame {
 
@@ -27,6 +28,7 @@ public class View1 extends javax.swing.JFrame {
     private Object indexProdConsult_tbl = null;
     private Object indexProdVenta_tbl = null;
     private double total = 0;
+    
     //PACO es instanciar al PanController 
 
     public View1() {
@@ -272,7 +274,7 @@ public class View1 extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nombre", "Cantidad", "Precio", "Proveerdor"
+                "Nombre", "Cantidad", "Precio", "Proveedor"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1952,16 +1954,21 @@ public class View1 extends javax.swing.JFrame {
 // Evento del boton para registrar y tabular el producto
     private void registrarPan(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarPan
         //valido la entrada de los productos con el metodo de val_panes
+        UUID idtest = UUID.randomUUID();
         if (Val_Panes(nombrePanReg_txt.getText(), precioPanReg_txt.getText(), cantidadPanReg_txt.getText())) {
             //metodo para saber si el producto tiene proveedores
             if (provePanReg_cmbx.getSelectedItem().toString().equals("Seleccione")) {
                 //crear un nuevo prpducto
-                paco.Create(new Producto(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), "f2"));
+                paco.Create(new Producto(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), idtest+""));
             } else {
                 //crear un nuevo producto
-                paco.Create(new Producto(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), "f2", provePanReg_cmbx.getSelectedItem().toString()));
+                paco.Create(new Producto(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), idtest+"", provePanReg_cmbx.getSelectedItem().toString()));
             }
             //tabular y vaciar vista
+            System.out.println("___________");
+            for (int i = 0; i < paco.getListaPan().size(); i++) {
+                System.out.println(paco.getListaPan().get(i).getId());
+            }
             Listas();
             VaciarReg_txt();
         }
