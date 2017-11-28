@@ -40,10 +40,10 @@ public class View1 extends javax.swing.JFrame {
         ComboBox();
     }
 
-    public void IconosPanel() {//ICONOS
+    public void IconosPanel() {//ICONOS 
          
         // Titulo + Icono del programa
-        setTitle("Panapa 1.6.250");
+        setTitle("Panapa 1.6.215");
         setIconImage(Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Icons/bread.png")));
         
         //Productos
