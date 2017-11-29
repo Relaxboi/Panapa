@@ -2789,7 +2789,7 @@ public class View1 extends javax.swing.JFrame {
                     || pagoClientVenta_txt.getText() == null || pagoClientVenta_txt.getText().equals("")) {
                 V = false;
                 JOptionPane.showMessageDialog(null, "Ha dejado campos vacios", "ERROR!", 0);
-            } else if (Integer.parseInt(pagoClientVenta_txt.getText()) <= 0 || Integer.parseInt(pagoClientVenta_txt.getText()) < total) {
+            } else if (Integer.parseInt(pagoClientVenta_txt.getText()) <= 0 || Integer.parseInt(pagoClientVenta_txt.getText()) < total || Integer.parseInt(pagoClientVenta_txt.getText()) %50 != 0) {
                 JOptionPane.showMessageDialog(null, "Verifique el pago", "ERROR!", 0);
                 V = false;
             } else {
