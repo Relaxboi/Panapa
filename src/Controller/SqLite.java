@@ -19,12 +19,14 @@ public class SqLite {
             file.createNewFile();
             if (file.exists()) {
                 Crear();
+                 System.err.println("Se ha creado la base de datos");
             }
         }
     }
 //metodo para actualizar el arraylist de los productos
     public ArrayList listaProductos() throws Exception {
         s = Conexion().createStatement();
+         System.out.println("conectado");
         ArrayList<Producto> Lista = new ArrayList();
         rs = s.executeQuery("select * from PRODUCTOS");
         while (rs.next()) {
@@ -33,11 +35,13 @@ public class SqLite {
         }
         s.close();
         Conexion().close();
+         System.err.println("Se ha actualizado");
         return Lista;
     }
 //metodo para actualizar el arraylist del cliente
     public ArrayList listaCLientes() throws Exception {
         s = Conexion().createStatement();
+        System.out.println("conectado");
         ArrayList<Client> Lista = new ArrayList();
         rs = s.executeQuery("select * from CLIENTE");
         while (rs.next()) {
@@ -46,11 +50,13 @@ public class SqLite {
         }
         s.close();
         Conexion().close();
+        System.err.println("Se ha actualizado");
         return Lista;
     }
 //metodo para actualizar el arraylist del proveedores
     public ArrayList listaProveedores() throws Exception {
         s = Conexion().createStatement();
+        System.out.println("conectado");
         ArrayList<Proveedor> Lista = new ArrayList();
         rs = s.executeQuery("select * from PROVEEDORES");
         while (rs.next()) {
@@ -59,11 +65,13 @@ public class SqLite {
         }
         s.close();
         Conexion().close();
+        System.err.println("Se ha actualizado");
         return Lista;
     }
 //metodo para actualizar el arraylist del compra
     public ArrayList listaCompra() throws Exception {
         s = Conexion().createStatement();
+        System.out.println("conectado");
         ArrayList<Factura> Lista = new ArrayList();
         ArrayList<Producto> Lista1 = new ArrayList();
         boolean V = false, N = false;
@@ -72,28 +80,28 @@ public class SqLite {
         while (rs.next()) {
             if (i == rs.getInt(1)) {
                 V = true;
+                N = false;
             } else {
                 Lista.add(new Factura(Lista1));
                 Lista1.clear();
                 V = false;
+                N = true;
                 i++;
             }
             Lista1.add(new Producto(rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(5), rs.getString(6), rs.getInt(7)));
-            N = true;
         }
-        if (N) {
-            Lista.add(new Factura(Lista1));
-        }
-        if (V) {
+        if (V || N) {
             Lista.add(new Factura(Lista1));
         }
         s.close();
         Conexion().close();
+        System.err.println("Se ha actualizado");
         return Lista;
     }
 //metodo para insertar el arraylist de los productos a la tabla
     public void InsertarProductos(String Id, String Nombre, double Precio, int Cantidad, String Proveedor) throws Exception {
         s = Conexion().createStatement();
+        System.out.println("conectado");
         s.execute("insert into PRODUCTOS values ('" + Id + "','" + Nombre + "','" + Precio + "','" + Cantidad + "','" + Proveedor + "')");
         s.close();
         Conexion().close();
@@ -102,6 +110,7 @@ public class SqLite {
 //metodo para insertar el arraylist de los clientes a la tabla
     public void InsertarClientes(String Nombre, String Identificacion, double Pago, double Total, double Devolucion) throws Exception {
         s = Conexion().createStatement();
+        System.out.println("conectado");
         s.execute("insert into CLIENTE values ('" + Nombre + "','" + Identificacion + "','" + Pago + "','" + Total + "','" + Devolucion + "')");
         s.close();
         Conexion().close();
@@ -110,6 +119,7 @@ public class SqLite {
 //metodo para insertar el arraylist de los proveedores a la tabla
     public void InsertarProveedores(String Nit, String Nombre, String Telefono, String Servicio, String Direccion) throws Exception {
         s = Conexion().createStatement();
+        System.out.println("conectado");
         s.execute("insert into PROVEEDORES values ('" + Nit + "','" + Nombre + "','" + Telefono + "','" + Servicio + "','" + Direccion + "')");
         s.close();
         Conexion().close();
@@ -118,6 +128,7 @@ public class SqLite {
 //metodo para insertar el arraylist de los compra a la tabla
     public void InsertarCompra(int NCompra, String Nombre, double Precio, int Cantidad, String Id, String Proveedor, double Ganancia) throws Exception {
         s = Conexion().createStatement();
+        System.out.println("conectado");
         s.execute("insert into COMPRA values ('" + NCompra + "','" + Nombre + "','" + Precio + "','" + Cantidad + "','" + Id + "','" + Proveedor + "','" + Ganancia + "')");
         s.close();
         Conexion().close();
@@ -126,9 +137,11 @@ public class SqLite {
 //metodo para eliminar tabla
     public void EliminarTabla(String Tabla) throws Exception {
         s = Conexion().createStatement();
+        System.out.println("conectado");
         s.execute("delete from " + Tabla);
         s.close();
         Conexion().close();
+        System.err.println("Se ha eliminado");
     }
 //metodo para crear tablas
     private void Crear() throws Exception {
@@ -173,9 +186,6 @@ public class SqLite {
         //ruta de la base de datos la cual crearemos
         Class.forName("org.sqlite.JDBC");
         cn = DriverManager.getConnection("jdbc:sqlite:Panapa.db");
-        if (cn != null) {
-            System.out.println("Conectado");
-        }
         return cn;
     }
 }
