@@ -13,6 +13,8 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class View1 extends javax.swing.JFrame {
 
@@ -29,15 +31,23 @@ public class View1 extends javax.swing.JFrame {
     private Object indexProdConsult_tbl = null;
     private Object indexProdVenta_tbl = null;
     private double total = 0;
+    private SqLite Bd;
     
     //PACO es instanciar al PanController 
 
-    public View1() {
+    public View1() throws Exception {
+        attachShutDownHook();
+        Bd = new SqLite();
+        paco.setListaPan(Bd.listaProductos());
+        Proveedor.setListaProveedores(Bd.listaProveedores());
+        Compra.setCompra(Bd.listaCompra());
+        Compra.setCliente(Bd.listaCLientes());
         initComponents();
         setResizable(false);
         setLocationRelativeTo(null);
         IconosPanel();
         ComboBox();
+        Listas();
     }
 
     public void IconosPanel() {//ICONOS 
@@ -2803,6 +2813,37 @@ public class View1 extends javax.swing.JFrame {
         }
         return V;
     }
+    
+    public void attachShutDownHook(){
+      Runtime.getRuntime().addShutdownHook(new Thread() {
+        @Override
+        public void run() {
+            try {
+                Bd.EliminarTabla("PRODUCTOS");
+                Bd.EliminarTabla("CLIENTE");
+                Bd.EliminarTabla("PROVEEDORES");
+                Bd.EliminarTabla("COMPRA");
+                for(Client C : Compra.getCliente()){
+                    Bd.InsertarClientes(C.getsNombre(), C.getsIndentificacion(), C.getiPago(), C.getiTotal(), C.getiDevolucion());
+                }
+                for(Producto P1: paco.getListaPan()){
+                   Bd.InsertarProductos(P1.getId(), P1.getNombreTipo(), P1.getPrecio(), P1.getCantidad(), P1.getsProveedor());
+                }
+                for(Proveedor P : Proveedor.getListaProveedores()){
+                    Bd.InsertarProveedores(P.getsId(), P.getsNombre(), P.getsTelefono(), P.getsServicio(), P.getsDireccion());
+                }
+                int i = 0;
+                for(Factura F : Compra.getCompra()){
+                    for(Producto P : F.getFactura()){
+                        Bd.InsertarCompra(i, P.getNombreTipo(), P.getPrecio(), P.getCantidad(), P.getId(), P.getsProveedor(), P.getiGanancias());
+                    }
+                    i++;
+                }
+            } catch (Exception ex) {}
+        }
+      } );
+    }
+
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -2831,9 +2872,15 @@ public class View1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new View1().setVisible(true);
+                try {
+                    new View1().setVisible(true);
+                } catch (Exception ex) {
+                    Logger.getLogger(View1.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

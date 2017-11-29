@@ -310,4 +310,10 @@ public class FacturaController {
         return Cliente;
     }
 
+    public void setCliente(ArrayList<Client> Cliente) {
+        this.Cliente = Cliente;
+    }
+    
+    
+
 }

@@ -24,7 +24,7 @@ public class ProductoController {
                 if (ListaPan.get(i).getNombreTipo().charAt(b) != ' ') {
                     Palabra += ListaPan.get(i).getNombreTipo().charAt(b);
                     if (Palabra.equals(s)) {
-                        A.add(new Object[]{ListaPan.get(i).getNombreTipo(), "" + ListaPan.get(i).getCantidad(), "" + ListaPan.get(i).getPrecio()});
+                        A.add(new Object[]{ListaPan.get(i).getNombreTipo(), "" + ListaPan.get(i).getCantidad(), "" + ListaPan.get(i).getPrecio(), ListaPan.get(i).getsProveedor()});
                         break;
                     }
 
@@ -74,4 +74,10 @@ public class ProductoController {
             Table.addRow(Array.get(i));
         }
     }
+
+    public void setListaPan(ArrayList<Producto> ListaPan) {
+        this.ListaPan = ListaPan;
+    }
+    
+    
 }
