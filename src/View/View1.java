@@ -2392,6 +2392,7 @@ public class View1 extends javax.swing.JFrame {
     private void selecProdEliminar_tbl(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_selecProdEliminar_tbl
         //igualar posicion global con posicion local
         this.indexElim_tbl = CheckBoxProducto(listaPanesEliminar_tbl, selecPanEliminar_chbx);
+        selecPanEliminar_chbx.setText(paco.getListaPan().get(CheckBoxProducto(listaPanesEliminar_tbl, selecPanEliminar_chbx)).getNombreTipo());
     }//GEN-LAST:event_selecProdEliminar_tbl
 //metodo para eliminar producto
     private void eliminarPan_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarPan_btnActionPerformed
@@ -2427,6 +2428,7 @@ public class View1 extends javax.swing.JFrame {
     private void listaProvEliminar_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaProvEliminar_tblMouseClicked
         //igualar posicion global con posicion local
         this.indexElim_tbl = CheckBoxProv(listaProvEliminar_tbl, selecEliminarProv_chbx);
+        selecEliminarProv_chbx.setText(paco.getListaPan().get(CheckBoxProv(listaProvEliminar_tbl, selecEliminarProv_chbx)).getNombreTipo());
     }//GEN-LAST:event_listaProvEliminar_tblMouseClicked
 //consultar un producto en la venta
     private void consultPanVenta_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultPanVenta_btnActionPerformed
