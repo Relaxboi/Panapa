@@ -2006,7 +2006,7 @@ public class View1 extends javax.swing.JFrame {
 
                 JOptionPane.showMessageDialog(null, "Ha dejado campos vacios", "ERROR", 0);
                 V = false;
-            } else if (Integer.parseInt(precio) <= 0 || Integer.parseInt(cantidad) <= 0) {
+            } else if (Integer.parseInt(precio) <= 0 || Integer.parseInt(cantidad) <= 0 || Integer.parseInt(precio) % 50 != 0) {
                 JOptionPane.showMessageDialog(null, "Hubo un valor extraño");
                 V = false;
 
