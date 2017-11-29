@@ -480,6 +480,7 @@ public class View1 extends javax.swing.JFrame {
         jLabel42.setText("Nuevo Proveedor:");
 
         provePanReg_cmbx1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        provePanReg_cmbx1.setEnabled(false);
 
         javax.swing.GroupLayout Modificar_ProductoLayout = new javax.swing.GroupLayout(Modificar_Producto);
         Modificar_Producto.setLayout(Modificar_ProductoLayout);
@@ -1979,7 +1980,7 @@ public class View1 extends javax.swing.JFrame {
             //metodo para saber si el producto tiene proveedores
             if (provePanReg_cmbx.getSelectedItem().toString().equals("Seleccione")) {
                 //crear un nuevo prpducto
-                paco.Create(new Producto(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), idtest+""));
+                paco.Create(new Producto(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), idtest+"", "DELICIAS LA 51"));
             } else {
                 //crear un nuevo producto
                 paco.Create(new Producto(nombrePanReg_txt.getText().toUpperCase(), Integer.parseInt(precioPanReg_txt.getText()), Integer.parseInt(cantidadPanReg_txt.getText()), idtest+"", provePanReg_cmbx.getSelectedItem().toString()));
@@ -2104,13 +2105,17 @@ public class View1 extends javax.swing.JFrame {
 
 //metodo para llenar el combobox de los proveedores
     private void ComboBox() {
-        //remuevo los items
+//remuevo los items
         provePanReg_cmbx.removeAllItems();
         provePanReg_cmbx.addItem("Seleccione");
+        provePanReg_cmbx.addItem("DELICIAS LA 51");
+        provePanReg_cmbx1.removeAllItems();
+        provePanReg_cmbx1.addItem("Seleccione");
+        provePanReg_cmbx1.addItem("DELICIAS LA 51");
         //agrego los items
-
         for (int i = 0; i < Proveedor.getListaProveedores().size(); i++) {
             provePanReg_cmbx.addItem(Proveedor.getListaProveedores().get(i).getsNombre());
+            provePanReg_cmbx1.addItem(Proveedor.getListaProveedores().get(i).getsNombre());
         }
     }
 
@@ -2128,6 +2133,12 @@ public class View1 extends javax.swing.JFrame {
         nombrePanEdit_txt.setText(paco.getListaPan().get(Integer.parseInt(indexMod_tbl.toString())).getNombreTipo());
         cantidadPanEdit_txt.setText(paco.getListaPan().get(Integer.parseInt(indexMod_tbl.toString())).getCantidad() + "");
         precioPanEdit_txt.setText(paco.getListaPan().get(Integer.parseInt(indexMod_tbl.toString())).getPrecio() + "");
+        for(int i = 0; i < provePanReg_cmbx1.getItemCount(); i++){
+            if(paco.getListaPan().get(Integer.parseInt(indexMod_tbl.toString())).getsProveedor().equals(provePanReg_cmbx1.getItemAt(i))){
+                provePanReg_cmbx1.setSelectedIndex(i);
+                break;
+            }
+        }
 
     }//GEN-LAST:event_selecProdModif_tbl
 //metodo para modificar pan
@@ -2140,7 +2151,7 @@ public class View1 extends javax.swing.JFrame {
             paco.Uptade(posEditPan, new Producto(
                     nombrePanEdit_txt.getText().toUpperCase(),
                     Integer.parseInt(precioPanEdit_txt.getText()),
-                    Integer.parseInt(cantidadPanEdit_txt.getText()), "")
+                    Integer.parseInt(cantidadPanEdit_txt.getText()), provePanReg_cmbx1.getSelectedItem().toString())
             );
             //tabulacion y vacio de la vista
             Listas();
@@ -2238,6 +2249,7 @@ public class View1 extends javax.swing.JFrame {
         precioPanEdit_txt.setEnabled(V);
         cantidadPanEdit_txt.setEnabled(V);
         selecEditPan_chbx.setSelected(V);
+        provePanReg_cmbx1.setEnabled(V);
     }
 
     //metodo para activar o desactivar vista de la edicion de los proveedores
