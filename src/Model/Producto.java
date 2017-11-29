@@ -11,11 +11,11 @@ public class Producto {
     private double iSubTotal;
 
     //Constructores - Sobrecarga
-    public Producto(String nombreTipo, int precio, int cantidad, String id) {
+    public Producto(String nombreTipo, int precio, int cantidad, String Proveedor) {
         this.nombreTipo = nombreTipo;
         this.precio = precio;
         this.cantidad = cantidad;
-        this.id = id;
+        this.sProveedor = Proveedor;
     }
 
     public Producto() {

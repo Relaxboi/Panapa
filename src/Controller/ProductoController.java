@@ -40,7 +40,7 @@ public class ProductoController {
         getListaPan().get(index).setNombreTipo(p1.getNombreTipo());
         getListaPan().get(index).setCantidad(p1.getCantidad());
         getListaPan().get(index).setPrecio(p1.getPrecio());
-        getListaPan().get(index).setId(p1.getId());
+        getListaPan().get(index).setsProveedor(p1.getsProveedor());
     }
 
     public void Delete(int index) {//Eliminar
