@@ -6,11 +6,7 @@ import static java.awt.Event.ENTER;
 import java.awt.HeadlessException;
 import java.awt.Toolkit;
 import java.util.ArrayList;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.UUID;
 
